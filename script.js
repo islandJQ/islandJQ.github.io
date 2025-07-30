@@ -21,6 +21,13 @@ document.addEventListener('DOMContentLoaded', function() {
     // 平滑滚动到目标部分
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
+            // 如果是语言切换按钮，不进行滚动
+            if (this.classList.contains('lang-switch')) {
+                e.preventDefault();
+                toggleLanguage();
+                return;
+            }
+            
             e.preventDefault();
             const targetId = this.getAttribute('href');
             const targetSection = document.querySelector(targetId);
@@ -238,8 +245,36 @@ document.addEventListener('DOMContentLoaded', function() {
         return card;
     }
 
-    // 获取 GitHub 项目数据
-    fetchGitHubProjects();
+    // 语言切换功能
+    function toggleLanguage() {
+        const langButton = document.getElementById('lang-switch');
+        const isEnglish = langButton.textContent === 'EN';
+        
+        if (isEnglish) {
+            // 切换到中文
+            langButton.textContent = 'CN';
+            // 这里可以添加切换到中文的逻辑
+            console.log('Switched to Chinese');
+        } else {
+            // 切换到英文
+            langButton.textContent = 'EN';
+            // 这里可以添加切换到英文的逻辑
+            console.log('Switched to English');
+        }
+    }
+
+    // 作品集交互效果
+    const workItems = document.querySelectorAll('.work-item');
+    workItems.forEach(item => {
+        item.addEventListener('click', function() {
+            const category = this.getAttribute('data-category');
+            console.log(`Clicked on ${category} work`);
+            // 这里可以添加打开作品详情的逻辑
+        });
+    });
+
+    // 获取 GitHub 项目数据（如果需要的话）
+    // fetchGitHubProjects();
 });
 
 // CSS 动画类
