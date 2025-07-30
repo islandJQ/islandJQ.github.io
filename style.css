@@ -6,17 +6,20 @@
 }
 
 :root {
-    --primary-color: #6366f1;
-    --secondary-color: #8b5cf6;
-    --accent-color: #06b6d4;
-    --text-primary: #1f2937;
-    --text-secondary: #6b7280;
+    --primary-color: #000000;
+    --secondary-color: #333333;
+    --accent-color: #666666;
+    --text-primary: #000000;
+    --text-secondary: #666666;
+    --text-light: #999999;
     --bg-primary: #ffffff;
-    --bg-secondary: #f8fafc;
-    --bg-dark: #0f172a;
-    --border-color: #e5e7eb;
-    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    --bg-secondary: #fafafa;
+    --bg-light: #f5f5f5;
+    --bg-dark: #000000;
+    --border-color: #e0e0e0;
+    --border-light: #f0f0f0;
+    --shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 4px 8px rgba(0, 0, 0, 0.12);
 }
 
 body {
@@ -37,10 +40,10 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(20px);
     z-index: 1000;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-light);
 }
 
 .nav-container {
@@ -68,15 +71,16 @@ body {
 }
 
 .nav-link {
-    color: var(--text-primary);
+    color: var(--text-secondary);
     text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease;
+    font-weight: 400;
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
     position: relative;
 }
 
 .nav-link:hover {
-    color: var(--primary-color);
+    color: var(--text-primary);
 }
 
 .nav-link::after {
@@ -85,9 +89,9 @@ body {
     bottom: -5px;
     left: 50%;
     width: 0;
-    height: 2px;
-    background: var(--primary-color);
-    transition: all 0.3s ease;
+    height: 1px;
+    background: var(--text-primary);
+    transition: all 0.2s ease;
     transform: translateX(-50%);
 }
 
@@ -96,18 +100,17 @@ body {
 }
 
 .lang-switch {
-    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    background: var(--primary-color);
     color: white !important;
-    padding: 8px 16px;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    transition: all 0.3s ease;
+    padding: 6px 14px;
+    border-radius: 2px;
+    font-size: 0.8rem;
+    font-weight: 400;
+    transition: all 0.2s ease;
 }
 
 .lang-switch:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow);
+    background: var(--secondary-color);
 }
 
 .lang-switch::after {
@@ -130,24 +133,13 @@ body {
 
 /* 主页部分 */
 .hero {
-    min-height: 100vh;
+    min-height: 80vh;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    overflow: hidden;
-}
-
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="a" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="%23ffffff" stop-opacity="0.1"/><stop offset="100%" stop-color="%23ffffff" stop-opacity="0"/></radialGradient></defs><circle cx="500" cy="500" r="500" fill="url(%23a)"/></svg>') center/cover;
-    animation: float 6s ease-in-out infinite;
+    background: var(--bg-primary);
+    border-bottom: 1px solid var(--border-color);
 }
 
 @keyframes float {
@@ -167,7 +159,7 @@ body {
 }
 
 .hero-text {
-    color: white;
+    color: var(--text-primary);
 }
 
 .hero-title {
@@ -190,16 +182,18 @@ body {
 }
 
 .hero-subtitle {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     margin-bottom: 1rem;
-    color: rgba(255, 255, 255, 0.9);
+    color: var(--text-secondary);
+    font-weight: 300;
 }
 
 .hero-description {
-    font-size: 1.1rem;
+    font-size: 1rem;
     margin-bottom: 2rem;
-    color: rgba(255, 255, 255, 0.8);
-    line-height: 1.6;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    max-width: 500px;
 }
 
 .hero-buttons {
@@ -219,24 +213,24 @@ body {
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
+    background: var(--primary-color);
     color: white;
 }
 
 .btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-lg);
+    background: var(--secondary-color);
+    transform: translateY(-1px);
 }
 
 .btn-secondary {
     background: transparent;
-    color: white;
-    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
 }
 
 .btn-secondary:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.5);
+    background: var(--bg-light);
+    border-color: var(--text-secondary);
 }
 
 .hero-image {
@@ -305,27 +299,16 @@ body {
 
 /* 通用部分样式 */
 section {
-    padding: 5rem 0;
+    padding: 6rem 0;
 }
 
 .section-title {
-    font-size: 2.5rem;
+    font-size: 2rem;
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
     color: var(--text-primary);
-    position: relative;
-}
-
-.section-title::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60px;
-    height: 4px;
-    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-    border-radius: 2px;
+    font-weight: 400;
+    letter-spacing: 1px;
 }
 
 /* 作品集部分 */
@@ -335,29 +318,32 @@ section {
 
 .works-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 3rem;
+    margin-top: 3rem;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .work-item {
     background: white;
-    border-radius: 15px;
     overflow: hidden;
-    box-shadow: var(--shadow);
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
     cursor: pointer;
+    border: 1px solid var(--border-light);
 }
 
 .work-item:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
 }
 
 .work-image {
-    height: 250px;
+    height: 300px;
     position: relative;
     overflow: hidden;
+    background: var(--bg-light);
 }
 
 .work-img {
@@ -427,29 +413,30 @@ section {
 }
 
 .work-info {
-    padding: 1.5rem;
+    padding: 1.5rem 1rem;
 }
 
 .work-info h3 {
-    font-size: 1.3rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
     color: var(--text-primary);
+    font-weight: 500;
 }
 
 .work-info p {
-    color: var(--text-secondary);
+    color: var(--text-light);
     margin-bottom: 1rem;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+    line-height: 1.4;
 }
 
 .work-category {
     display: inline-block;
-    background: var(--bg-secondary);
-    color: var(--primary-color);
-    padding: 4px 12px;
-    border-radius: 15px;
-    font-size: 0.8rem;
-    font-weight: 500;
+    color: var(--text-secondary);
+    font-size: 0.75rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 /* 关于我部分 */
