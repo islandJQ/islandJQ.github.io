@@ -55,12 +55,11 @@ body {
 
 .nav-logo a {
     font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--primary-color);
+    font-family: 'DIN Next LT Pro', 'Arial', sans-serif;
+    font-weight: 100;
+    color: #000000;
     text-decoration: none;
-    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    letter-spacing: 0.5px;
 }
 
 .nav-menu {
