@@ -360,20 +360,70 @@ section {
     overflow: hidden;
 }
 
-.work-placeholder {
+.work-img {
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 4rem;
-    color: white;
+    object-fit: cover;
     transition: all 0.3s ease;
 }
 
-.work-item:hover .work-placeholder {
-    transform: scale(1.1);
+.work-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.work-overlay-content {
+    text-align: center;
+    color: white;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+.work-overlay-content h4 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.work-overlay-content p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.work-item:hover .work-overlay {
+    opacity: 1;
+}
+
+.work-item:hover .work-overlay-content {
+    transform: translateY(0);
+}
+
+.work-item:hover .work-img {
+    transform: scale(1.05);
+}
+
+/* 备用样式：如果图片加载失败，显示渐变背景 */
+.work-img[src*="project1.jpg"] {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+}
+
+.work-img:not([src]):before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
 }
 
 .work-info {
