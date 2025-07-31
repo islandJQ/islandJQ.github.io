@@ -3,19 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="islandJQ设计工作室 - 专注简约现代设计，提供平面设计、品牌设计、包装设计、网页设计等专业服务。">
-    <meta name="keywords" content="设计工作室,平面设计,品牌设计,包装设计,网页设计,摄影,islandJQ,设计师">
+    <meta name="description" content="islandJQ设计工作室 - 专注简约现代设计，提供品牌设计、包装设计、网页设计、平面设计等专业视觉解决方案。">
+    <meta name="keywords" content="设计工作室,品牌设计,包装设计,网页设计,平面设计,VI设计,创意设计,设计师,islandJQ">
     <meta name="author" content="islandJQ DESIGN STUDIO">
-    <meta property="og:title" content="islandJQ DESIGN STUDIO">
-    <meta property="og:description" content="专注简约现代设计的创意工作室">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    <link rel="canonical" href="https://islandJQ.github.io">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="islandJQ DESIGN STUDIO - 专业设计工作室">
+    <meta property="og:description" content="专注简约现代设计的创意工作室，提供品牌设计、包装设计、网页设计等专业服务">
     <meta property="og:url" content="https://islandJQ.github.io">
     <meta property="og:type" content="website">
-    <title>islandJQ DESIGN STUDIO</title>
+    <meta property="og:image" content="https://islandJQ.github.io/images/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="islandJQ DESIGN STUDIO">
+    <meta property="og:locale" content="zh_CN">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="islandJQ DESIGN STUDIO">
+    <meta name="twitter:description" content="专注简约现代设计的创意工作室">
+    <meta name="twitter:image" content="https://islandJQ.github.io/images/og-image.jpg">
+    <title>islandJQ DESIGN STUDIO - 专业创意设计工作室 | 品牌设计 包装设计 网页设计</title>
     <link rel="stylesheet" href="style.css?v=2024073002">
+    <link rel="stylesheet" href="loader.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=DIN+Next+LT+Pro:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="languages.js"></script>
+    
+    <!-- 结构化数据 -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "islandJQ DESIGN STUDIO",
+        "url": "https://islandJQ.github.io",
+        "description": "专注简约现代设计的创意工作室，提供品牌设计、包装设计、网页设计等专业服务",
+        "founder": {
+            "@type": "Person",
+            "name": "islandJQ"
+        },
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "CN"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "customer service",
+            "email": "design@islandJQ.com"
+        },
+        "sameAs": [
+            "https://github.com/islandJQ"
+        ],
+        "offers": [
+            {
+                "@type": "Service",
+                "name": "品牌设计",
+                "description": "专业的品牌视觉识别系统设计"
+            },
+            {
+                "@type": "Service",
+                "name": "包装设计",
+                "description": "创意包装设计解决方案"
+            },
+            {
+                "@type": "Service",
+                "name": "网页设计",
+                "description": "响应式网站设计与开发"
+            }
+        ]
+    }
+    </script>
 </head>
 <body>
+    <!-- 加载动画 -->
+    <div class="loader-wrapper" id="loader">
+        <div class="loader">
+            <div class="loader-circle"></div>
+            <div class="loader-text">LOADING</div>
+        </div>
+    </div>
+    
+    <!-- 页面过渡动画 -->
+    <div class="page-transition" id="page-transition"></div>
+    
     <!-- 导航栏 -->
     <nav class="navbar">
         <div class="nav-container">
@@ -23,9 +96,9 @@
                 <a href="#home">islandJQ  DESIGN  STUDIO</a>
             </div>
             <div class="nav-menu" id="nav-menu">
-                <a href="#works" class="nav-link">Works</a>
-                <a href="#me" class="nav-link">Me</a>
-                <a href="#news" class="nav-link">News</a>
+                <a href="#works" class="nav-link" data-translate="nav.works">Works</a>
+                <a href="#me" class="nav-link" data-translate="nav.me">Me</a>
+                <a href="#news" class="nav-link" data-translate="nav.news">News</a>
                 <a href="#" class="nav-link lang-switch" id="lang-switch">EN</a>
             </div>
             <div class="nav-toggle" id="nav-toggle">
@@ -39,20 +112,20 @@
     <!-- 主页部分 -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <div class="hero-text">
-                <h1 class="hero-title">
+            <div class="hero-text fade-in">
+                <h1 class="hero-title" data-translate="hero.title">
                     Creative <span class="highlight">Design</span> Studio
                 </h1>
-                <p class="hero-subtitle">平面设计 · 综合设计 · 视觉创意</p>
-                <p class="hero-description">
+                <p class="hero-subtitle" data-translate="hero.subtitle">平面设计 · 综合设计 · 视觉创意</p>
+                <p class="hero-description" data-translate="hero.description">
                     我们专注于简约现代的设计理念，为客户提供专业的视觉解决方案
                 </p>
                 <div class="hero-buttons">
-                    <a href="#works" class="btn btn-primary">查看作品</a>
-                    <a href="#me" class="btn btn-secondary">了解更多</a>
+                    <a href="#works" class="btn btn-primary" data-translate="hero.viewWorks">查看作品</a>
+                    <a href="#me" class="btn btn-secondary" data-translate="hero.learnMore">了解更多</a>
                 </div>
             </div>
-            <div class="hero-image">
+            <div class="hero-image fade-in delay-2">
                 <div class="design-showcase">
                     <div class="design-element">
                         <i class="fas fa-palette"></i>
@@ -76,24 +149,24 @@
     <!-- 作品集部分 -->
     <section id="works" class="works">
         <div class="container">
-            <h2 class="section-title">Works</h2>
+            <h2 class="section-title fade-in" data-translate="works.title">Works</h2>
             <div class="works-grid">
-                <div class="work-item" data-category="branding">
+                <a href="project-detail.html?id=branding-1" class="work-item fade-in" data-category="branding">
                     <div class="work-image">
-                        <img src="images/works/branding/project1.jpg" alt="品牌设计项目" class="work-img">
+                        <img src="images/works/branding/project1.jpg" alt="创新科技品牌视觉识别系统" class="work-img">
                         <div class="work-overlay">
                             <div class="work-overlay-content">
-                                <h4>品牌设计项目</h4>
+                                <h4>创新科技品牌视觉识别系统</h4>
                                 <p>查看详情</p>
                             </div>
                         </div>
                     </div>
                     <div class="work-info">
-                        <h3>品牌设计项目</h3>
-                        <p>Brand Identity Design</p>
+                        <h3 data-translate="works.branding.title">创新科技品牌视觉识别系统</h3>
+                        <p data-translate="works.branding.subtitle">Tech Brand Identity System</p>
                         <span class="work-category">Branding</span>
                     </div>
-                </div>
+                </a>
                 
                 <div class="work-item" data-category="print">
                     <div class="work-image">
@@ -146,39 +219,39 @@
                     </div>
                 </div>
                 
-                <div class="work-item" data-category="packaging">
+                <a href="project-detail.html?id=packaging-1" class="work-item" data-category="packaging">
                     <div class="work-image">
-                        <img src="images/works/packaging/project1.jpg" alt="包装设计" class="work-img">
+                        <img src="images/works/packaging/project1.jpg" alt="有机茶品包装设计系列" class="work-img">
                         <div class="work-overlay">
                             <div class="work-overlay-content">
-                                <h4>包装设计</h4>
+                                <h4>有机茶品包装设计系列</h4>
                                 <p>查看详情</p>
                             </div>
                         </div>
                     </div>
                     <div class="work-info">
-                        <h3>包装设计</h3>
-                        <p>Packaging Design</p>
+                        <h3>有机茶品包装设计系列</h3>
+                        <p>Organic Tea Packaging Design</p>
                         <span class="work-category">Packaging</span>
                     </div>
-                </div>
+                </a>
                 
-                <div class="work-item" data-category="web">
+                <a href="project-detail.html?id=web-1" class="work-item" data-category="web">
                     <div class="work-image">
-                        <img src="images/works/web/project1.jpg" alt="网页设计" class="work-img">
+                        <img src="images/works/web/project1.jpg" alt="创意工作室响应式网站设计" class="work-img">
                         <div class="work-overlay">
                             <div class="work-overlay-content">
-                                <h4>网页设计</h4>
+                                <h4>创意工作室响应式网站设计</h4>
                                 <p>查看详情</p>
                             </div>
                         </div>
                     </div>
                     <div class="work-info">
-                        <h3>网页设计</h3>
-                        <p>Web Design Project</p>
+                        <h3>创意工作室响应式网站设计</h3>
+                        <p>Creative Studio Website Design</p>
                         <span class="work-category">Web</span>
                     </div>
-                </div>
+                </a>
                 
                 <div class="work-item" data-category="photography">
                     <div class="work-image">
@@ -203,14 +276,14 @@
     <!-- 关于我部分 -->
     <section id="me" class="me">
         <div class="container">
-            <h2 class="section-title">Me</h2>
-            <div class="me-content">
+            <h2 class="section-title fade-in" data-translate="me.title">Me</h2>
+            <div class="me-content fade-in delay-1">
                 <div class="me-text">
-                    <p>我是一名专注于简约现代设计的创意工作者，致力于为客户提供专业的视觉解决方案。</p>
-                    <p>擅长平面设计和综合设计，追求简洁而富有表现力的设计语言，让每一个作品都能传达出独特的视觉魅力。</p>
+                    <p data-translate="me.description1">我是一名专注于简约现代设计的创意工作者，致力于为客户提供专业的视觉解决方案。</p>
+                    <p data-translate="me.description2">擅长平面设计和综合设计，追求简洁而富有表现力的设计语言，让每一个作品都能传达出独特的视觉魅力。</p>
                     
                     <div class="skills">
-                        <h3>专业技能</h3>
+                        <h3 data-translate="me.skills">专业技能</h3>
                         <div class="skill-tags">
                             <span class="skill-tag">Brand Identity</span>
                             <span class="skill-tag">Print Design</span>
@@ -229,13 +302,13 @@
     <!-- 新闻动态部分 -->
     <section id="news" class="news">
         <div class="container">
-            <h2 class="section-title">News</h2>
-            <div class="news-grid">
+            <h2 class="section-title fade-in" data-translate="news.title">News</h2>
+            <div class="news-grid fade-in delay-1">
                 <article class="news-item">
                     <div class="news-date">2024.01</div>
                     <div class="news-content">
-                        <h3>新作品发布</h3>
-                        <p>最新品牌设计项目正式发布，展现简约现代的设计理念。</p>
+                        <h3 data-translate="news.item1.title">新作品发布</h3>
+                        <p data-translate="news.item1.content">最新品牌设计项目正式发布，展现简约现代的设计理念。</p>
                     </div>
                 </article>
                 
@@ -261,13 +334,13 @@
     <!-- 联系我部分 -->
     <section id="contact" class="contact">
         <div class="container">
-            <h2 class="section-title">Contact</h2>
+            <h2 class="section-title" data-translate="contact.title">Contact</h2>
             <div class="contact-content">
-                <p>如果您对我们的设计服务感兴趣，欢迎联系我们进行合作洽谈。</p>
+                <p data-translate="contact.description">如果您对我们的设计服务感兴趣，欢迎联系我们进行合作洽谈。</p>
                 <div class="contact-links">
-                    <a href="mailto:design@studio.com" class="contact-link">
+                    <a href="contact-form.html" class="contact-link">
                         <i class="fas fa-envelope"></i>
-                        <span>Email</span>
+                        <span>联系表单</span>
                     </a>
                     <a href="#" class="contact-link">
                         <i class="fab fa-instagram"></i>
@@ -289,10 +362,18 @@
     <!-- 页脚 -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 islandJQ  DESIGN  STUDIO. All rights reserved.</p>
+            <p data-translate="footer.copyright">&copy; 2024 islandJQ  DESIGN  STUDIO. All rights reserved.</p>
         </div>
     </footer>
 
+    <script src="performance.js"></script>
+    <script src="animations.js"></script>
     <script src="script.js"></script>
+    <script>
+        // 初始化语言管理器
+        document.addEventListener('DOMContentLoaded', function() {
+            window.languageManager.init();
+        });
+    </script>
 </body>
 </html>

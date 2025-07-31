@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="联系我们 - islandJQ设计工作室">
+    <title>联系我们 - islandJQ DESIGN STUDIO</title>
+    <link rel="stylesheet" href="style.css?v=2024073003">
+    <link rel="stylesheet" href="loader.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DIN+Next+LT+Pro:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* 联系表单样式 */
+        .contact-form-page {
+            margin-top: 70px;
+            min-height: 100vh;
+            background: var(--bg-primary);
+        }
+        
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 6rem 2rem;
+        }
+        
+        .form-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .form-title {
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+        
+        .form-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        
+        .contact-form {
+            background: white;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .form-group {
+            margin-bottom: 2rem;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            font-size: 0.9rem;
+        }
+        
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: all 0.3s ease;
+            background: var(--bg-primary);
+        }
+        
+        .form-input:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+        
+        .form-submit {
+            width: 100%;
+            padding: 1.2rem 2rem;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+        
+        .form-submit:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+        
+        .form-submit:disabled {
+            background: var(--text-light);
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .form-message {
+            margin-top: 1rem;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            display: none;
+        }
+        
+        .form-message.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .form-message.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+        
+        .info-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+        
+        .info-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .info-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+        
+        .info-text {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .form-container {
+                padding: 4rem 1rem;
+            }
+            
+            .form-title {
+                font-size: 2rem;
+            }
+            
+            .contact-form {
+                padding: 2rem;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .contact-info {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">islandJQ  DESIGN  STUDIO</a>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html#works" class="nav-link">Works</a>
+                <a href="index.html#me" class="nav-link">Me</a>
+                <a href="index.html#news" class="nav-link">News</a>
+                <a href="#" class="nav-link lang-switch" id="lang-switch">EN</a>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 联系表单页面 -->
+    <div class="contact-form-page">
+        <div class="form-container">
+            <div class="form-header">
+                <h1 class="form-title">联系我们</h1>
+                <p class="form-subtitle">
+                    如果您对我们的设计服务感兴趣，或者有任何项目合作意向，<br>
+                    欢迎通过以下表单与我们取得联系。我们会尽快回复您。
+                </p>
+            </div>
+
+            <form class="contact-form" id="contact-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name" class="form-label">姓名 *</label>
+                        <input type="text" id="name" name="name" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="form-label">邮箱 *</label>
+                        <input type="email" id="email" name="email" class="form-input" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="company" class="form-label">公司/机构</label>
+                        <input type="text" id="company" name="company" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone" class="form-label">联系电话</label>
+                        <input type="tel" id="phone" name="phone" class="form-input">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="subject" class="form-label">项目类型</label>
+                    <select id="subject" name="subject" class="form-input">
+                        <option value="">请选择项目类型</option>
+                        <option value="branding">品牌设计</option>
+                        <option value="packaging">包装设计</option>
+                        <option value="web">网页设计</option>
+                        <option value="print">印刷设计</option>
+                        <option value="illustration">插画设计</option>
+                        <option value="photography">摄影服务</option>
+                        <option value="other">其他</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="budget" class="form-label">预算范围</label>
+                    <select id="budget" name="budget" class="form-input">
+                        <option value="">请选择预算范围</option>
+                        <option value="under-10k">1万以下</option>
+                        <option value="10k-30k">1-3万</option>
+                        <option value="30k-50k">3-5万</option>
+                        <option value="50k-100k">5-10万</option>
+                        <option value="over-100k">10万以上</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message" class="form-label">项目描述 *</label>
+                    <textarea id="message" name="message" class="form-textarea" 
+                              placeholder="请详细描述您的项目需求、目标、时间要求等..." required></textarea>
+                </div>
+                
+                <button type="submit" class="form-submit" id="submit-btn">
+                    <i class="fas fa-paper-plane"></i>
+                    发送消息
+                </button>
+                
+                <div class="form-message" id="form-message"></div>
+            </form>
+
+            <!-- 联系信息 -->
+            <div class="contact-info">
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3 class="info-title">邮箱联系</h3>
+                    <p class="info-text">design@islandJQ.com<br>我们会在24小时内回复</p>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fab fa-weixin"></i>
+                    </div>
+                    <h3 class="info-title">微信咨询</h3>
+                    <p class="info-text">islandJQ_Design<br>扫码或搜索添加好友</p>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3 class="info-title">工作时间</h3>
+                    <p class="info-text">周一至周五<br>9:00 - 18:00</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 islandJQ  DESIGN  STUDIO. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // 表单处理
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submit-btn');
+            const formMessage = document.getElementById('form-message');
+            
+            // 显示加载状态
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> 发送中...';
+            
+            // 获取表单数据
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // 模拟表单提交（实际项目中应该发送到服务器）
+            setTimeout(() => {
+                // 重置按钮状态
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> 发送消息';
+                
+                // 显示成功消息
+                formMessage.className = 'form-message success';
+                formMessage.textContent = '消息发送成功！我们会尽快与您联系。';
+                formMessage.style.display = 'block';
+                
+                // 重置表单
+                this.reset();
+                
+                // 3秒后隐藏消息
+                setTimeout(() => {
+                    formMessage.style.display = 'none';
+                }, 3000);
+                
+                console.log('表单数据:', data);
+            }, 2000);
+        });
+        
+        // 导航栏功能
+        const navToggle = document.getElementById('nav-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        
+        navToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+            navToggle.classList.toggle('active');
+        });
+        
+        // 表单验证增强
+        const inputs = document.querySelectorAll('.form-input, .form-textarea');
+        inputs.forEach(input => {
+            input.addEventListener('blur', function() {
+                if (this.required && !this.value.trim()) {
+                    this.style.borderColor = '#e74c3c';
+                } else {
+                    this.style.borderColor = '#28a745';
+                }
+            });
+            
+            input.addEventListener('input', function() {
+                if (this.style.borderColor === 'rgb(231, 76, 60)') {
+                    this.style.borderColor = '';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

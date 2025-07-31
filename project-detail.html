@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="项目详情 - islandJQ设计工作室作品展示">
+    <title>项目详情 - islandJQ DESIGN STUDIO</title>
+    <link rel="stylesheet" href="style.css?v=2024073003">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DIN+Next+LT+Pro:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* 极简主义风格 */
+        body {
+            background: #ffffff;
+        }
+        
+        .project-wrapper {
+            margin-top: 70px;
+        }
+        
+        /* 项目标题区域 */
+        .project-header {
+            padding: 80px 20px 40px;
+            text-align: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .project-title {
+            font-size: 2.5rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+            margin-bottom: 2rem;
+            color: #000;
+            font-family: 'DIN Next LT Pro', sans-serif;
+        }
+        
+        /* 全宽图片画廊 */
+        .project-gallery {
+            width: 100%;
+            margin: 0;
+        }
+        
+        .gallery-item {
+            width: 100%;
+            margin: 0;
+            overflow: hidden;
+            background: #f5f5f5;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.6s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.02);
+        }
+        
+        /* 项目信息区域 */
+        .project-info {
+            max-width: 1000px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        
+        .info-item {
+            border-top: 1px solid #e0e0e0;
+            padding-top: 20px;
+        }
+        
+        .info-label {
+            font-size: 0.85rem;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .info-value {
+            font-size: 1rem;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* 项目描述 */
+        .project-description {
+            max-width: 800px;
+            margin: 60px auto;
+            line-height: 1.8;
+            color: #333;
+            font-size: 1.1rem;
+        }
+        
+        /* 导航按钮 */
+        .project-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1000px;
+            margin: 100px auto 80px;
+            padding: 0 20px;
+        }
+        
+        .nav-button {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: #000;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            padding: 10px 0;
+            border-bottom: 1px solid transparent;
+        }
+        
+        .nav-button:hover {
+            border-bottom: 1px solid #000;
+        }
+        
+        .nav-prev i {
+            transition: transform 0.3s ease;
+        }
+        
+        .nav-prev:hover i {
+            transform: translateX(-5px);
+        }
+        
+        .nav-next i {
+            transition: transform 0.3s ease;
+        }
+        
+        .nav-next:hover i {
+            transform: translateX(5px);
+        }
+        
+        /* 返回顶部按钮 */
+        .back-to-top {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            width: 50px;
+            height: 50px;
+            background: #000;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            cursor: pointer;
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+        }
+        
+        .back-to-top:hover {
+            background: #333;
+            transform: translateY(-3px);
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .project-title {
+                font-size: 2rem;
+            }
+            
+            .info-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .project-nav {
+                flex-direction: column;
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">islandJQ  DESIGN  STUDIO</a>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html#works" class="nav-link">Works</a>
+                <a href="index.html#me" class="nav-link">Me</a>
+                <a href="index.html#news" class="nav-link">News</a>
+                <a href="#" class="nav-link lang-switch" id="lang-switch">EN</a>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 项目详情主体 -->
+    <div class="project-wrapper">
+        <!-- 项目标题 -->
+        <header class="project-header">
+            <h1 class="project-title" id="project-title">品牌视觉识别系统设计</h1>
+        </header>
+
+        <!-- 全宽图片画廊 -->
+        <section class="project-gallery" id="project-gallery">
+            <!-- 项目图片将通过JavaScript动态加载 -->
+            <div class="gallery-item">
+                <img src="images/projects/project1/main.jpg" alt="项目主图" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="images/projects/project1/detail1.jpg" alt="项目细节1" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="images/projects/project1/detail2.jpg" alt="项目细节2" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="images/projects/project1/detail3.jpg" alt="项目细节3" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="images/projects/project1/detail4.jpg" alt="项目细节4" loading="lazy">
+            </div>
+        </section>
+
+        <!-- 项目信息 -->
+        <section class="project-info">
+            <div class="info-grid">
+                <div class="info-item">
+                    <div class="info-label">Client</div>
+                    <div class="info-value" id="project-client">创新科技有限公司</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Category</div>
+                    <div class="info-value" id="project-category">品牌设计 / VI设计</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Date</div>
+                    <div class="info-value" id="project-date">2024年3月</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Team</div>
+                    <div class="info-value" id="project-team">islandJQ Design Studio</div>
+                </div>
+            </div>
+
+            <div class="project-description">
+                <p id="project-overview">
+                    为新兴科技公司打造的全新品牌视觉识别系统。项目涵盖了从标志设计到完整的VI手册，
+                    确保品牌在各个触点上保持一致性和专业性。设计理念融合了科技感与人文关怀，
+                    体现了公司"科技改变生活"的核心价值观。通过简约而富有表现力的视觉语言，
+                    成功帮助客户在竞争激烈的市场中建立了独特的品牌形象。
+                </p>
+            </div>
+        </section>
+
+        <!-- 项目导航 -->
+        <nav class="project-nav">
+            <a href="#" class="nav-button nav-prev" id="prev-project">
+                <i class="fas fa-arrow-left"></i>
+                <span>上一个项目</span>
+            </a>
+            <a href="index.html#works" class="nav-button">
+                <span>返回作品集</span>
+            </a>
+            <a href="#" class="nav-button nav-next" id="next-project">
+                <span>下一个项目</span>
+                <i class="fas fa-arrow-right"></i>
+            </a>
+        </nav>
+    </div>
+
+    <!-- 返回顶部按钮 -->
+    <div class="back-to-top" id="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 islandJQ  DESIGN  STUDIO. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="project-detail.js"></script>
+</body>
+</html>
