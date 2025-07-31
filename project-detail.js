@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
             nextProject: 'branding-1'
         },
         'print-1': {
-            title: '印刷设计作品',
+            title: '印刷作品',
             client: '文化传媒公司',
             category: '印刷设计 / 平面设计',
             date: '2024年4月',
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
             nextProject: 'digital-1'
         },
         'digital-1': {
-            title: '数字设计项目',
+            title: '数字设计',
             client: '数字科技公司',
             category: '数字设计 / UI/UX设计',
             date: '2024年3月',
@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
             nextProject: 'photography-1'
         },
         'photography-1': {
-            title: '摄影作品',
+            title: '摄影',
             client: '艺术画廊',
             category: '摄影艺术 / 视觉记录',
             date: '2024年1月',
