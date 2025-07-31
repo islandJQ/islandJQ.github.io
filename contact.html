@@ -66,27 +66,30 @@
         }
         
         .contact-links {
-            display: flex;
-            flex-direction: column;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
         }
         
         .contact-link {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 12px;
             text-decoration: none;
             color: #333;
-            padding: 15px 0;
-            border-bottom: 1px solid transparent;
+            padding: 15px 20px;
+            border: 1px solid #e5e5e5;
+            border-radius: 2px;
             transition: all 0.3s ease;
-            font-size: 1rem;
+            font-size: 0.95rem;
+            background: #fff;
         }
         
         .contact-link:hover {
             color: #000;
-            border-bottom: 1px solid #000;
-            transform: translateX(5px);
+            border-color: #000;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
         
         .contact-link i {
@@ -186,6 +189,16 @@
             .contact-content {
                 grid-template-columns: 1fr;
                 gap: 40px;
+            }
+            
+            .contact-links {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .contact-link {
+                padding: 12px 15px;
+                font-size: 0.9rem;
             }
             
             .contact-form {

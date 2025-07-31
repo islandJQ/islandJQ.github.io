@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // 平滑滚动到目标部分
+    // 平滑滚动到目标部分（仅对锚点链接）
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             // 如果是语言切换按钮，不进行滚动
@@ -27,17 +27,22 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
             
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
+            const href = this.getAttribute('href');
             
-            if (targetSection) {
-                const offsetTop = targetSection.offsetTop - 70; // 减去导航栏高度
-                window.scrollTo({
-                    top: offsetTop,
-                    behavior: 'smooth'
-                });
+            // 只对锚点链接（以#开头）进行平滑滚动，其他链接正常跳转
+            if (href && href.startsWith('#')) {
+                e.preventDefault();
+                const targetSection = document.querySelector(href);
+                
+                if (targetSection) {
+                    const offsetTop = targetSection.offsetTop - 70; // 减去导航栏高度
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
             }
+            // 对于.html文件链接，不阻止默认行为，让浏览器正常跳转
         });
     });
 
