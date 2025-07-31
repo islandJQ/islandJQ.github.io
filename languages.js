@@ -5,6 +5,7 @@ const translations = {
         'nav.works': 'Works',
         'nav.me': 'Me',
         'nav.news': 'News',
+        'nav.contact': 'Contact',
         'nav.lang': 'EN',
         
         // 主页
@@ -16,6 +17,7 @@ const translations = {
         
         // 作品集
         'works.title': 'Works',
+        'works.subtitle': '精选作品',
         'works.branding.title': '品牌视觉设计',
         'works.branding.subtitle': 'Brand Visual Design',
         'works.packaging.title': '包装设计',
@@ -58,6 +60,7 @@ const translations = {
         'nav.works': 'Works',
         'nav.me': 'Me',
         'nav.news': 'News',
+        'nav.contact': 'Contact',
         'nav.lang': '中',
         
         // 主页
@@ -69,6 +72,7 @@ const translations = {
         
         // 作品集
         'works.title': 'Works',
+        'works.subtitle': 'Selected Projects',
         'works.branding.title': 'Brand Visual Design',
         'works.branding.subtitle': 'Brand Identity System',
         'works.packaging.title': 'Packaging Design',

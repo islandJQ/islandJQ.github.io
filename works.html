@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Works - islandJQ设计工作室作品集展示">
+    <title>Works - islandJQ DESIGN STUDIO</title>
+    <link rel="stylesheet" href="style.css?v=2024073004">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DIN+Next+LT+Pro:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="languages.js"></script>
+    <style>
+        /* Works页面专用样式，参考tian-design.com的设计 */
+        body {
+            background: #ffffff;
+            font-family: 'DIN Next LT Pro', sans-serif;
+        }
+        
+        .works-wrapper {
+            margin-top: 70px;
+            min-height: 100vh;
+        }
+        
+        /* 页面标题 */
+        .works-header {
+            padding: 60px 20px 40px;
+            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .works-title {
+            font-size: 3rem;
+            font-weight: 200;
+            letter-spacing: 3px;
+            margin-bottom: 1rem;
+            color: #000;
+        }
+        
+        .works-subtitle {
+            font-size: 1.1rem;
+            color: #666;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+        
+        /* 分类筛选 */
+        .works-filter {
+            padding: 40px 20px;
+            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            border-bottom: 1px solid #e5e5e5;
+        }
+        
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        .filter-btn {
+            background: none;
+            border: none;
+            font-size: 0.9rem;
+            color: #999;
+            cursor: pointer;
+            padding: 8px 0;
+            letter-spacing: 1px;
+            font-weight: 300;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid transparent;
+            font-family: 'DIN Next LT Pro', sans-serif;
+        }
+        
+        .filter-btn:hover,
+        .filter-btn.active {
+            color: #000;
+            border-bottom: 1px solid #000;
+        }
+        
+        /* 网格布局 - 参考tian-design.com */
+        .works-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            align-items: start;
+        }
+        
+        .work-card {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+        
+        .work-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .work-image {
+            width: 100%;
+            aspect-ratio: 4/3;
+            overflow: hidden;
+            background: #f8f8f8;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .work-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        
+        .work-card:hover .work-image img {
+            transform: scale(1.05);
+        }
+        
+        /* 项目信息 */
+        .work-meta {
+            padding: 0 5px;
+        }
+        
+        .work-title {
+            font-size: 1.3rem;
+            font-weight: 300;
+            margin-bottom: 8px;
+            color: #000;
+            letter-spacing: 0.5px;
+        }
+        
+        .work-category {
+            font-size: 0.85rem;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+        
+        .work-year {
+            font-size: 0.85rem;
+            color: #ccc;
+            font-weight: 300;
+        }
+        
+        /* 占位符样式 */
+        .placeholder-image {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            color: white;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .works-title {
+                font-size: 2.5rem;
+            }
+            
+            .works-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                padding: 40px 20px;
+            }
+            
+            .filter-buttons {
+                gap: 20px;
+            }
+            
+            .filter-btn {
+                font-size: 0.8rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .works-title {
+                font-size: 2rem;
+                letter-spacing: 2px;
+            }
+            
+            .filter-buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+        
+        /* 加载动画 */
+        .work-card {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        
+        .work-card:nth-child(1) { animation-delay: 0.1s; }
+        .work-card:nth-child(2) { animation-delay: 0.2s; }
+        .work-card:nth-child(3) { animation-delay: 0.3s; }
+        .work-card:nth-child(4) { animation-delay: 0.4s; }
+        .work-card:nth-child(5) { animation-delay: 0.5s; }
+        .work-card:nth-child(6) { animation-delay: 0.6s; }
+        .work-card:nth-child(7) { animation-delay: 0.7s; }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">islandJQ  DESIGN  STUDIO</a>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html#works" class="nav-link" data-translate="nav.works">Works</a>
+                <a href="index.html#me" class="nav-link" data-translate="nav.me">Me</a>
+                <a href="index.html#news" class="nav-link" data-translate="nav.news">News</a>
+                <a href="index.html#contact" class="nav-link" data-translate="nav.contact">Contact</a>
+                <a href="#" class="nav-link lang-switch" id="lang-switch">EN</a>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 作品集主体 -->
+    <div class="works-wrapper">
+        <!-- 页面标题 -->
+        <header class="works-header">
+            <h1 class="works-title" data-translate="works.title">Works</h1>
+            <p class="works-subtitle" data-translate="works.subtitle">Selected Projects</p>
+        </header>
+
+        <!-- 分类筛选 -->
+        <section class="works-filter">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="branding">Branding</button>
+                <button class="filter-btn" data-filter="print">Print</button>
+                <button class="filter-btn" data-filter="digital">Digital</button>
+                <button class="filter-btn" data-filter="illustration">Illustration</button>
+                <button class="filter-btn" data-filter="packaging">Packaging</button>
+                <button class="filter-btn" data-filter="web">Web</button>
+                <button class="filter-btn" data-filter="photography">Photography</button>
+            </div>
+        </section>
+
+        <!-- 作品网格 -->
+        <section class="works-grid" id="works-grid">
+            <a href="project-detail.html?id=branding-1" class="work-card" data-category="branding">
+                <div class="work-image">
+                    <div class="placeholder-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                        Brand Visual Design
+                    </div>
+                </div>
+                <div class="work-meta">
+                    <h3 class="work-title" data-translate="works.branding.title">品牌视觉设计</h3>
+                    <div class="work-category" data-translate="works.branding.subtitle">Brand Visual Design</div>
+                    <div class="work-year">2024</div>
+                </div>
+            </a>
+
+            <a href="project-detail.html?id=print-1" class="work-card" data-category="print">
+                <div class="work-image">
+                    <div class="placeholder-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                        Print Works
+                    </div>
+                </div>
+                <div class="work-meta">
+                    <h3 class="work-title" data-translate="works.print.title">印刷作品</h3>
+                    <div class="work-category" data-translate="works.print.subtitle">Print Works</div>
+                    <div class="work-year">2024</div>
+                </div>
+            </a>
+
+            <a href="project-detail.html?id=digital-1" class="work-card" data-category="digital">
+                <div class="work-image">
+                    <div class="placeholder-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                        Digital Design
+                    </div>
+                </div>
+                <div class="work-meta">
+                    <h3 class="work-title" data-translate="works.digital.title">数字设计</h3>
+                    <div class="work-category" data-translate="works.digital.subtitle">Digital Design</div>
+                    <div class="work-year">2024</div>
+                </div>
+            </a>
+
+            <a href="project-detail.html?id=illustration-1" class="work-card" data-category="illustration">
+                <div class="work-image">
+                    <div class="placeholder-image" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+                        Illustration Design
+                    </div>
+                </div>
+                <div class="work-meta">
+                    <h3 class="work-title" data-translate="works.illustration.title">插画设计</h3>
+                    <div class="work-category" data-translate="works.illustration.subtitle">Illustration Design</div>
+                    <div class="work-year">2024</div>
+                </div>
+            </a>
+
+            <a href="project-detail.html?id=packaging-1" class="work-card" data-category="packaging">
+                <div class="work-image">
+                    <div class="placeholder-image" style="background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);">
+                        Packaging Design
+                    </div>
+                </div>
+                <div class="work-meta">
+                    <h3 class="work-title" data-translate="works.packaging.title">包装设计</h3>
+                    <div class="work-category" data-translate="works.packaging.subtitle">Packaging Design</div>
+                    <div class="work-year">2024</div>
+                </div>
+            </a>
+
+            <a href="project-detail.html?id=web-1" class="work-card" data-category="web">
+                <div class="work-image">
+                    <div class="placeholder-image" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
+                        Web Design
+                    </div>
+                </div>
+                <div class="work-meta">
+                    <h3 class="work-title" data-translate="works.web.title">网页设计</h3>
+                    <div class="work-category" data-translate="works.web.subtitle">Web Design</div>
+                    <div class="work-year">2024</div>
+                </div>
+            </a>
+
+            <a href="project-detail.html?id=photography-1" class="work-card" data-category="photography">
+                <div class="work-image">
+                    <img src="images/works/photography/project1.jpg" alt="摄影作品" loading="lazy">
+                </div>
+                <div class="work-meta">
+                    <h3 class="work-title" data-translate="works.photography.title">摄影</h3>
+                    <div class="work-category" data-translate="works.photography.subtitle">Photography</div>
+                    <div class="work-year">2024</div>
+                </div>
+            </a>
+        </section>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <p data-translate="footer.copyright">&copy; 2024 islandJQ  DESIGN  STUDIO. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // 筛选功能
+        document.addEventListener('DOMContentLoaded', function() {
+            // 初始化语言管理器
+            window.languageManager.init();
+            
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const workCards = document.querySelectorAll('.work-card');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const filter = this.getAttribute('data-filter');
+                    
+                    // 更新按钮状态
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // 筛选作品
+                    workCards.forEach(card => {
+                        const category = card.getAttribute('data-category');
+                        
+                        if (filter === 'all' || category === filter) {
+                            card.style.display = 'block';
+                            card.style.animation = 'fadeInUp 0.6s ease forwards';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+            
+            // 导航栏功能
+            const navToggle = document.getElementById('nav-toggle');
+            const navMenu = document.getElementById('nav-menu');
+            
+            navToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+                navToggle.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
