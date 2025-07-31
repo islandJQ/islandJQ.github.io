@@ -16,15 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
                      '确保品牌在各个触点上保持一致性和专业性。设计理念融合了科技感与人文关怀，' +
                      '体现了公司"科技改变生活"的核心价值观。通过简约而富有表现力的视觉语言，' +
                      '成功帮助客户在竞争激烈的市场中建立了独特的品牌形象。',
-            images: [
-                'images/projects/branding1/main.jpg',
-                'images/projects/branding1/logo-variations.jpg',
-                'images/projects/branding1/business-cards.jpg',
-                'images/projects/branding1/stationery.jpg',
-                'images/projects/branding1/website-mockup.jpg',
-                'images/projects/branding1/signage.jpg',
-                'images/projects/branding1/brand-guidelines.jpg'
-            ],
+            images: [],
             prevProject: 'web-1',
             nextProject: 'packaging-1'
         },
@@ -37,14 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
             overview: '为高端有机茶品牌设计的包装系列。设计灵感来源于中国传统茶文化与现代简约美学的结合。' +
                      '通过精心的材质选择和印刷工艺，营造出优雅而具有品质感的产品形象。' +
                      '整个设计系列强调生态环保理念，使用可再生材料，传递绿色健康的生活方式。',
-            images: [
-                'images/projects/packaging1/main.jpg',
-                'images/projects/packaging1/box-series.jpg',
-                'images/projects/packaging1/pattern-design.jpg',
-                'images/projects/packaging1/gift-set.jpg',
-                'images/projects/packaging1/material-detail.jpg',
-                'images/projects/packaging1/store-display.jpg'
-            ],
+            images: [],
             prevProject: 'branding-1',
             nextProject: 'web-1'
         },
@@ -57,14 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
             overview: '为创意工作室设计的响应式网站。采用大胆的版式设计和流畅的交互动画，' +
                      '展现工作室的创意实力。网站不仅美观，更注重用户体验和转化率。' +
                      '特别设计了沉浸式的作品展示方式，让访客能够更好地体验和理解创意作品。',
-            images: [
-                'images/projects/web1/homepage.jpg',
-                'images/projects/web1/portfolio-grid.jpg',
-                'images/projects/web1/project-detail.jpg',
-                'images/projects/web1/mobile-responsive.jpg',
-                'images/projects/web1/interaction-design.jpg',
-                'images/projects/web1/loading-animation.jpg'
-            ],
+            images: [],
             prevProject: 'packaging-1',
             nextProject: 'branding-1'
         },
@@ -77,13 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
             overview: '专业的印刷设计作品集，包含海报设计、宣传册设计、名片设计等多种印刷媒体。' +
                      '设计注重视觉冲击力与信息传达的平衡，运用简约现代的设计语言，' +
                      '确保每个作品都能在印刷媒体中发挥最佳的视觉效果。',
-            images: [
-                'images/projects/print1/poster-series.jpg',
-                'images/projects/print1/brochure-design.jpg',
-                'images/projects/print1/business-card.jpg',
-                'images/projects/print1/flyer-design.jpg',
-                'images/projects/print1/magazine-layout.jpg'
-            ],
+            images: [],
             prevProject: 'photography-1',
             nextProject: 'digital-1'
         },
@@ -96,13 +68,7 @@ document.addEventListener('DOMContentLoaded', function() {
             overview: '为数字平台打造的全套视觉设计解决方案。项目涵盖移动应用界面设计、' +
                      '数字广告创意、社交媒体视觉内容等。设计采用现代简约风格，' +
                      '注重用户体验和视觉层次，确保在数字环境中获得最佳的展示效果。',
-            images: [
-                'images/projects/digital1/app-interface.jpg',
-                'images/projects/digital1/digital-ads.jpg',
-                'images/projects/digital1/social-media.jpg',
-                'images/projects/digital1/banner-design.jpg',
-                'images/projects/digital1/icon-system.jpg'
-            ],
+            images: [],
             prevProject: 'print-1',
             nextProject: 'illustration-1'
         },
@@ -115,13 +81,7 @@ document.addEventListener('DOMContentLoaded', function() {
             overview: '原创插画设计作品，风格简约现代，富有表现力。作品应用于书籍封面、' +
                      '杂志插图、品牌视觉等多个领域。插画风格注重线条的简洁性和色彩的和谐性，' +
                      '通过独特的视觉语言传达情感和概念。',
-            images: [
-                'images/projects/illustration1/book-cover.jpg',
-                'images/projects/illustration1/magazine-illustration.jpg',
-                'images/projects/illustration1/character-design.jpg',
-                'images/projects/illustration1/pattern-design.jpg',
-                'images/projects/illustration1/concept-art.jpg'
-            ],
+            images: [],
             prevProject: 'digital-1',
             nextProject: 'photography-1'
         },
@@ -135,17 +95,13 @@ document.addEventListener('DOMContentLoaded', function() {
                      '摄影风格简洁明快，注重光影的运用和构图的平衡。' +
                      '通过镜头语言展现物体的美感和空间的韵律。',
             images: [
-                'images/projects/photography1/product-photography.jpg',
-                'images/projects/photography1/architecture.jpg',
-                'images/projects/photography1/portrait-series.jpg',
-                'images/projects/photography1/still-life.jpg',
-                'images/projects/photography1/landscape.jpg'
+                'images/works/photography/project1.jpg'
             ],
             prevProject: 'illustration-1',
             nextProject: 'print-1'
         },
         'default': {
-            title: '品牌视觉识别系统设计',
+            title: '品牌视觉设计',
             client: '创新科技有限公司',
             category: '品牌设计 / VI设计',
             date: '2024年3月',
