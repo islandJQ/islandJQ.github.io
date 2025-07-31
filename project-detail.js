@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // 项目数据
     const projectsData = {
         'branding-1': {
-            title: '创新科技品牌视觉识别系统',
+            title: '品牌视觉设计',
             client: '创新科技有限公司',
             category: '品牌设计 / VI设计',
             date: '2024年3月',
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
             nextProject: 'packaging-1'
         },
         'packaging-1': {
-            title: '有机茶品包装设计系列',
+            title: '包装设计',
             client: '自然茶园',
             category: '包装设计 / 产品设计',
             date: '2024年2月',
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
             nextProject: 'web-1'
         },
         'web-1': {
-            title: '创意工作室响应式网站设计',
+            title: '网页设计',
             client: '创意无限工作室',
             category: '网页设计 / UI/UX设计',
             date: '2024年1月',
@@ -68,8 +68,84 @@ document.addEventListener('DOMContentLoaded', function() {
             prevProject: 'packaging-1',
             nextProject: 'branding-1'
         },
+        'print-1': {
+            title: '印刷设计作品',
+            client: '文化传媒公司',
+            category: '印刷设计 / 平面设计',
+            date: '2024年4月',
+            team: 'islandJQ Design Studio',
+            overview: '专业的印刷设计作品集，包含海报设计、宣传册设计、名片设计等多种印刷媒体。' +
+                     '设计注重视觉冲击力与信息传达的平衡，运用简约现代的设计语言，' +
+                     '确保每个作品都能在印刷媒体中发挥最佳的视觉效果。',
+            images: [
+                'images/projects/print1/poster-series.jpg',
+                'images/projects/print1/brochure-design.jpg',
+                'images/projects/print1/business-card.jpg',
+                'images/projects/print1/flyer-design.jpg',
+                'images/projects/print1/magazine-layout.jpg'
+            ],
+            prevProject: 'photography-1',
+            nextProject: 'digital-1'
+        },
+        'digital-1': {
+            title: '数字设计项目',
+            client: '数字科技公司',
+            category: '数字设计 / UI/UX设计',
+            date: '2024年3月',
+            team: 'islandJQ Design Studio',
+            overview: '为数字平台打造的全套视觉设计解决方案。项目涵盖移动应用界面设计、' +
+                     '数字广告创意、社交媒体视觉内容等。设计采用现代简约风格，' +
+                     '注重用户体验和视觉层次，确保在数字环境中获得最佳的展示效果。',
+            images: [
+                'images/projects/digital1/app-interface.jpg',
+                'images/projects/digital1/digital-ads.jpg',
+                'images/projects/digital1/social-media.jpg',
+                'images/projects/digital1/banner-design.jpg',
+                'images/projects/digital1/icon-system.jpg'
+            ],
+            prevProject: 'print-1',
+            nextProject: 'illustration-1'
+        },
+        'illustration-1': {
+            title: '插画设计',
+            client: '出版社',
+            category: '插画设计 / 视觉艺术',
+            date: '2024年2月',
+            team: 'islandJQ Design Studio',
+            overview: '原创插画设计作品，风格简约现代，富有表现力。作品应用于书籍封面、' +
+                     '杂志插图、品牌视觉等多个领域。插画风格注重线条的简洁性和色彩的和谐性，' +
+                     '通过独特的视觉语言传达情感和概念。',
+            images: [
+                'images/projects/illustration1/book-cover.jpg',
+                'images/projects/illustration1/magazine-illustration.jpg',
+                'images/projects/illustration1/character-design.jpg',
+                'images/projects/illustration1/pattern-design.jpg',
+                'images/projects/illustration1/concept-art.jpg'
+            ],
+            prevProject: 'digital-1',
+            nextProject: 'photography-1'
+        },
+        'photography-1': {
+            title: '摄影作品',
+            client: '艺术画廊',
+            category: '摄影艺术 / 视觉记录',
+            date: '2024年1月',
+            team: 'islandJQ Design Studio',
+            overview: '专业摄影作品集，涵盖产品摄影、建筑摄影、人像摄影等多个领域。' +
+                     '摄影风格简洁明快，注重光影的运用和构图的平衡。' +
+                     '通过镜头语言展现物体的美感和空间的韵律。',
+            images: [
+                'images/projects/photography1/product-photography.jpg',
+                'images/projects/photography1/architecture.jpg',
+                'images/projects/photography1/portrait-series.jpg',
+                'images/projects/photography1/still-life.jpg',
+                'images/projects/photography1/landscape.jpg'
+            ],
+            prevProject: 'illustration-1',
+            nextProject: 'print-1'
+        },
         'default': {
-            title: '品牍视觉识别系统设计',
+            title: '品牌视觉识别系统设计',
             client: '创新科技有限公司',
             category: '品牌设计 / VI设计',
             date: '2024年3月',
