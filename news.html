@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="News - islandJQ设计工作室最新动态">
+    <title>News - islandJQ DESIGN STUDIO</title>
+    <link rel="stylesheet" href="style.css?v=2024073006">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DIN+Next+LT+Pro:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="languages.js"></script>
+    <style>
+        body {
+            background: #ffffff;
+            font-family: 'DIN Next LT Pro', sans-serif;
+        }
+        
+        .news-wrapper {
+            margin-top: 70px;
+            min-height: 100vh;
+            padding: 60px 20px;
+        }
+        
+        .news-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .news-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+        
+        .news-title {
+            font-size: 3rem;
+            font-weight: 200;
+            letter-spacing: 3px;
+            margin-bottom: 2rem;
+            color: #000;
+        }
+        
+        .news-subtitle {
+            font-size: 1.1rem;
+            color: #666;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+        
+        .news-grid {
+            display: grid;
+            gap: 60px;
+        }
+        
+        .news-article {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 40px;
+            padding-bottom: 60px;
+            border-bottom: 1px solid #e5e5e5;
+            transition: all 0.3s ease;
+        }
+        
+        .news-article:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        
+        .news-article:hover {
+            transform: translateY(-5px);
+        }
+        
+        .news-date {
+            text-align: right;
+            padding-top: 10px;
+        }
+        
+        .date-month {
+            font-size: 2rem;
+            font-weight: 200;
+            color: #000;
+            line-height: 1;
+            margin-bottom: 5px;
+        }
+        
+        .date-year {
+            font-size: 0.9rem;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .news-content {
+            padding-top: 10px;
+        }
+        
+        .news-item-title {
+            font-size: 1.8rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+            color: #000;
+            letter-spacing: 0.5px;
+            line-height: 1.3;
+        }
+        
+        .news-excerpt {
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+        
+        .news-category {
+            display: inline-block;
+            font-size: 0.8rem;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 5px 12px;
+            border: 1px solid #e5e5e5;
+            border-radius: 2px;
+            margin-right: 10px;
+        }
+        
+        .read-more {
+            color: #000;
+            text-decoration: none;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s ease;
+        }
+        
+        .read-more:hover {
+            border-bottom: 1px solid #000;
+        }
+        
+        .featured-article {
+            background: #f8f8f8;
+            padding: 40px;
+            margin-bottom: 60px;
+            border-radius: 2px;
+        }
+        
+        .featured-article .news-item-title {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .featured-tag {
+            display: inline-block;
+            background: #000;
+            color: #fff;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 8px 15px;
+            margin-bottom: 1.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .news-title {
+                font-size: 2.5rem;
+            }
+            
+            .news-article {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                text-align: left;
+            }
+            
+            .news-date {
+                text-align: left;
+                border-bottom: 1px solid #e5e5e5;
+                padding-bottom: 15px;
+                display: flex;
+                align-items: center;
+                gap: 15px;
+            }
+            
+            .date-month {
+                font-size: 1.5rem;
+            }
+            
+            .featured-article {
+                padding: 30px 20px;
+            }
+            
+            .featured-article .news-item-title {
+                font-size: 1.8rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .news-title {
+                font-size: 2rem;
+                letter-spacing: 2px;
+            }
+            
+            .news-wrapper {
+                padding: 40px 20px;
+            }
+        }
+        
+        .news-article {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        
+        .news-article:nth-child(1) { animation-delay: 0.1s; }
+        .news-article:nth-child(2) { animation-delay: 0.2s; }
+        .news-article:nth-child(3) { animation-delay: 0.3s; }
+        .news-article:nth-child(4) { animation-delay: 0.4s; }
+        .news-article:nth-child(5) { animation-delay: 0.5s; }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">islandJQ  DESIGN  STUDIO</a>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="works.html" class="nav-link" data-translate="nav.works">Works</a>
+                <a href="me.html" class="nav-link" data-translate="nav.me">Me</a>
+                <a href="news.html" class="nav-link" data-translate="nav.news">News</a>
+                <a href="contact.html" class="nav-link" data-translate="nav.contact">Contact</a>
+                <a href="#" class="nav-link lang-switch" id="lang-switch">EN</a>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 新闻页面主体 -->
+    <div class="news-wrapper">
+        <div class="news-container">
+            <!-- 页面标题 -->
+            <header class="news-header">
+                <h1 class="news-title" data-translate="news.title">News</h1>
+                <p class="news-subtitle" data-translate="news.subtitle">Latest Updates & Stories</p>
+            </header>
+
+            <!-- 特色文章 -->
+            <article class="news-article featured-article">
+                <div class="featured-tag" data-translate="news.featured">Featured</div>
+                <div class="news-content">
+                    <h2 class="news-item-title" data-translate="news.featured.title">工作室全新视觉识别系统发布</h2>
+                    <p class="news-excerpt" data-translate="news.featured.content">
+                        经过数月的精心设计和反复打磨，islandJQ DESIGN STUDIO 全新的视觉识别系统正式发布。
+                        新的品牌形象更好地体现了我们简约现代的设计理念，以及对细节的极致追求。
+                        从标志设计到色彩系统，每一个细节都经过精心考量，旨在为客户提供更加专业和一致的品牌体验。
+                    </p>
+                    <div class="news-meta">
+                        <span class="news-category">Brand</span>
+                        <a href="#" class="read-more" data-translate="news.readMore">Read More</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 新闻列表 -->
+            <div class="news-grid">
+                <article class="news-article">
+                    <div class="news-date">
+                        <div class="date-month">Jan</div>
+                        <div class="date-year">2024</div>
+                    </div>
+                    <div class="news-content">
+                        <h2 class="news-item-title" data-translate="news.item1.title">新作品发布</h2>
+                        <p class="news-excerpt" data-translate="news.item1.content">
+                            最新品牌设计项目正式发布，展现简约现代的设计理念。这个项目融合了传统文化元素与现代设计语言，
+                            为客户打造了独特而富有表现力的品牌形象。
+                        </p>
+                        <div class="news-meta">
+                            <span class="news-category">Project</span>
+                            <a href="#" class="read-more" data-translate="news.readMore">Read More</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="news-article">
+                    <div class="news-date">
+                        <div class="date-month">Dec</div>
+                        <div class="date-year">2023</div>
+                    </div>
+                    <div class="news-content">
+                        <h2 class="news-item-title" data-translate="news.item2.title">设计奖项获得</h2>
+                        <p class="news-excerpt" data-translate="news.item2.content">
+                            包装设计作品荣获年度优秀设计奖，感谢评委会的认可。这个荣誉不仅是对我们设计实力的肯定，
+                            更是对我们坚持原创设计理念的最好回报。
+                        </p>
+                        <div class="news-meta">
+                            <span class="news-category">Award</span>
+                            <a href="#" class="read-more" data-translate="news.readMore">Read More</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="news-article">
+                    <div class="news-date">
+                        <div class="date-month">Nov</div>
+                        <div class="date-year">2023</div>
+                    </div>
+                    <div class="news-content">
+                        <h2 class="news-item-title" data-translate="news.item3.title">工作室更新</h2>
+                        <p class="news-excerpt" data-translate="news.item3.content">
+                            工作室官网全新改版，提供更好的作品展示体验。新网站采用极简主义的设计风格，
+                            让访客能够更好地专注于我们的设计作品本身。
+                        </p>
+                        <div class="news-meta">
+                            <span class="news-category">Studio</span>
+                            <a href="#" class="read-more" data-translate="news.readMore">Read More</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="news-article">
+                    <div class="news-date">
+                        <div class="date-month">Oct</div>
+                        <div class="date-year">2023</div>
+                    </div>
+                    <div class="news-content">
+                        <h2 class="news-item-title" data-translate="news.item4.title">设计展览参与</h2>
+                        <p class="news-excerpt" data-translate="news.item4.content">
+                            受邀参加年度设计展览，展示最新的创意作品。在展览中，我们的作品获得了众多设计师和观众的好评，
+                            这也让我们更加坚定了追求设计excellence的决心。
+                        </p>
+                        <div class="news-meta">
+                            <span class="news-category">Exhibition</span>
+                            <a href="#" class="read-more" data-translate="news.readMore">Read More</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="news-article">
+                    <div class="news-date">
+                        <div class="date-month">Sep</div>
+                        <div class="date-year">2023</div>
+                    </div>
+                    <div class="news-content">
+                        <h2 class="news-item-title" data-translate="news.item5.title">客户案例分享</h2>
+                        <p class="news-excerpt" data-translate="news.item5.content">
+                            分享最新的客户合作案例，从概念到实现的完整设计过程。这个案例展现了我们如何通过深入了解客户需求，
+                            为其量身定制独特的设计解决方案。
+                        </p>
+                        <div class="news-meta">
+                            <span class="news-category">Case Study</span>
+                            <a href="#" class="read-more" data-translate="news.readMore">Read More</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <p data-translate="footer.copyright">&copy; 2024 islandJQ  DESIGN  STUDIO. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 初始化语言管理器
+            window.languageManager.init();
+            
+            // 导航栏功能
+            const navToggle = document.getElementById('nav-toggle');
+            const navMenu = document.getElementById('nav-menu');
+            
+            navToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+                navToggle.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact - islandJQ设计工作室联系方式">
+    <title>Contact - islandJQ DESIGN STUDIO</title>
+    <link rel="stylesheet" href="style.css?v=2024073005">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DIN+Next+LT+Pro:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="languages.js"></script>
+    <style>
+        body {
+            background: #ffffff;
+            font-family: 'DIN Next LT Pro', sans-serif;
+        }
+        
+        .contact-wrapper {
+            margin-top: 70px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 20px;
+        }
+        
+        .contact-container {
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .contact-title {
+            font-size: 3rem;
+            font-weight: 200;
+            letter-spacing: 3px;
+            margin-bottom: 2rem;
+            color: #000;
+        }
+        
+        .contact-description {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 4rem;
+            line-height: 1.6;
+            font-weight: 300;
+        }
+        
+        .contact-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 60px;
+            margin-bottom: 4rem;
+        }
+        
+        .contact-section {
+            text-align: left;
+        }
+        
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 400;
+            margin-bottom: 2rem;
+            color: #000;
+            letter-spacing: 1px;
+        }
+        
+        .contact-links {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+            color: #333;
+            padding: 15px 0;
+            border-bottom: 1px solid transparent;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+        
+        .contact-link:hover {
+            color: #000;
+            border-bottom: 1px solid #000;
+            transform: translateX(5px);
+        }
+        
+        .contact-link i {
+            font-size: 1.2rem;
+            width: 20px;
+            text-align: center;
+        }
+        
+        .contact-form {
+            background: #f8f8f8;
+            padding: 40px;
+            border-radius: 2px;
+            text-align: left;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-label {
+            display: block;
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 400;
+        }
+        
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: 15px 0;
+            border: none;
+            border-bottom: 1px solid #ddd;
+            background: transparent;
+            font-size: 1rem;
+            font-family: 'DIN Next LT Pro', sans-serif;
+            transition: border-color 0.3s ease;
+            box-sizing: border-box;
+        }
+        
+        .form-input:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-bottom: 1px solid #000;
+        }
+        
+        .form-textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        .form-button {
+            background: #000;
+            color: #fff;
+            border: none;
+            padding: 15px 40px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'DIN Next LT Pro', sans-serif;
+        }
+        
+        .form-button:hover {
+            background: #333;
+            transform: translateY(-2px);
+        }
+        
+        .studio-info {
+            margin-top: 4rem;
+            padding-top: 4rem;
+            border-top: 1px solid #e5e5e5;
+            text-align: center;
+        }
+        
+        .studio-info h3 {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+            color: #000;
+        }
+        
+        .studio-info p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 0.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .contact-title {
+                font-size: 2.5rem;
+            }
+            
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .contact-form {
+                padding: 30px 20px;
+            }
+            
+            .contact-wrapper {
+                padding: 40px 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .contact-title {
+                font-size: 2rem;
+                letter-spacing: 2px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">islandJQ  DESIGN  STUDIO</a>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="works.html" class="nav-link" data-translate="nav.works">Works</a>
+                <a href="me.html" class="nav-link" data-translate="nav.me">Me</a>
+                <a href="news.html" class="nav-link" data-translate="nav.news">News</a>
+                <a href="contact.html" class="nav-link" data-translate="nav.contact">Contact</a>
+                <a href="#" class="nav-link lang-switch" id="lang-switch">EN</a>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 联系页面主体 -->
+    <div class="contact-wrapper">
+        <div class="contact-container">
+            <h1 class="contact-title" data-translate="contact.title">Contact</h1>
+            <p class="contact-description" data-translate="contact.description">
+                如果您对我们的设计服务感兴趣，欢迎联系我们进行合作洽谈。
+            </p>
+            
+            <div class="contact-content">
+                <!-- 联系方式 -->
+                <div class="contact-section">
+                    <h2 class="section-title" data-translate="contact.getInTouch">Get in Touch</h2>
+                    <div class="contact-links">
+                        <a href="mailto:design@islandJQ.com" class="contact-link">
+                            <i class="fas fa-envelope"></i>
+                            <span>design@islandJQ.com</span>
+                        </a>
+                        <a href="tel:+86-138-0000-0000" class="contact-link">
+                            <i class="fas fa-phone"></i>
+                            <span>+86 138 0000 0000</span>
+                        </a>
+                        <a href="#" class="contact-link">
+                            <i class="fab fa-instagram"></i>
+                            <span>@islandJQ_design</span>
+                        </a>
+                        <a href="#" class="contact-link">
+                            <i class="fab fa-behance"></i>
+                            <span>islandJQ Studio</span>
+                        </a>
+                        <a href="#" class="contact-link">
+                            <i class="fab fa-weixin"></i>
+                            <span>WeChat: islandJQ</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- 联系表单 -->
+                <div class="contact-section">
+                    <h2 class="section-title" data-translate="contact.sendMessage">Send a Message</h2>
+                    <form class="contact-form" id="contact-form">
+                        <div class="form-group">
+                            <label class="form-label" for="name" data-translate="contact.form.name">Name</label>
+                            <input type="text" id="name" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="email" data-translate="contact.form.email">Email</label>
+                            <input type="email" id="email" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="subject" data-translate="contact.form.subject">Subject</label>
+                            <input type="text" id="subject" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="message" data-translate="contact.form.message">Message</label>
+                            <textarea id="message" class="form-textarea" required></textarea>
+                        </div>
+                        <button type="submit" class="form-button" data-translate="contact.form.send">Send Message</button>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- 工作室信息 -->
+            <div class="studio-info">
+                <h3 data-translate="contact.studio.title">islandJQ DESIGN STUDIO</h3>
+                <p data-translate="contact.studio.description">专注简约现代设计的创意工作室</p>
+                <p data-translate="contact.studio.location">Based in China</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <p data-translate="footer.copyright">&copy; 2024 islandJQ  DESIGN  STUDIO. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 初始化语言管理器
+            window.languageManager.init();
+            
+            // 导航栏功能
+            const navToggle = document.getElementById('nav-toggle');
+            const navMenu = document.getElementById('nav-menu');
+            
+            navToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+                navToggle.classList.toggle('active');
+            });
+            
+            // 联系表单提交
+            const contactForm = document.getElementById('contact-form');
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // 获取表单数据
+                const formData = {
+                    name: document.getElementById('name').value,
+                    email: document.getElementById('email').value,
+                    subject: document.getElementById('subject').value,
+                    message: document.getElementById('message').value
+                };
+                
+                // 这里可以添加实际的表单提交逻辑
+                console.log('Form submitted:', formData);
+                alert('感谢您的留言！我们会尽快回复您。');
+                
+                // 重置表单
+                contactForm.reset();
+            });
+        });
+    </script>
+</body>
+</html>

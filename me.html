@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="About Me - islandJQ设计师介绍">
+    <title>About Me - islandJQ DESIGN STUDIO</title>
+    <link rel="stylesheet" href="style.css?v=2024073007">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DIN+Next+LT+Pro:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="languages.js"></script>
+    <style>
+        body {
+            background: #ffffff;
+            font-family: 'DIN Next LT Pro', sans-serif;
+        }
+        
+        .me-wrapper {
+            margin-top: 70px;
+            min-height: 100vh;
+        }
+        
+        .me-hero {
+            display: flex;
+            align-items: center;
+            min-height: 70vh;
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .me-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            width: 100%;
+        }
+        
+        .me-text {
+            max-width: 500px;
+        }
+        
+        .me-title {
+            font-size: 3rem;
+            font-weight: 200;
+            letter-spacing: 3px;
+            margin-bottom: 2rem;
+            color: #000;
+        }
+        
+        .me-description {
+            font-size: 1.2rem;
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+        
+        .me-description:last-of-type {
+            margin-bottom: 3rem;
+        }
+        
+        .me-image {
+            position: relative;
+            aspect-ratio: 3/4;
+            overflow: hidden;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+        
+        .me-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .skills-section {
+            padding: 80px 20px;
+            background: #f8f8f8;
+        }
+        
+        .skills-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .skills-title {
+            font-size: 2rem;
+            font-weight: 300;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: #000;
+            letter-spacing: 2px;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 60px;
+        }
+        
+        .skill-category {
+            text-align: center;
+        }
+        
+        .skill-category h3 {
+            font-size: 1.3rem;
+            font-weight: 400;
+            margin-bottom: 2rem;
+            color: #000;
+            letter-spacing: 1px;
+        }
+        
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .skill-tag {
+            display: inline-block;
+            padding: 10px 20px;
+            background: white;
+            color: #333;
+            font-size: 0.9rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .skill-tag:hover {
+            background: #000;
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .experience-section {
+            padding: 80px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .experience-title {
+            font-size: 2rem;
+            font-weight: 300;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: #000;
+            letter-spacing: 2px;
+        }
+        
+        .experience-timeline {
+            position: relative;
+            padding-left: 40px;
+        }
+        
+        .timeline-line {
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            background: #e0e0e0;
+        }
+        
+        .experience-item {
+            position: relative;
+            margin-bottom: 50px;
+            padding-left: 40px;
+        }
+        
+        .experience-item:before {
+            content: '';
+            position: absolute;
+            left: -32px;
+            top: 8px;
+            width: 10px;
+            height: 10px;
+            background: #000;
+            border-radius: 50%;
+        }
+        
+        .experience-year {
+            font-size: 0.9rem;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+        
+        .experience-role {
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: #000;
+            margin-bottom: 8px;
+        }
+        
+        .experience-company {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        .experience-description {
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .philosophy-section {
+            padding: 80px 20px;
+            background: #000;
+            color: white;
+            text-align: center;
+        }
+        
+        .philosophy-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .philosophy-quote {
+            font-size: 2rem;
+            font-weight: 200;
+            line-height: 1.4;
+            margin-bottom: 2rem;
+            letter-spacing: 1px;
+        }
+        
+        .philosophy-author {
+            font-size: 1rem;
+            color: #ccc;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        @media (max-width: 768px) {
+            .me-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+            
+            .me-title {
+                font-size: 2.5rem;
+            }
+            
+            .me-description {
+                font-size: 1.1rem;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .philosophy-quote {
+                font-size: 1.6rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .me-title {
+                font-size: 2rem;
+                letter-spacing: 2px;
+            }
+            
+            .me-hero {
+                padding: 40px 20px;
+            }
+            
+            .philosophy-quote {
+                font-size: 1.4rem;
+            }
+        }
+        
+        /* 动画效果 */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        
+        .fade-in:nth-child(1) { animation-delay: 0.1s; }
+        .fade-in:nth-child(2) { animation-delay: 0.3s; }
+        .fade-in:nth-child(3) { animation-delay: 0.5s; }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">islandJQ  DESIGN  STUDIO</a>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="works.html" class="nav-link" data-translate="nav.works">Works</a>
+                <a href="me.html" class="nav-link" data-translate="nav.me">Me</a>
+                <a href="news.html" class="nav-link" data-translate="nav.news">News</a>
+                <a href="contact.html" class="nav-link" data-translate="nav.contact">Contact</a>
+                <a href="#" class="nav-link lang-switch" id="lang-switch">EN</a>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About Me 页面主体 -->
+    <div class="me-wrapper">
+        <!-- 主要介绍区域 -->
+        <section class="me-hero">
+            <div class="me-content">
+                <div class="me-text">
+                    <h1 class="me-title fade-in" data-translate="me.title">About Me</h1>
+                    <p class="me-description fade-in" data-translate="me.description1">
+                        我是一名专注于简约现代设计的创意工作者，致力于为客户提供专业的视觉解决方案。
+                    </p>
+                    <p class="me-description fade-in" data-translate="me.description2">
+                        擅长平面设计和综合设计，追求简洁而富有表现力的设计语言，让每一个作品都能传达出独特的视觉魅力。
+                    </p>
+                </div>
+                <div class="me-image fade-in">
+                    <span>DESIGNER PORTRAIT</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 技能展示区域 -->
+        <section class="skills-section">
+            <div class="skills-container">
+                <h2 class="skills-title fade-in" data-translate="me.skills">专业技能</h2>
+                <div class="skills-grid">
+                    <div class="skill-category fade-in">
+                        <h3 data-translate="me.skills.design">Design</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Brand Identity</span>
+                            <span class="skill-tag">Print Design</span>
+                            <span class="skill-tag">Digital Design</span>
+                            <span class="skill-tag">Illustration</span>
+                            <span class="skill-tag">Packaging</span>
+                            <span class="skill-tag">Typography</span>
+                        </div>
+                    </div>
+                    <div class="skill-category fade-in">
+                        <h3 data-translate="me.skills.tools">Tools</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Adobe Creative Suite</span>
+                            <span class="skill-tag">Figma</span>
+                            <span class="skill-tag">Sketch</span>
+                            <span class="skill-tag">Principle</span>
+                            <span class="skill-tag">Cinema 4D</span>
+                        </div>
+                    </div>
+                    <div class="skill-category fade-in">
+                        <h3 data-translate="me.skills.development">Development</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">HTML/CSS</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">Web Design</span>
+                            <span class="skill-tag">Responsive Design</span>
+                            <span class="skill-tag">UI/UX</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 经验时间线 -->
+        <section class="experience-section">
+            <h2 class="experience-title fade-in" data-translate="me.experience">Experience</h2>
+            <div class="experience-timeline">
+                <div class="timeline-line"></div>
+                
+                <div class="experience-item fade-in">
+                    <div class="experience-year">2024 - Present</div>
+                    <h3 class="experience-role" data-translate="me.experience.current.role">Founder & Creative Director</h3>
+                    <div class="experience-company">islandJQ DESIGN STUDIO</div>
+                    <p class="experience-description" data-translate="me.experience.current.description">
+                        创立个人设计工作室，专注于品牌设计、包装设计和数字设计领域。为各类客户提供从概念到实现的完整设计解决方案。
+                    </p>
+                </div>
+                
+                <div class="experience-item fade-in">
+                    <div class="experience-year">2022 - 2024</div>
+                    <h3 class="experience-role" data-translate="me.experience.previous.role">Senior Graphic Designer</h3>
+                    <div class="experience-company" data-translate="me.experience.previous.company">Leading Design Agency</div>
+                    <p class="experience-description" data-translate="me.experience.previous.description">
+                        在知名设计公司担任高级平面设计师，参与多个大型品牌项目的设计与执行，积累了丰富的商业设计经验。
+                    </p>
+                </div>
+                
+                <div class="experience-item fade-in">
+                    <div class="experience-year">2020 - 2022</div>
+                    <h3 class="experience-role" data-translate="me.experience.early.role">Visual Designer</h3>
+                    <div class="experience-company" data-translate="me.experience.early.company">Creative Studio</div>
+                    <p class="experience-description" data-translate="me.experience.early.description">
+                        专注于视觉设计和品牌形象的创建，为初创公司和中小企业提供专业的设计服务，建立了扎实的设计基础。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 设计理念 -->
+        <section class="philosophy-section">
+            <div class="philosophy-container">
+                <blockquote class="philosophy-quote fade-in" data-translate="me.philosophy.quote">
+                    "简约不是减少，而是去除多余。<br>好的设计应该是不言而喻的。"
+                </blockquote>
+                <cite class="philosophy-author fade-in">— islandJQ</cite>
+            </div>
+        </section>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <p data-translate="footer.copyright">&copy; 2024 islandJQ  DESIGN  STUDIO. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 初始化语言管理器
+            window.languageManager.init();
+            
+            // 导航栏功能
+            const navToggle = document.getElementById('nav-toggle');
+            const navMenu = document.getElementById('nav-menu');
+            
+            navToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+                navToggle.classList.toggle('active');
+            });
+            
+            // 滚动动画
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                    }
+                });
+            }, observerOptions);
+            
+            // 观察所有需要动画的元素
+            document.querySelectorAll('.fade-in').forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
