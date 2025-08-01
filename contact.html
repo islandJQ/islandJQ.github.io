@@ -290,10 +290,13 @@
             color: #000;
         }
 
-        .wechat-qr img {
-            width: 200px;
-            height: 200px;
+        .wechat-qr {
             margin: 20px 0;
+            text-align: center;
+        }
+
+        .wechat-qr img {
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
         }
 
         .wechat-id {
@@ -465,7 +468,7 @@
             <span class="wechat-close" onclick="closeWeChatModal()">&times;</span>
             <h3>微信联系方式</h3>
             <div class="wechat-qr">
-                <img src="images/wechat-qr.jpg" alt="微信二维码" />
+                <img src="images/wechat-qr-placeholder.svg" alt="微信二维码" style="width: 200px; height: 200px; border-radius: 10px;" />
             </div>
             <p class="wechat-id">微信号：<span id="wechat-id-text">Yinghuochong_Q</span></p>
             <button onclick="copyWeChatId()" class="copy-btn">复制微信号</button>
