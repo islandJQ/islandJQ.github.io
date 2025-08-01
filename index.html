@@ -154,6 +154,13 @@
 
     <!-- 主页部分 -->
     <section id="home" class="hero">
+        <!-- 背景图片轮播 -->
+        <div class="hero-background">
+            <div class="hero-bg-image active"></div>
+            <div class="hero-bg-image"></div>
+            <div class="hero-bg-image"></div>
+        </div>
+        
         <div class="hero-content">
             <div class="hero-text fade-in">
                 <h1 class="hero-title" data-translate="hero.title">
@@ -229,6 +236,24 @@
         // 初始化语言管理器
         document.addEventListener('DOMContentLoaded', function() {
             window.languageManager.init();
+            
+            // 背景图片轮播功能
+            const bgImages = document.querySelectorAll('.hero-bg-image');
+            let currentImageIndex = 0;
+            
+            function switchBackground() {
+                // 移除当前活跃状态
+                bgImages[currentImageIndex].classList.remove('active');
+                
+                // 切换到下一张图片
+                currentImageIndex = (currentImageIndex + 1) % bgImages.length;
+                
+                // 添加活跃状态到新图片
+                bgImages[currentImageIndex].classList.add('active');
+            }
+            
+            // 每5秒切换一次背景图片
+            setInterval(switchBackground, 5000);
         });
         
         // Web Vitals 监测
