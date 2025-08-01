@@ -3,7 +3,7 @@ const translations = {
     'zh': {
         // 导航
         'nav.works': 'Works',
-        'nav.academic': '学术发表',
+        'nav.academic': 'Publications',
         'nav.me': 'Me',
         'nav.news': 'News',
         'nav.contact': 'Contact',
@@ -86,7 +86,7 @@ const translations = {
         'contact.studio.location': '地址：中国',
         
         // 学术发表
-        'academic.title': '学术发表',
+        'academic.title': 'Publications',
         'academic.subtitle': '设计理论研究 · 学术论文 · 期刊发表',
         'filter.all': '全部',
         'filter.journal': '期刊论文',
@@ -100,7 +100,7 @@ const translations = {
     'en': {
         // 导航
         'nav.works': 'Works',
-        'nav.academic': 'Academic Publications',
+        'nav.academic': 'Publications',
         'nav.me': 'Me',
         'nav.news': 'News',
         'nav.contact': 'Contact',
@@ -183,7 +183,7 @@ const translations = {
         'contact.studio.location': 'Based in China',
         
         // 学术发表
-        'academic.title': 'Academic Publications',
+        'academic.title': 'Publications',
         'academic.subtitle': 'Design Theory Research · Academic Papers · Journal Publications',
         'filter.all': 'All',
         'filter.journal': 'Journal Papers',
