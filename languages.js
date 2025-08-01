@@ -3,6 +3,7 @@ const translations = {
     'zh': {
         // 导航
         'nav.works': 'Works',
+        'nav.academic': '学术发表',
         'nav.me': 'Me',
         'nav.news': 'News',
         'nav.contact': 'Contact',
@@ -84,12 +85,22 @@ const translations = {
         'contact.studio.description': '专注简约现代设计的创意工作室',
         'contact.studio.location': '地址：中国',
         
+        // 学术发表
+        'academic.title': '学术发表',
+        'academic.subtitle': '设计理论研究 · 学术论文 · 期刊发表',
+        'filter.all': '全部',
+        'filter.journal': '期刊论文',
+        'filter.conference': '会议论文',
+        'filter.book': '专著',
+        'filter.chapter': '章节',
+        
         // 页脚
         'footer.copyright': '© 2024 islandJQ  DESIGN  STUDIO. All rights reserved.'
     },
     'en': {
         // 导航
         'nav.works': 'Works',
+        'nav.academic': 'Academic Publications',
         'nav.me': 'Me',
         'nav.news': 'News',
         'nav.contact': 'Contact',
@@ -170,6 +181,15 @@ const translations = {
         'contact.studio.title': 'islandJQ DESIGN STUDIO',
         'contact.studio.description': 'Creative studio focused on minimalist modern design',
         'contact.studio.location': 'Based in China',
+        
+        // 学术发表
+        'academic.title': 'Academic Publications',
+        'academic.subtitle': 'Design Theory Research · Academic Papers · Journal Publications',
+        'filter.all': 'All',
+        'filter.journal': 'Journal Papers',
+        'filter.conference': 'Conference Papers',
+        'filter.book': 'Books',
+        'filter.chapter': 'Chapters',
         
         // 页脚
         'footer.copyright': '© 2024 islandJQ  DESIGN  STUDIO. All rights reserved.'

@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="学术发表详情页 - 深入了解研究内容、方法和贡献">
+    <meta name="keywords" content="学术论文详情,研究方法,学术贡献,设计研究">
+    <meta name="author" content="islandJQ DESIGN STUDIO">
+    
+    <title>学术发表详情 - islandJQ DESIGN STUDIO</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DIN+Next+LT+Pro:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        .detail-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 120px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .detail-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.3);
+        }
+        
+        .detail-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            margin-bottom: 2rem;
+            transition: color 0.3s ease;
+        }
+        
+        .back-btn:hover {
+            color: white;
+        }
+        
+        .publication-type-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: rgba(255,255,255,0.2);
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            backdrop-filter: blur(10px);
+        }
+        
+        .detail-title {
+            font-size: 3rem;
+            font-weight: 300;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+        
+        .detail-authors {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+        
+        .detail-venue {
+            font-size: 1.1rem;
+            opacity: 0.8;
+            font-style: italic;
+        }
+        
+        .detail-main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+        
+        .detail-section {
+            margin-bottom: 3rem;
+        }
+        
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--text-primary);
+        }
+        
+        .detail-text {
+            line-height: 1.8;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .keywords-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-top: 1rem;
+        }
+        
+        .keyword {
+            padding: 0.4rem 0.8rem;
+            background: var(--bg-light);
+            color: var(--text-secondary);
+            border-radius: 15px;
+            font-size: 0.9rem;
+        }
+        
+        .citation-box {
+            background: #f8f9fa;
+            border-left: 4px solid var(--text-primary);
+            padding: 1.5rem;
+            border-radius: 0 8px 8px 0;
+            margin: 2rem 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: var(--text-secondary);
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            margin: 3rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .action-btn {
+            padding: 0.8rem 1.5rem;
+            background: var(--text-primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .action-btn:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+        
+        .action-btn.secondary {
+            background: transparent;
+            color: var(--text-primary);
+            border: 2px solid var(--text-primary);
+        }
+        
+        .action-btn.secondary:hover {
+            background: var(--text-primary);
+            color: white;
+        }
+        
+        .related-section {
+            background: var(--bg-secondary);
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+        
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .related-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+        
+        .related-card:hover {
+            transform: translateY(-3px);
+        }
+        
+        .related-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            color: var(--text-primary);
+        }
+        
+        .related-meta {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .related-link {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .related-link:hover {
+            text-decoration: underline;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .detail-title {
+                font-size: 2.2rem;
+            }
+            
+            .detail-main {
+                padding: 2rem 1rem;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+            }
+            
+            .action-btn {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">islandJQ  DESIGN  STUDIO</a>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="works.html" class="nav-link">Works</a>
+                <a href="academic-publications.html" class="nav-link">学术发表</a>
+                <a href="me.html" class="nav-link">Me</a>
+                <a href="news.html" class="nav-link">News</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="#" class="nav-link lang-switch" id="lang-switch">EN</a>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="detail-hero">
+        <div class="container">
+            <div class="detail-content">
+                <a href="academic-publications.html" class="back-btn">
+                    <i class="fas fa-arrow-left"></i>
+                    返回学术发表
+                </a>
+                <div class="publication-type-badge">期刊论文</div>
+                <h1 class="detail-title">视觉传达设计中的信息可视化研究</h1>
+                <p class="detail-authors"><strong>徐静琪</strong>, 张三, 李四</p>
+                <p class="detail-venue">《装饰》, 2024年第3期, pp. 45-52</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 主要内容 -->
+    <main class="detail-main">
+        <!-- 摘要 -->
+        <section class="detail-section">
+            <h2 class="section-title">摘要</h2>
+            <p class="detail-text">
+                随着数字化时代的到来，信息可视化在视觉传达设计中扮演着越来越重要的角色。本文通过理论分析和实证研究，系统探讨了信息可视化在视觉传达设计中的应用原理、设计方法和实践路径。研究发现，有效的信息可视化设计需要在数据准确性、视觉美学和用户体验之间找到平衡点。
+            </p>
+            <p class="detail-text">
+                本研究采用案例分析法，选取了近五年来国内外优秀的信息可视化设计作品进行深入分析，提出了基于用户认知的信息可视化设计框架。该框架包含信息层次构建、视觉编码规则、交互设计原则三个核心要素，为设计实践提供了系统性的理论指导。
+            </p>
+        </section>
+
+        <!-- 关键词 -->
+        <section class="detail-section">
+            <h2 class="section-title">关键词</h2>
+            <div class="keywords-list">
+                <span class="keyword">信息可视化</span>
+                <span class="keyword">视觉传达设计</span>
+                <span class="keyword">用户体验</span>
+                <span class="keyword">数据可视化</span>
+                <span class="keyword">交互设计</span>
+                <span class="keyword">认知心理学</span>
+            </div>
+        </section>
+
+        <!-- 研究背景 -->
+        <section class="detail-section">
+            <h2 class="section-title">研究背景</h2>
+            <p class="detail-text">
+                在信息爆炸的时代，如何有效地传达复杂信息成为设计师面临的重要挑战。传统的视觉传达设计主要依靠图形、色彩、文字等元素进行信息传递，而信息可视化则通过数据驱动的方式，将抽象的信息转化为直观的视觉形式。
+            </p>
+            <p class="detail-text">
+                近年来，大数据、人工智能等技术的快速发展，为信息可视化提供了强大的技术支撑。同时，用户对信息获取效率和体验质量的要求不断提高，促使设计师重新思考信息传达的方式和方法。在此背景下，研究信息可视化在视觉传达设计中的应用具有重要的理论价值和实践意义。
+            </p>
+        </section>
+
+        <!-- 研究方法 -->
+        <section class="detail-section">
+            <h2 class="section-title">研究方法</h2>
+            <p class="detail-text">
+                本研究采用混合研究方法，结合定性和定量分析。首先通过文献调研，梳理信息可视化和视觉传达设计的理论基础；然后采用案例分析法，选取50个优秀的信息可视化设计案例进行深入分析；最后通过用户测试和专家访谈，验证所提出的设计框架的有效性。
+            </p>
+            <p class="detail-text">
+                研究过程中，我们建立了信息可视化设计评价体系，包括信息传达效率、视觉吸引力、用户满意度三个维度。通过量化评估，为设计实践提供了客观的参考标准。
+            </p>
+        </section>
+
+        <!-- 主要贡献 -->
+        <section class="detail-section">
+            <h2 class="section-title">主要贡献</h2>
+            <p class="detail-text">
+                本研究的主要贡献包括：
+            </p>
+            <p class="detail-text">
+                1. <strong>理论贡献</strong>：提出了基于用户认知的信息可视化设计框架，丰富了视觉传达设计的理论体系。
+            </p>
+            <p class="detail-text">
+                2. <strong>方法贡献</strong>：建立了信息可视化设计的评价体系，为设计质量评估提供了量化工具。
+            </p>
+            <p class="detail-text">
+                3. <strong>实践贡献</strong>：通过案例分析总结了信息可视化设计的最佳实践，为设计师提供了具体的操作指导。
+            </p>
+        </section>
+
+        <!-- 引用格式 -->
+        <section class="detail-section">
+            <h2 class="section-title">引用格式</h2>
+            <div class="citation-box">
+                徐静琪, 张三, 李四. 视觉传达设计中的信息可视化研究[J]. 装饰, 2024(3): 45-52.
+                <br><br>
+                Xu, J. Q., Zhang, S., & Li, S. (2024). Research on Information Visualization in Visual Communication Design. Zhuangshi, (3), 45-52.
+            </div>
+        </section>
+
+        <!-- 操作按钮 -->
+        <div class="action-buttons">
+            <a href="#" class="action-btn">
+                <i class="fas fa-download"></i>
+                下载PDF
+            </a>
+            <a href="#" class="action-btn secondary">
+                <i class="fas fa-quote-right"></i>
+                复制引用
+            </a>
+            <a href="#" class="action-btn secondary">
+                <i class="fas fa-share"></i>
+                分享
+            </a>
+        </div>
+    </main>
+
+    <!-- 相关发表 -->
+    <section class="related-section">
+        <div class="container">
+            <h2 class="section-title">相关发表</h2>
+            <div class="related-grid">
+                <article class="related-card">
+                    <h3 class="related-title">基于AI技术的平面设计创新实践研究</h3>
+                    <p class="related-meta">会议论文 · 第十五届中国设计学年会 · 2023</p>
+                    <a href="#" class="related-link">阅读更多 <i class="fas fa-arrow-right"></i></a>
+                </article>
+                
+                <article class="related-card">
+                    <h3 class="related-title">江南传统文化在现代包装设计中的传承与创新</h3>
+                    <p class="related-meta">期刊论文 · 《包装工程》· 2023</p>
+                    <a href="#" class="related-link">阅读更多 <i class="fas fa-arrow-right"></i></a>
+                </article>
+                
+                <article class="related-card">
+                    <h3 class="related-title">数字媒体时代的品牌视觉设计</h3>
+                    <p class="related-meta">章节 · 《当代设计研究》· 2023</p>
+                    <a href="#" class="related-link">阅读更多 <i class="fas fa-arrow-right"></i></a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 islandJQ  DESIGN  STUDIO. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 导航栏功能
+            const navToggle = document.getElementById('nav-toggle');
+            const navMenu = document.getElementById('nav-menu');
+            
+            navToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+                navToggle.classList.toggle('active');
+            });
+
+            // 复制引用功能
+            const copyBtn = document.querySelector('.action-btn.secondary');
+            if (copyBtn && copyBtn.textContent.includes('复制引用')) {
+                copyBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const citation = document.querySelector('.citation-box').textContent.trim();
+                    navigator.clipboard.writeText(citation).then(() => {
+                        const originalText = this.innerHTML;
+                        this.innerHTML = '<i class="fas fa-check"></i> 已复制';
+                        setTimeout(() => {
+                            this.innerHTML = originalText;
+                        }, 2000);
+                    });
+                });
+            }
+
+            // 分享功能
+            const shareBtn = document.querySelector('.action-btn.secondary:last-child');
+            if (shareBtn) {
+                shareBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    if (navigator.share) {
+                        navigator.share({
+                            title: document.title,
+                            url: window.location.href
+                        });
+                    } else {
+                        // 复制链接到剪贴板
+                        navigator.clipboard.writeText(window.location.href);
+                        const originalText = this.innerHTML;
+                        this.innerHTML = '<i class="fas fa-check"></i> 链接已复制';
+                        setTimeout(() => {
+                            this.innerHTML = originalText;
+                        }, 2000);
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

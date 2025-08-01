@@ -1,0 +1,95 @@
+{
+  "name": "islandJQ DESIGN STUDIO",
+  "short_name": "islandJQ",
+  "description": "专注简约现代设计的创意工作室，提供品牌设计、包装设计、网页设计等专业服务",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/images/icon-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/icon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/icon-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/icon-152x152.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/images/screenshot-1.png",
+      "sizes": "540x720",
+      "type": "image/png",
+      "label": "主页展示"
+    },
+    {
+      "src": "/images/screenshot-2.png",
+      "sizes": "540x720",
+      "type": "image/png",
+      "label": "作品集展示"
+    }
+  ],
+  "categories": ["design", "portfolio", "business"],
+  "lang": "zh-CN",
+  "dir": "ltr",
+  "scope": "/",
+  "shortcuts": [
+    {
+      "name": "作品集",
+      "short_name": "作品",
+      "description": "查看设计作品集",
+      "url": "/works.html",
+      "icons": [{ "src": "/images/works-icon.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "联系我们",
+      "short_name": "联系",
+      "description": "与我们取得联系",
+      "url": "/contact.html",
+      "icons": [{ "src": "/images/contact-icon.png", "sizes": "96x96" }]
+    }
+  ],
+  "prefer_related_applications": false
+}

@@ -1,4 +1,43 @@
+# robots.txt for islandJQ.github.io
+# Last updated: 2024-08-01
+
 User-agent: *
 Allow: /
+Disallow: /blog-starter-app/
+Disallow: *.min.js
+Disallow: *.min.css
 
+# 搜索引擎爬虫优化
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 0
+
+User-agent: DuckDuckBot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 0
+
+# 阻止恶意爬虫
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+# 站点地图
 Sitemap: https://islandJQ.github.io/sitemap.xml
+Sitemap: https://islandJQ.github.io/sitemap-images.xml

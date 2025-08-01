@@ -10,6 +10,20 @@
     <meta name="googlebot" content="index, follow">
     <link rel="canonical" href="https://islandJQ.github.io">
     
+    <!-- PWA配置 -->
+    <meta name="theme-color" content="#000000">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="islandJQ">
+    <link rel="manifest" href="/manifest.json">
+    
+    <!-- 预加载关键资源 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    
     <!-- Open Graph -->
     <meta property="og:title" content="islandJQ DESIGN STUDIO - 专业设计工作室">
     <meta property="og:description" content="专注简约现代设计的创意工作室，提供品牌设计、包装设计、网页设计等专业服务">
@@ -27,11 +41,26 @@
     <meta name="twitter:description" content="专注简约现代设计的创意工作室">
     <meta name="twitter:image" content="https://islandJQ.github.io/images/og-image.jpg">
     <title>islandJQ DESIGN STUDIO - 专业创意设计工作室 | 品牌设计 包装设计 网页设计</title>
-    <link rel="stylesheet" href="style.css?v=2024073002">
-    <link rel="stylesheet" href="loader.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=DIN+Next+LT+Pro:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="languages.js"></script>
+    
+    <!-- 内联关键CSS -->
+    <style>
+        /* Critical CSS - 首屏关键样式 */
+        :root{--primary-color:#000;--secondary-color:#333;--accent-color:#666;--text-primary:#000;--text-secondary:#666;--text-light:#999;--bg-primary:#fff;--bg-secondary:#fafafa;--bg-light:#f5f5f5;--bg-dark:#000;--border-color:#e0e0e0;--border-light:#f0f0f0;--shadow:0 2px 4px rgba(0,0,0,.08);--shadow-lg:0 4px 8px rgba(0,0,0,.12)}*{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;line-height:1.6;color:var(--text-primary);background:var(--bg-primary)}.container{max-width:1200px;margin:0 auto;padding:0 2rem}.navbar{position:fixed;top:0;width:100%;background:rgba(255,255,255,.98);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);z-index:1000;border-bottom:1px solid var(--border-light)}.nav-container{max-width:1200px;margin:0 auto;padding:0 2rem;display:flex;justify-content:space-between;align-items:center;height:70px}.nav-logo a{font-size:1.2rem;font-weight:100;color:#000;text-decoration:none;letter-spacing:.5px}.nav-menu{display:flex;gap:2rem}.nav-link{color:var(--text-secondary);text-decoration:none;font-weight:400;font-size:.9rem;transition:color .2s ease}.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding-top:70px}img{max-width:100%;height:auto;display:block}.font-din{font-family:'DIN Next LT Pro',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif}
+    </style>
+    
+    <!-- 预加载关键字体 -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=DIN+Next+LT+Pro:wght@100;200;300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DIN+Next+LT+Pro:wght@100;200;300;400;500;600;700&display=swap"></noscript>
+    
+    <!-- 延迟加载非关键CSS -->
+    <link rel="preload" href="style.css?v=2024080101" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="style.css?v=2024080101"></noscript>
+    <link rel="preload" href="loader.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="loader.css"></noscript>
+    
+    <!-- 异步加载脚本 -->
+    <script src="languages.js" defer></script>
+    <script src="image-optimizer.js" defer></script>
     
     <!-- 结构化数据 -->
     <script type="application/ld+json">
@@ -76,6 +105,18 @@
         ]
     }
     </script>
+    
+    <!-- 异步加载Font Awesome -->
+    <script>
+        (function() {
+            var link = document.createElement('link');
+            link.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css';
+            link.rel = 'stylesheet';
+            link.media = 'print';
+            link.onload = function() { this.media = 'all'; };
+            document.head.appendChild(link);
+        })();
+    </script>
 </head>
 <body>
     <!-- 加载动画 -->
@@ -97,6 +138,7 @@
             </div>
             <div class="nav-menu" id="nav-menu">
                 <a href="works.html" class="nav-link" data-translate="nav.works">Works</a>
+                <a href="academic-publications.html" class="nav-link" data-translate="nav.academic">学术发表</a>
                 <a href="me.html" class="nav-link" data-translate="nav.me">Me</a>
                 <a href="news.html" class="nav-link" data-translate="nav.news">News</a>
                 <a href="contact.html" class="nav-link" data-translate="nav.contact">Contact</a>
@@ -282,14 +324,78 @@
         </div>
     </footer>
 
-    <script src="performance.js"></script>
-    <script src="animations.js"></script>
-    <script src="script.js"></script>
+    <!-- 优化脚本加载 -->
+    <script src="script.js" defer></script>
+    <script src="animations.js" defer></script>
+    <script src="performance.js" defer></script>
+    
     <script>
+        // 注册增强版 Service Worker
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/sw-enhanced.js')
+                    .then(function(registration) {
+                        console.log('Enhanced SW registered:', registration);
+                        
+                        // 监听更新
+                        registration.addEventListener('updatefound', function() {
+                            const newWorker = registration.installing;
+                            newWorker.addEventListener('statechange', function() {
+                                if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                                    // 提示用户有新版本
+                                    if (confirm('网站有新版本可用，是否立即更新？')) {
+                                        newWorker.postMessage({ type: 'SKIP_WAITING' });
+                                        window.location.reload();
+                                    }
+                                }
+                            });
+                        });
+                    })
+                    .catch(function(error) {
+                        console.log('SW registration failed:', error);
+                    });
+            });
+        }
+        
         // 初始化语言管理器
         document.addEventListener('DOMContentLoaded', function() {
             window.languageManager.init();
         });
+        
+        // Web Vitals 监测
+        function measureWebVitals() {
+            // Largest Contentful Paint
+            new PerformanceObserver((list) => {
+                const entries = list.getEntries();
+                const lastEntry = entries[entries.length - 1];
+                console.log('LCP:', lastEntry.startTime);
+            }).observe({ entryTypes: ['largest-contentful-paint'] });
+            
+            // First Input Delay
+            new PerformanceObserver((list) => {
+                const entries = list.getEntries();
+                entries.forEach((entry) => {
+                    const delay = entry.processingStart - entry.startTime;
+                    console.log('FID:', delay);
+                });
+            }).observe({ entryTypes: ['first-input'] });
+            
+            // Cumulative Layout Shift
+            let clsValue = 0;
+            new PerformanceObserver((list) => {
+                for (const entry of list.getEntries()) {
+                    if (!entry.hadRecentInput) {
+                        clsValue += entry.value;
+                    }
+                }
+                console.log('CLS:', clsValue);
+            }).observe({ entryTypes: ['layout-shift'] });
+        }
+        
+        // 仅在开发环境监测
+        if (window.location.hostname === 'localhost' || window.location.hostname.includes('127.0.0.1')) {
+            measureWebVitals();
+        }
     </script>
 </body>
 </html>

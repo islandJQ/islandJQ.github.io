@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="islandJQ设计工作室学术发表 - 设计理论研究、学术论文、期刊发表、会议论文等学术成果展示">
+    <meta name="keywords" content="学术发表,设计理论,论文发表,期刊论文,会议论文,学术研究,设计研究,视觉传达研究">
+    <meta name="author" content="islandJQ DESIGN STUDIO">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="学术发表 - islandJQ DESIGN STUDIO">
+    <meta property="og:description" content="设计理论研究与学术成果展示">
+    <meta property="og:url" content="https://islandJQ.github.io/academic-publications.html">
+    <meta property="og:type" content="website">
+    
+    <title>学术发表 - islandJQ DESIGN STUDIO</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="loader.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DIN+Next+LT+Pro:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="languages.js"></script>
+    
+    <!-- 结构化数据 -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ScholarlyArticle",
+        "author": {
+            "@type": "Person",
+            "name": "islandJQ",
+            "affiliation": "islandJQ DESIGN STUDIO"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "islandJQ DESIGN STUDIO"
+        },
+        "about": "设计理论研究与学术成果"
+    }
+    </script>
+    
+    <style>
+        /* 学术页面特有样式 */
+        .academic-hero {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 120px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .academic-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="%23e9ecef" opacity="0.5"/></svg>') repeat;
+            background-size: 50px 50px;
+            animation: float 20s infinite linear;
+        }
+        
+        @keyframes float {
+            0% { transform: translateX(0) translateY(0); }
+            100% { transform: translateX(-50px) translateY(-50px); }
+        }
+        
+        .academic-title {
+            font-size: 3.5rem;
+            font-weight: 100;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .academic-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .publications-filter {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 3rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            padding: 0.8rem 1.5rem;
+            background: transparent;
+            border: 2px solid var(--border-color);
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 400;
+        }
+        
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--text-primary);
+            color: white;
+            border-color: var(--text-primary);
+            transform: translateY(-2px);
+        }
+        
+        .publications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .publication-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .publication-card.animate-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .publication-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .publication-header {
+            padding: 2rem 2rem 1rem;
+            border-bottom: 1px solid var(--border-light);
+        }
+        
+        .publication-type {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            background: var(--bg-secondary);
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            border-radius: 15px;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+        
+        .publication-type.journal {
+            background: #e3f2fd;
+            color: #1976d2;
+        }
+        
+        .publication-type.conference {
+            background: #f3e5f5;
+            color: #7b1fa2;
+        }
+        
+        .publication-type.book {
+            background: #e8f5e8;
+            color: #388e3c;
+        }
+        
+        .publication-type.chapter {
+            background: #fff3e0;
+            color: #f57c00;
+        }
+        
+        .publication-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.8rem;
+            line-height: 1.4;
+        }
+        
+        .publication-authors {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .publication-venue {
+            color: var(--accent-color);
+            font-size: 0.95rem;
+            font-style: italic;
+        }
+        
+        .publication-content {
+            padding: 1.5rem 2rem;
+        }
+        
+        .publication-abstract {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        
+        .publication-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .publication-date {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        
+        .publication-links {
+            display: flex;
+            gap: 0.8rem;
+        }
+        
+        .pub-link {
+            padding: 0.5rem 1rem;
+            background: var(--bg-light);
+            color: var(--text-secondary);
+            text-decoration: none;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+        
+        .pub-link:hover {
+            background: var(--text-primary);
+            color: white;
+            transform: translateY(-1px);
+        }
+        
+        .stats-section {
+            background: var(--bg-secondary);
+            padding: 4rem 0;
+            margin: 4rem 0 0;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+        
+        .stat-item {
+            padding: 2rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 100;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .academic-title {
+                font-size: 2.5rem;
+            }
+            
+            .publications-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .publication-card {
+                margin: 0 1rem;
+            }
+            
+            .publications-filter {
+                padding: 0 1rem;
+            }
+            
+            .filter-btn {
+                font-size: 0.8rem;
+                padding: 0.6rem 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 加载动画 -->
+    <div class="loader-wrapper" id="loader">
+        <div class="loader">
+            <div class="loader-circle"></div>
+            <div class="loader-text">LOADING</div>
+        </div>
+    </div>
+    
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">islandJQ  DESIGN  STUDIO</a>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="works.html" class="nav-link" data-translate="nav.works">Works</a>
+                <a href="academic-publications.html" class="nav-link active" data-translate="nav.academic">学术发表</a>
+                <a href="me.html" class="nav-link" data-translate="nav.me">Me</a>
+                <a href="news.html" class="nav-link" data-translate="nav.news">News</a>
+                <a href="contact.html" class="nav-link" data-translate="nav.contact">Contact</a>
+                <a href="#" class="nav-link lang-switch" id="lang-switch">EN</a>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主内容区 -->
+    <main>
+        <!-- Hero Section -->
+        <section class="academic-hero">
+            <div class="container">
+                <h1 class="academic-title font-din" data-translate="academic.title">学术发表</h1>
+                <p class="academic-subtitle" data-translate="academic.subtitle">设计理论研究 · 学术论文 · 期刊发表</p>
+            </div>
+        </section>
+
+        <!-- 筛选器 -->
+        <section class="container">
+            <div class="publications-filter">
+                <button class="filter-btn active" data-filter="all" data-translate="filter.all">全部</button>
+                <button class="filter-btn" data-filter="journal" data-translate="filter.journal">期刊论文</button>
+                <button class="filter-btn" data-filter="conference" data-translate="filter.conference">会议论文</button>
+                <button class="filter-btn" data-filter="book" data-translate="filter.book">专著</button>
+                <button class="filter-btn" data-filter="chapter" data-translate="filter.chapter">章节</button>
+            </div>
+        </section>
+
+        <!-- 发表列表 -->
+        <section class="container">
+            <div class="publications-grid" id="publications-grid">
+                <!-- 期刊论文 -->
+                <article class="publication-card" data-type="journal">
+                    <header class="publication-header">
+                        <span class="publication-type journal">期刊论文</span>
+                        <h2 class="publication-title">视觉传达设计中的信息可视化研究</h2>
+                        <p class="publication-authors"><strong>徐静琪</strong>, 张三, 李四</p>
+                        <p class="publication-venue">《装饰》, 2024年第3期</p>
+                    </header>
+                    <div class="publication-content">
+                        <p class="publication-abstract">
+                            本文探讨了在数字化时代背景下，视觉传达设计中信息可视化的理论基础与实践方法。通过分析现代设计案例，提出了基于用户体验的信息可视化设计框架，为设计实践提供了理论指导。
+                        </p>
+                        <div class="publication-meta">
+                            <span class="publication-date">2024年3月</span>
+                            <div class="publication-links">
+                                <a href="#" class="pub-link">
+                                    <i class="fas fa-file-pdf"></i>
+                                    PDF
+                                </a>
+                                <a href="#" class="pub-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    期刊链接
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 会议论文 -->
+                <article class="publication-card" data-type="conference">
+                    <header class="publication-header">
+                        <span class="publication-type conference">会议论文</span>
+                        <h2 class="publication-title">基于AI技术的平面设计创新实践研究</h2>
+                        <p class="publication-authors"><strong>徐静琪</strong>, 王五</p>
+                        <p class="publication-venue">第十五届中国设计学年会, 苏州大学</p>
+                    </header>
+                    <div class="publication-content">
+                        <p class="publication-abstract">
+                            随着人工智能技术的快速发展，AI在平面设计领域的应用日趋成熟。本研究通过实证分析，探讨了AI技术在设计创作、元素生成、版式优化等方面的应用前景与挑战。
+                        </p>
+                        <div class="publication-meta">
+                            <span class="publication-date">2023年12月</span>
+                            <div class="publication-links">
+                                <a href="#" class="pub-link">
+                                    <i class="fas fa-file-pdf"></i>
+                                    PDF
+                                </a>
+                                <a href="#" class="pub-link">
+                                    <i class="fas fa-presentation"></i>
+                                    演示文稿
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 专著 -->
+                <article class="publication-card" data-type="book">
+                    <header class="publication-header">
+                        <span class="publication-type book">专著</span>
+                        <h2 class="publication-title">现代视觉传达设计理论与实践</h2>
+                        <p class="publication-authors"><strong>徐静琪</strong> 著</p>
+                        <p class="publication-venue">苏州大学出版社</p>
+                    </header>
+                    <div class="publication-content">
+                        <p class="publication-abstract">
+                            本书系统阐述了现代视觉传达设计的理论基础、设计方法和实践应用。全书分为理论篇、方法篇和案例篇三个部分，涵盖了从基础理论到实际应用的完整知识体系，为设计专业学生和从业人员提供了全面的参考。
+                        </p>
+                        <div class="publication-meta">
+                            <span class="publication-date">2023年9月</span>
+                            <div class="publication-links">
+                                <a href="#" class="pub-link">
+                                    <i class="fas fa-book"></i>
+                                    购买链接
+                                </a>
+                                <a href="#" class="pub-link">
+                                    <i class="fas fa-info-circle"></i>
+                                    详细信息
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 章节 -->
+                <article class="publication-card" data-type="chapter">
+                    <header class="publication-header">
+                        <span class="publication-type chapter">章节</span>
+                        <h2 class="publication-title">数字媒体时代的品牌视觉设计</h2>
+                        <p class="publication-authors"><strong>徐静琪</strong></p>
+                        <p class="publication-venue">《当代设计研究》第六章, 江苏美术出版社</p>
+                    </header>
+                    <div class="publication-content">
+                        <p class="publication-abstract">
+                            在数字媒体快速发展的今天，品牌视觉设计面临着新的机遇与挑战。本章从品牌识别系统的角度出发，分析了数字化环境对品牌视觉设计的影响，提出了适应数字媒体特点的设计策略。
+                        </p>
+                        <div class="publication-meta">
+                            <span class="publication-date">2023年6月</span>
+                            <div class="publication-links">
+                                <a href="#" class="pub-link">
+                                    <i class="fas fa-book-open"></i>
+                                    查看章节
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 期刊论文2 -->
+                <article class="publication-card" data-type="journal">
+                    <header class="publication-header">
+                        <span class="publication-type journal">期刊论文</span>
+                        <h2 class="publication-title">江南传统文化在现代包装设计中的传承与创新</h2>
+                        <p class="publication-authors"><strong>徐静琪</strong>, 陈六, 孙七</p>
+                        <p class="publication-venue">《包装工程》, 2023年第8期</p>
+                    </header>
+                    <div class="publication-content">
+                        <p class="publication-abstract">
+                            本文以江南传统文化为研究对象，探讨其在现代包装设计中的传承与创新应用。通过案例分析和实地调研，提出了传统文化元素与现代设计语言结合的有效策略，为文化创意产业发展提供了设计思路。
+                        </p>
+                        <div class="publication-meta">
+                            <span class="publication-date">2023年8月</span>
+                            <div class="publication-links">
+                                <a href="#" class="pub-link">
+                                    <i class="fas fa-file-pdf"></i>
+                                    PDF
+                                </a>
+                                <a href="#" class="pub-link">
+                                    <i class="fas fa-quote-right"></i>
+                                    引用
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 会议论文2 -->
+                <article class="publication-card" data-type="conference">
+                    <header class="publication-header">
+                        <span class="publication-type conference">会议论文</span>
+                        <h2 class="publication-title">可持续设计理念在平面设计教育中的实践研究</h2>
+                        <p class="publication-authors"><strong>徐静琪</strong>, 李八</p>
+                        <p class="publication-venue">2023年中国设计教育论坛, 北京</p>
+                    </header>
+                    <div class="publication-content">
+                        <p class="publication-abstract">
+                            面对全球环境挑战，可持续设计理念在设计教育中的融入显得尤为重要。本研究通过教学实践，探索了可持续设计理念在平面设计课程中的应用方法，为培养具有环保意识的设计人才提供了参考。
+                        </p>
+                        <div class="publication-meta">
+                            <span class="publication-date">2023年5月</span>
+                            <div class="publication-links">
+                                <a href="#" class="pub-link">
+                                    <i class="fas fa-file-pdf"></i>
+                                    PDF
+                                </a>
+                                <a href="#" class="pub-link">
+                                    <i class="fas fa-video"></i>
+                                    视频回放
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- 统计数据 -->
+        <section class="stats-section">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">15+</div>
+                        <div class="stat-label">期刊论文</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">8+</div>
+                        <div class="stat-label">会议论文</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">2</div>
+                        <div class="stat-label">专著</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">5+</div>
+                        <div class="stat-label">章节</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <p data-translate="footer.copyright">&copy; 2024 islandJQ  DESIGN  STUDIO. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="performance.js"></script>
+    <script src="animations.js"></script>
+    <script src="script.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 导航栏功能
+            const navToggle = document.getElementById('nav-toggle');
+            const navMenu = document.getElementById('nav-menu');
+            
+            navToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+                navToggle.classList.toggle('active');
+            });
+
+            // 筛选功能
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const publicationCards = document.querySelectorAll('.publication-card');
+            
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // 移除所有按钮的active类
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    // 添加当前按钮的active类
+                    this.classList.add('active');
+                    
+                    const filter = this.dataset.filter;
+                    
+                    publicationCards.forEach(card => {
+                        if (filter === 'all' || card.dataset.type === filter) {
+                            card.style.display = 'block';
+                            setTimeout(() => {
+                                card.classList.add('animate-in');
+                            }, 100);
+                        } else {
+                            card.classList.remove('animate-in');
+                            setTimeout(() => {
+                                card.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                });
+            });
+
+            // 初始动画
+            setTimeout(() => {
+                publicationCards.forEach((card, index) => {
+                    setTimeout(() => {
+                        card.classList.add('animate-in');
+                    }, index * 200);
+                });
+            }, 500);
+
+            // 初始化语言管理器
+            if (window.languageManager) {
+                window.languageManager.init();
+            }
+        });
+    </script>
+</body>
+</html>

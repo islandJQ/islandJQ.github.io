@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Publications - islandJQ设计工作室学术出版与发表">
+    <title>Publications - islandJQ DESIGN STUDIO</title>
+    <link rel="stylesheet" href="style.css?v=2024073008">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DIN+Next+LT+Pro:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="languages.js"></script>
+    <style>
+        body {
+            background: #ffffff;
+            font-family: 'DIN Next LT Pro', sans-serif;
+        }
+        
+        .publications-wrapper {
+            margin-top: 70px;
+            min-height: 100vh;
+            padding: 60px 20px;
+        }
+        
+        .publications-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .publications-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+        
+        .publications-title {
+            font-size: 3rem;
+            font-weight: 200;
+            letter-spacing: 3px;
+            margin-bottom: 2rem;
+            color: #000;
+        }
+        
+        .publications-subtitle {
+            font-size: 1.1rem;
+            color: #666;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+        
+        /* 分类筛选 */
+        .publications-filter {
+            margin-bottom: 60px;
+            text-align: center;
+        }
+        
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        .filter-btn {
+            background: none;
+            border: none;
+            font-size: 0.9rem;
+            color: #999;
+            cursor: pointer;
+            padding: 8px 0;
+            letter-spacing: 1px;
+            font-weight: 300;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid transparent;
+            font-family: 'DIN Next LT Pro', sans-serif;
+        }
+        
+        .filter-btn:hover,
+        .filter-btn.active {
+            color: #000;
+            border-bottom: 1px solid #000;
+        }
+        
+        /* 出版物列表 */
+        .publications-list {
+            display: grid;
+            gap: 50px;
+        }
+        
+        .publication-item {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 40px;
+            padding: 40px 0;
+            border-bottom: 1px solid #f0f0f0;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .publication-item:last-child {
+            border-bottom: none;
+        }
+        
+        .publication-item:hover {
+            transform: translateY(-3px);
+            background: #fafafa;
+            padding: 40px 20px;
+            margin: 0 -20px;
+            border-radius: 2px;
+        }
+        
+        .publication-meta {
+            text-align: right;
+            padding-top: 10px;
+        }
+        
+        .publication-year {
+            font-size: 2rem;
+            font-weight: 200;
+            color: #000;
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+        
+        .publication-type {
+            font-size: 0.8rem;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+        
+        .publication-status {
+            font-size: 0.75rem;
+            color: #666;
+            padding: 4px 8px;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            display: inline-block;
+        }
+        
+        .status-published {
+            background: #e8f5e8;
+            color: #2d5a2d;
+            border-color: #c8e6c9;
+        }
+        
+        .status-accepted {
+            background: #e3f2fd;
+            color: #1565c0;
+            border-color: #bbdefb;
+        }
+        
+        .status-submitted {
+            background: #fff3e0;
+            color: #ef6c00;
+            border-color: #ffcc02;
+        }
+        
+        .publication-content {
+            padding-top: 10px;
+        }
+        
+        .publication-title {
+            font-size: 1.6rem;
+            font-weight: 400;
+            margin-bottom: 0.8rem;
+            color: #000;
+            letter-spacing: 0.5px;
+            line-height: 1.4;
+        }
+        
+        .publication-authors {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 0.8rem;
+            font-style: italic;
+        }
+        
+        .publication-journal {
+            font-size: 1rem;
+            color: #333;
+            font-weight: 500;
+            margin-bottom: 0.8rem;
+        }
+        
+        .publication-abstract {
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1.2rem;
+        }
+        
+        .publication-links {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .pub-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.85rem;
+            color: #000;
+            text-decoration: none;
+            padding: 6px 12px;
+            border: 1px solid #e0e0e0;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+            background: #fff;
+        }
+        
+        .pub-link:hover {
+            background: #000;
+            color: #fff;
+            border-color: #000;
+        }
+        
+        .pub-link i {
+            font-size: 0.8rem;
+        }
+        
+        /* 特色发表 */
+        .featured-publication {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 40px;
+            margin-bottom: 60px;
+            border-radius: 2px;
+            border-left: 4px solid #000;
+        }
+        
+        .featured-tag {
+            display: inline-block;
+            background: #000;
+            color: #fff;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 8px 15px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .featured-publication .publication-title {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* 统计信息 */
+        .publications-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+            padding: 40px;
+            background: #f8f9fa;
+            border-radius: 2px;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 200;
+            color: #000;
+            margin-bottom: 8px;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        @media (max-width: 768px) {
+            .publications-title {
+                font-size: 2.5rem;
+            }
+            
+            .publication-item {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .publication-meta {
+                text-align: left;
+                border-bottom: 1px solid #e5e5e5;
+                padding-bottom: 15px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            
+            .publications-stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+                padding: 30px 20px;
+            }
+            
+            .featured-publication {
+                padding: 30px 20px;
+            }
+            
+            .filter-buttons {
+                gap: 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .publications-title {
+                font-size: 2rem;
+                letter-spacing: 2px;
+            }
+            
+            .publications-stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+        }
+        
+        /* 动画效果 */
+        .publication-item {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        
+        .publication-item:nth-child(1) { animation-delay: 0.1s; }
+        .publication-item:nth-child(2) { animation-delay: 0.2s; }
+        .publication-item:nth-child(3) { animation-delay: 0.3s; }
+        .publication-item:nth-child(4) { animation-delay: 0.4s; }
+        .publication-item:nth-child(5) { animation-delay: 0.5s; }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">islandJQ  DESIGN  STUDIO</a>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="works.html" class="nav-link" data-translate="nav.works">Works</a>
+                <a href="publications.html" class="nav-link" data-translate="nav.publications">Publications</a>
+                <a href="me.html" class="nav-link" data-translate="nav.me">Me</a>
+                <a href="news.html" class="nav-link" data-translate="nav.news">News</a>
+                <a href="contact.html" class="nav-link" data-translate="nav.contact">Contact</a>
+                <a href="#" class="nav-link lang-switch" id="lang-switch">EN</a>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 学术出版页面主体 -->
+    <div class="publications-wrapper">
+        <div class="publications-container">
+            <!-- 页面标题 -->
+            <header class="publications-header">
+                <h1 class="publications-title" data-translate="publications.title">Publications</h1>
+                <p class="publications-subtitle" data-translate="publications.subtitle">Academic Research & Design Publications</p>
+            </header>
+
+            <!-- 统计信息 -->
+            <section class="publications-stats">
+                <div class="stat-item">
+                    <div class="stat-number">15</div>
+                    <div class="stat-label" data-translate="publications.stats.total">Total Publications</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">8</div>
+                    <div class="stat-label" data-translate="publications.stats.journal">Journal Articles</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">5</div>
+                    <div class="stat-label" data-translate="publications.stats.conference">Conference Papers</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">2</div>
+                    <div class="stat-label" data-translate="publications.stats.book">Book Chapters</div>
+                </div>
+            </section>
+
+            <!-- 分类筛选 -->
+            <section class="publications-filter">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="journal">Journal Articles</button>
+                    <button class="filter-btn" data-filter="conference">Conference Papers</button>
+                    <button class="filter-btn" data-filter="book">Book Chapters</button>
+                    <button class="filter-btn" data-filter="submitted">Under Review</button>
+                </div>
+            </section>
+
+            <!-- 特色发表 -->
+            <article class="featured-publication">
+                <div class="featured-tag" data-translate="publications.featured">Featured</div>
+                <div class="publication-content">
+                    <h2 class="publication-title">Design Thinking in Visual Communication: A Systematic Review</h2>
+                    <div class="publication-authors">J. Island, M. Chen, L. Wang</div>
+                    <div class="publication-journal">Design Studies, Vol. 75, 2021</div>
+                    <p class="publication-abstract">
+                        This comprehensive review examines the application of design thinking methodologies in visual communication design. 
+                        Through systematic analysis of 150+ studies, we identify key trends and propose a new framework for integrating 
+                        design thinking principles into contemporary visual design practice.
+                    </p>
+                    <div class="publication-links">
+                        <a href="#" class="pub-link" target="_blank">
+                            <i class="fas fa-file-pdf"></i> PDF
+                        </a>
+                        <a href="#" class="pub-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> DOI
+                        </a>
+                        <a href="#" class="pub-link" target="_blank">
+                            <i class="fas fa-quote-left"></i> Cite
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 出版物列表 -->
+            <div class="publications-list">
+                <article class="publication-item" data-category="journal" onclick="window.open('publication-detail.html?id=1', '_blank')">
+                    <div class="publication-meta">
+                        <div class="publication-year">2024</div>
+                        <div class="publication-type">Journal Article</div>
+                        <span class="publication-status status-published">Published</span>
+                    </div>
+                    <div class="publication-content">
+                        <h3 class="publication-title">Minimalist Design Principles in Digital Media</h3>
+                        <div class="publication-authors">J. Island, S. Liu</div>
+                        <div class="publication-journal">International Journal of Design, Vol. 18, No. 2</div>
+                        <p class="publication-abstract">
+                            An exploration of minimalist design principles and their application in contemporary digital media platforms, 
+                            examining user experience impacts and aesthetic considerations.
+                        </p>
+                        <div class="publication-links">
+                            <a href="#" class="pub-link" target="_blank">
+                                <i class="fas fa-file-pdf"></i> PDF
+                            </a>
+                            <a href="#" class="pub-link" target="_blank">
+                                <i class="fas fa-external-link-alt"></i> DOI
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="publication-item" data-category="conference" onclick="window.open('publication-detail.html?id=2', '_blank')">
+                    <div class="publication-meta">
+                        <div class="publication-year">2024</div>
+                        <div class="publication-type">Conference</div>
+                        <span class="publication-status status-published">Published</span>
+                    </div>
+                    <div class="publication-content">
+                        <h3 class="publication-title">AI-Assisted Design: Bridging Human Creativity and Machine Intelligence</h3>
+                        <div class="publication-authors">J. Island, A. Chen, R. Zhang</div>
+                        <div class="publication-journal">CHI '24: Proceedings of the 2024 CHI Conference on Human Factors in Computing Systems</div>
+                        <p class="publication-abstract">
+                            This paper investigates the integration of AI tools in the design process, analyzing how designers adapt their 
+                            workflows and the impact on creative outcomes.
+                        </p>
+                        <div class="publication-links">
+                            <a href="#" class="pub-link" target="_blank">
+                                <i class="fas fa-file-pdf"></i> PDF
+                            </a>
+                            <a href="#" class="pub-link" target="_blank">
+                                <i class="fas fa-play"></i> Video
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="publication-item" data-category="journal" onclick="window.open('publication-detail.html?id=3', '_blank')">
+                    <div class="publication-meta">
+                        <div class="publication-year">2023</div>
+                        <div class="publication-type">Journal Article</div>
+                        <span class="publication-status status-published">Published</span>
+                    </div>
+                    <div class="publication-content">
+                        <h3 class="publication-title">Cultural Influences on Brand Visual Identity Design</h3>
+                        <div class="publication-authors">J. Island, T. Wang, M. Li</div>
+                        <div class="publication-journal">Design and Culture, Vol. 15, No. 3</div>
+                        <p class="publication-abstract">
+                            A cross-cultural study examining how cultural factors influence brand visual identity design decisions 
+                            and consumer perception across different markets.
+                        </p>
+                        <div class="publication-links">
+                            <a href="#" class="pub-link" target="_blank">
+                                <i class="fas fa-file-pdf"></i> PDF
+                            </a>
+                            <a href="#" class="pub-link" target="_blank">
+                                <i class="fas fa-database"></i> Data
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="publication-item" data-category="submitted" onclick="window.open('publication-detail.html?id=4', '_blank')">
+                    <div class="publication-meta">
+                        <div class="publication-year">2024</div>
+                        <div class="publication-type">Journal Article</div>
+                        <span class="publication-status status-submitted">Under Review</span>
+                    </div>
+                    <div class="publication-content">
+                        <h3 class="publication-title">Sustainable Design Practices in Contemporary Visual Communication</h3>
+                        <div class="publication-authors">J. Island, K. Green, L. Eco</div>
+                        <div class="publication-journal">Journal of Sustainable Design (Under Review)</div>
+                        <p class="publication-abstract">
+                            This research explores sustainable design practices in visual communication, proposing frameworks 
+                            for environmentally conscious design decision-making.
+                        </p>
+                        <div class="publication-links">
+                            <a href="#" class="pub-link">
+                                <i class="fas fa-hourglass-half"></i> Under Review
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="publication-item" data-category="book" onclick="window.open('publication-detail.html?id=5', '_blank')">
+                    <div class="publication-meta">
+                        <div class="publication-year">2023</div>
+                        <div class="publication-type">Book Chapter</div>
+                        <span class="publication-status status-published">Published</span>
+                    </div>
+                    <div class="publication-content">
+                        <h3 class="publication-title">The Evolution of Typography in Digital Design</h3>
+                        <div class="publication-authors">J. Island</div>
+                        <div class="publication-journal">In: Handbook of Digital Design (pp. 245-268), Springer</div>
+                        <p class="publication-abstract">
+                            A comprehensive overview of typography evolution in digital design, from early web fonts to 
+                            contemporary variable typography systems.
+                        </p>
+                        <div class="publication-links">
+                            <a href="#" class="pub-link" target="_blank">
+                                <i class="fas fa-book"></i> Chapter
+                            </a>
+                            <a href="#" class="pub-link" target="_blank">
+                                <i class="fas fa-external-link-alt"></i> Book
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <p data-translate="footer.copyright">&copy; 2024 islandJQ  DESIGN  STUDIO. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 初始化语言管理器
+            window.languageManager.init();
+            
+            // 导航栏功能
+            const navToggle = document.getElementById('nav-toggle');
+            const navMenu = document.getElementById('nav-menu');
+            
+            navToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+                navToggle.classList.toggle('active');
+            });
+            
+            // 筛选功能
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const publicationItems = document.querySelectorAll('.publication-item');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const filter = this.getAttribute('data-filter');
+                    
+                    // 更新按钮状态
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // 筛选出版物
+                    publicationItems.forEach(item => {
+                        const category = item.getAttribute('data-category');
+                        
+                        if (filter === 'all' || category === filter) {
+                            item.style.display = 'grid';
+                            item.style.animation = 'fadeInUp 0.6s ease forwards';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
