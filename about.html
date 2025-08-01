@@ -13,270 +13,190 @@
         body {
             background: #ffffff;
             font-family: 'DIN Next LT Pro', sans-serif;
-            line-height: 1.6;
+            line-height: 1.5;
         }
         
         .about-wrapper {
             margin-top: 70px;
             min-height: 100vh;
+            padding: 40px 0;
         }
         
-        /* 主标题区域 */
-        .about-header {
-            padding: 60px 2rem 40px;
-            max-width: 1200px;
+        .about-container {
+            max-width: 800px;
             margin: 0 auto;
-            text-align: center;
-        }
-        
-        .about-title {
-            font-size: 2.5rem;
-            font-weight: 200;
-            letter-spacing: 3px;
-            margin-bottom: 1rem;
-            color: #000;
-        }
-        
-        .about-subtitle {
-            font-size: 1rem;
-            color: #666;
-            font-weight: 300;
-            letter-spacing: 1px;
+            padding: 0 2rem;
         }
         
         /* 负责人部分 */
         .director-section {
-            padding: 40px 2rem 60px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .director-content {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 60px;
-            align-items: start;
-        }
-        
-        .director-info {
-            position: sticky;
-            top: 100px;
+            margin-bottom: 60px;
         }
         
         .director-name {
-            font-size: 2rem;
-            font-weight: 300;
+            font-size: 1.8rem;
+            font-weight: 400;
             color: #000;
             margin-bottom: 0.5rem;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
         }
         
-        .director-title {
-            font-size: 1rem;
+        .director-position {
+            font-size: 1.1rem;
             color: #666;
             margin-bottom: 2rem;
             font-weight: 300;
         }
         
-        .director-image {
-            width: 100%;
-            aspect-ratio: 3/4;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.2rem;
-            font-weight: 300;
-            letter-spacing: 2px;
+        .director-info {
             margin-bottom: 2rem;
         }
         
-        .director-contact {
+        .info-section {
+            margin-bottom: 2rem;
+        }
+        
+        .info-section h3 {
+            font-size: 1rem;
+            font-weight: 400;
+            color: #000;
+            margin-bottom: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .info-content {
+            font-size: 0.95rem;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .info-content p {
+            margin-bottom: 1rem;
+        }
+        
+        .info-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .info-list li {
+            margin-bottom: 0.8rem;
+            font-size: 0.9rem;
+            color: #333;
+        }
+        
+        .year {
+            font-weight: 400;
+            color: #000;
+            margin-right: 1rem;
+            display: inline-block;
+            min-width: 80px;
+        }
+        
+        .contact-info {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        .contact-info p {
             font-size: 0.9rem;
             color: #666;
-            line-height: 1.8;
+            margin-bottom: 0.5rem;
         }
         
-        .director-contact a {
+        .contact-info a {
             color: #000;
             text-decoration: none;
         }
         
-        .director-contact a:hover {
+        .contact-info a:hover {
             text-decoration: underline;
         }
         
-        .director-details {
-            padding-left: 40px;
+        /* 团队部分 */
+        .team-section {
+            border-top: 1px solid #e0e0e0;
+            padding-top: 40px;
         }
         
-        .detail-section {
-            margin-bottom: 3rem;
-        }
-        
-        .detail-section h3 {
-            font-size: 1.1rem;
+        .team-title {
+            font-size: 1.4rem;
             font-weight: 400;
             color: #000;
-            margin-bottom: 1rem;
+            margin-bottom: 2rem;
             letter-spacing: 0.5px;
         }
         
-        .detail-content {
-            font-size: 0.95rem;
-            color: #666;
-            line-height: 1.7;
-        }
-        
-        .detail-content p {
-            margin-bottom: 1rem;
-        }
-        
-        .education-item,
-        .award-item {
-            margin-bottom: 1rem;
-            padding-bottom: 1rem;
+        .team-member {
+            margin-bottom: 2.5rem;
+            padding-bottom: 2rem;
             border-bottom: 1px solid #f0f0f0;
         }
         
-        .education-item:last-child,
-        .award-item:last-child {
+        .team-member:last-child {
             border-bottom: none;
             margin-bottom: 0;
             padding-bottom: 0;
         }
         
-        .year {
-            font-size: 0.85rem;
-            color: #999;
-            margin-bottom: 0.3rem;
-        }
-        
-        .institution,
-        .award-name {
-            font-weight: 400;
-            color: #000;
-            margin-bottom: 0.2rem;
-        }
-        
-        .degree,
-        .award-org {
-            font-size: 0.9rem;
-            color: #666;
-        }
-        
-        /* 团队部分 */
-        .team-section {
-            padding: 60px 2rem;
-            background: #fafafa;
-        }
-        
-        .team-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .team-title {
-            font-size: 1.8rem;
-            font-weight: 300;
-            color: #000;
-            margin-bottom: 3rem;
-            text-align: center;
-            letter-spacing: 2px;
-        }
-        
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-        }
-        
-        .team-member {
-            background: white;
-            padding: 2rem;
-            border: 1px solid #e0e0e0;
-        }
-        
         .member-name {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             font-weight: 400;
             color: #000;
-            margin-bottom: 0.5rem;
-            letter-spacing: 0.5px;
+            margin-bottom: 0.3rem;
+            letter-spacing: 0.3px;
         }
         
-        .member-role {
+        .member-position {
             font-size: 0.95rem;
             color: #666;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
             font-weight: 300;
         }
         
-        .member-details {
+        .member-info {
             font-size: 0.9rem;
-            color: #666;
-            line-height: 1.6;
+            color: #333;
+            line-height: 1.5;
         }
         
-        .member-details .detail-item {
-            margin-bottom: 0.8rem;
+        .member-info p {
+            margin-bottom: 0.5rem;
         }
         
-        .member-details .label {
+        .label {
             font-weight: 400;
             color: #000;
             margin-right: 0.5rem;
+            display: inline-block;
+            min-width: 80px;
         }
         
         /* 响应式设计 */
         @media (max-width: 768px) {
-            .about-title {
-                font-size: 2rem;
-                letter-spacing: 2px;
+            .about-container {
+                padding: 0 1rem;
             }
             
-            .director-content {
-                grid-template-columns: 1fr;
-                gap: 40px;
+            .director-name {
+                font-size: 1.5rem;
             }
             
-            .director-info {
-                position: static;
-                text-align: center;
-            }
-            
-            .director-details {
-                padding-left: 0;
-            }
-            
-            .team-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            
-            .team-member {
-                padding: 1.5rem;
+            .about-wrapper {
+                padding: 20px 0;
             }
         }
         
         @media (max-width: 480px) {
-            .about-header {
-                padding: 40px 1rem 30px;
-            }
-            
-            .director-section,
-            .team-section {
-                padding-left: 1rem;
-                padding-right: 1rem;
-            }
-            
-            .about-title {
-                font-size: 1.8rem;
-            }
-            
             .director-name {
-                font-size: 1.6rem;
+                font-size: 1.3rem;
+            }
+            
+            .label {
+                min-width: 70px;
+                font-size: 0.85rem;
             }
         }
         
@@ -290,7 +210,6 @@
         .fade-in:nth-child(1) { animation-delay: 0.1s; }
         .fade-in:nth-child(2) { animation-delay: 0.2s; }
         .fade-in:nth-child(3) { animation-delay: 0.3s; }
-        .fade-in:nth-child(4) { animation-delay: 0.4s; }
         
         @keyframes fadeInUp {
             to {
@@ -325,153 +244,93 @@
 
     <!-- About页面主体 -->
     <div class="about-wrapper">
-        <!-- 页面标题 -->
-        <header class="about-header">
-            <h1 class="about-title fade-in" data-translate="about.title">About</h1>
-            <p class="about-subtitle fade-in" data-translate="about.subtitle">专注简约现代设计的创意工作室</p>
-        </header>
-
-        <!-- 负责人介绍 -->
-        <section class="director-section">
-            <div class="director-content">
-                <div class="director-info fade-in">
-                    <h2 class="director-name" data-translate="director.name">islandJQ</h2>
-                    <p class="director-title" data-translate="director.title">Founder & Creative Director</p>
-                    
-                    <div class="director-image">
-                        <span>DIRECTOR PORTRAIT</span>
-                    </div>
-                    
-                    <div class="director-contact">
-                        <p><strong>Email:</strong><br>
-                        <a href="mailto:island.jqstudio@gmail.com">island.jqstudio@gmail.com</a></p>
-                        <p><strong>Location:</strong><br>
-                        Based in China</p>
-                    </div>
-                </div>
+        <div class="about-container">
+            
+            <!-- 负责人介绍 -->
+            <section class="director-section fade-in">
+                <h1 class="director-name" data-translate="director.name">islandJQ</h1>
+                <p class="director-position" data-translate="director.position">Founder & Creative Director, islandJQ STUDIO</p>
                 
-                <div class="director-details fade-in">
-                    <div class="detail-section">
+                <div class="director-info">
+                    <div class="info-section">
                         <h3 data-translate="director.background">Background</h3>
-                        <div class="detail-content">
-                            <p data-translate="director.background.text1">
-                                我是一名专注于简约现代设计的创意工作者，致力于为客户提供专业的视觉解决方案。擅长平面设计和综合设计，追求简洁而富有表现力的设计语言。
-                            </p>
-                            <p data-translate="director.background.text2">
-                                在设计实践中，我始终坚持"少即是多"的设计理念，通过精炼的视觉元素传达深层的品牌内涵，让每一个作品都能传达出独特的视觉魅力。
+                        <div class="info-content">
+                            <p data-translate="director.background.text">
+                                专注于简约现代设计的创意工作者，致力于为客户提供专业的视觉解决方案。擅长平面设计和综合设计，追求简洁而富有表现力的设计语言。在设计实践中始终坚持"少即是多"的设计理念，通过精炼的视觉元素传达深层的品牌内涵。
                             </p>
                         </div>
                     </div>
                     
-                    <div class="detail-section">
+                    <div class="info-section">
                         <h3 data-translate="director.education">Education</h3>
-                        <div class="detail-content">
-                            <div class="education-item">
-                                <div class="year">2019-2021</div>
-                                <div class="institution" data-translate="director.education.master.school">Master of Fine Arts in Visual Communication</div>
-                                <div class="degree" data-translate="director.education.master.degree">Design Academy</div>
-                            </div>
-                            <div class="education-item">
-                                <div class="year">2015-2019</div>
-                                <div class="institution" data-translate="director.education.bachelor.school">Bachelor of Arts in Graphic Design</div>
-                                <div class="degree" data-translate="director.education.bachelor.degree">Art Institute</div>
-                            </div>
+                        <div class="info-content">
+                            <ul class="info-list">
+                                <li><span class="year">2019-2021</span>Master of Fine Arts in Visual Communication, Design Academy</li>
+                                <li><span class="year">2015-2019</span>Bachelor of Arts in Graphic Design, Art Institute</li>
+                            </ul>
                         </div>
                     </div>
                     
-                    <div class="detail-section">
+                    <div class="info-section">
                         <h3 data-translate="director.experience">Professional Experience</h3>
-                        <div class="detail-content">
-                            <div class="education-item">
-                                <div class="year">2024 - Present</div>
-                                <div class="institution">islandJQ STUDIO</div>
-                                <div class="degree" data-translate="director.experience.current">Founder & Creative Director - 创立个人设计工作室，专注于品牌设计、包装设计和数字设计领域</div>
-                            </div>
-                            <div class="education-item">
-                                <div class="year">2022 - 2024</div>
-                                <div class="institution" data-translate="director.experience.previous.company">Leading Design Agency</div>
-                                <div class="degree" data-translate="director.experience.previous.role">Senior Graphic Designer - 参与多个大型品牌项目的设计与执行</div>
-                            </div>
+                        <div class="info-content">
+                            <ul class="info-list">
+                                <li><span class="year">2024-Present</span>Founder & Creative Director, islandJQ STUDIO</li>
+                                <li><span class="year">2022-2024</span>Senior Graphic Designer, Leading Design Agency</li>
+                                <li><span class="year">2020-2022</span>Visual Designer, Creative Studio</li>
+                            </ul>
                         </div>
                     </div>
                     
-                    <div class="detail-section">
+                    <div class="info-section">
                         <h3 data-translate="director.specialization">Specialization</h3>
-                        <div class="detail-content">
-                            <p data-translate="director.specialization.text">
-                                Brand Identity Design, Print Design, Digital Design, Packaging Design, Typography, UI/UX Design
-                            </p>
+                        <div class="info-content">
+                            <p>Brand Identity Design, Print Design, Digital Design, Packaging Design, Typography, UI/UX Design</p>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <!-- 团队介绍 -->
-        <section class="team-section">
-            <div class="team-container">
-                <h2 class="team-title fade-in" data-translate="team.title">Team</h2>
                 
-                <div class="team-grid">
-                    <div class="team-member fade-in">
-                        <h3 class="member-name" data-translate="team.member1.name">李设计师</h3>
-                        <p class="member-role" data-translate="team.member1.role">Senior Visual Designer</p>
-                        <div class="member-details">
-                            <div class="detail-item">
-                                <span class="label" data-translate="team.education">Education:</span>
-                                <span data-translate="team.member1.education">美术学院视觉传达专业</span>
-                            </div>
-                            <div class="detail-item">
-                                <span class="label" data-translate="team.joined">Joined:</span>
-                                <span>2024</span>
-                            </div>
-                            <div class="detail-item">
-                                <span class="label" data-translate="team.specialization">Specialization:</span>
-                                <span data-translate="team.member1.spec">Brand Identity, Print Design</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="team-member fade-in">
-                        <h3 class="member-name" data-translate="team.member2.name">王设计师</h3>
-                        <p class="member-role" data-translate="team.member2.role">Digital Designer</p>
-                        <div class="member-details">
-                            <div class="detail-item">
-                                <span class="label" data-translate="team.education">Education:</span>
-                                <span data-translate="team.member2.education">交互设计专业</span>
-                            </div>
-                            <div class="detail-item">
-                                <span class="label" data-translate="team.joined">Joined:</span>
-                                <span>2024</span>
-                            </div>
-                            <div class="detail-item">
-                                <span class="label" data-translate="team.specialization">Specialization:</span>
-                                <span data-translate="team.member2.spec">UI/UX Design, Web Design</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="team-member fade-in">
-                        <h3 class="member-name" data-translate="team.member3.name">张策划师</h3>
-                        <p class="member-role" data-translate="team.member3.role">Creative Strategist</p>
-                        <div class="member-details">
-                            <div class="detail-item">
-                                <span class="label" data-translate="team.education">Education:</span>
-                                <span data-translate="team.member3.education">市场营销与传播学</span>
-                            </div>
-                            <div class="detail-item">
-                                <span class="label" data-translate="team.joined">Joined:</span>
-                                <span>2024</span>
-                            </div>
-                            <div class="detail-item">
-                                <span class="label" data-translate="team.specialization">Specialization:</span>
-                                <span data-translate="team.member3.spec">Brand Strategy, Content Planning</span>
-                            </div>
-                        </div>
+                <div class="contact-info">
+                    <p><strong>Email:</strong> <a href="mailto:island.jqstudio@gmail.com">island.jqstudio@gmail.com</a></p>
+                    <p><strong>Location:</strong> Based in China</p>
+                </div>
+            </section>
+
+            <!-- 团队介绍 -->
+            <section class="team-section fade-in">
+                <h2 class="team-title" data-translate="team.title">Team Members</h2>
+                
+                <div class="team-member">
+                    <h3 class="member-name" data-translate="team.member1.name">李设计师</h3>
+                    <p class="member-position" data-translate="team.member1.position">Senior Visual Designer</p>
+                    <div class="member-info">
+                        <p><span class="label">Education:</span>美术学院视觉传达专业</p>
+                        <p><span class="label">Joined:</span>2024</p>
+                        <p><span class="label">Focus:</span>Brand Identity, Print Design</p>
                     </div>
                 </div>
-            </div>
-        </section>
+                
+                <div class="team-member">
+                    <h3 class="member-name" data-translate="team.member2.name">王设计师</h3>
+                    <p class="member-position" data-translate="team.member2.position">Digital Designer</p>
+                    <div class="member-info">
+                        <p><span class="label">Education:</span>交互设计专业</p>
+                        <p><span class="label">Joined:</span>2024</p>
+                        <p><span class="label">Focus:</span>UI/UX Design, Web Design</p>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <h3 class="member-name" data-translate="team.member3.name">张策划师</h3>
+                    <p class="member-position" data-translate="team.member3.position">Creative Strategist</p>
+                    <div class="member-info">
+                        <p><span class="label">Education:</span>市场营销与传播学</p>
+                        <p><span class="label">Joined:</span>2024</p>
+                        <p><span class="label">Focus:</span>Brand Strategy, Content Planning</p>
+                    </div>
+                </div>
+            </section>
+        </div>
     </div>
 
     <!-- 页脚 -->
