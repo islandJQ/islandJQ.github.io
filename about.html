@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="About - islandJQ设计师介绍">
+    <meta name="description" content="About - islandJQ设计工作室团队介绍">
     <title>About - islandJQ STUDIO</title>
     <link rel="stylesheet" href="style.css?v=2025080122">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
@@ -13,285 +13,284 @@
         body {
             background: #ffffff;
             font-family: 'DIN Next LT Pro', sans-serif;
+            line-height: 1.6;
         }
         
-        .me-wrapper {
+        .about-wrapper {
             margin-top: 70px;
             min-height: 100vh;
         }
         
-        .me-hero {
-            display: flex;
-            align-items: center;
-            min-height: 70vh;
-            padding: 60px 20px;
+        /* 主标题区域 */
+        .about-header {
+            padding: 60px 2rem 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .about-title {
+            font-size: 2.5rem;
+            font-weight: 200;
+            letter-spacing: 3px;
+            margin-bottom: 1rem;
+            color: #000;
+        }
+        
+        .about-subtitle {
+            font-size: 1rem;
+            color: #666;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+        
+        /* 负责人部分 */
+        .director-section {
+            padding: 40px 2rem 60px;
             max-width: 1200px;
             margin: 0 auto;
         }
         
-        .me-content {
+        .director-content {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: center;
-            width: 100%;
+            grid-template-columns: 1fr 2fr;
+            gap: 60px;
+            align-items: start;
         }
         
-        .me-text {
-            max-width: 500px;
+        .director-info {
+            position: sticky;
+            top: 100px;
         }
         
-        .me-title {
-            font-size: 3rem;
-            font-weight: 200;
-            letter-spacing: 3px;
-            margin-bottom: 2rem;
+        .director-name {
+            font-size: 2rem;
+            font-weight: 300;
             color: #000;
+            margin-bottom: 0.5rem;
+            letter-spacing: 1px;
         }
         
-        .me-description {
-            font-size: 1.2rem;
+        .director-title {
+            font-size: 1rem;
             color: #666;
-            line-height: 1.8;
             margin-bottom: 2rem;
             font-weight: 300;
         }
         
-        .me-description:last-of-type {
-            margin-bottom: 3rem;
-        }
-        
-        .me-image {
-            position: relative;
+        .director-image {
+            width: 100%;
             aspect-ratio: 3/4;
-            overflow: hidden;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             font-weight: 300;
             letter-spacing: 2px;
+            margin-bottom: 2rem;
         }
         
-        .me-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        .director-contact {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.8;
         }
         
-        .skills-section {
-            padding: 80px 20px;
-            background: #f8f8f8;
+        .director-contact a {
+            color: #000;
+            text-decoration: none;
         }
         
-        .skills-container {
+        .director-contact a:hover {
+            text-decoration: underline;
+        }
+        
+        .director-details {
+            padding-left: 40px;
+        }
+        
+        .detail-section {
+            margin-bottom: 3rem;
+        }
+        
+        .detail-section h3 {
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: #000;
+            margin-bottom: 1rem;
+            letter-spacing: 0.5px;
+        }
+        
+        .detail-content {
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.7;
+        }
+        
+        .detail-content p {
+            margin-bottom: 1rem;
+        }
+        
+        .education-item,
+        .award-item {
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .education-item:last-child,
+        .award-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .year {
+            font-size: 0.85rem;
+            color: #999;
+            margin-bottom: 0.3rem;
+        }
+        
+        .institution,
+        .award-name {
+            font-weight: 400;
+            color: #000;
+            margin-bottom: 0.2rem;
+        }
+        
+        .degree,
+        .award-org {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        /* 团队部分 */
+        .team-section {
+            padding: 60px 2rem;
+            background: #fafafa;
+        }
+        
+        .team-container {
             max-width: 1200px;
             margin: 0 auto;
         }
         
-        .skills-title {
-            font-size: 2rem;
+        .team-title {
+            font-size: 1.8rem;
             font-weight: 300;
+            color: #000;
             margin-bottom: 3rem;
             text-align: center;
-            color: #000;
             letter-spacing: 2px;
         }
         
-        .skills-grid {
+        .team-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 60px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
         }
         
-        .skill-category {
-            text-align: center;
-        }
-        
-        .skill-category h3 {
-            font-size: 1.3rem;
-            font-weight: 400;
-            margin-bottom: 2rem;
-            color: #000;
-            letter-spacing: 1px;
-        }
-        
-        .skill-tags {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-        }
-        
-        .skill-tag {
-            display: inline-block;
-            padding: 10px 20px;
+        .team-member {
             background: white;
-            color: #333;
-            font-size: 0.9rem;
-            border-radius: 25px;
-            transition: all 0.3s ease;
+            padding: 2rem;
             border: 1px solid #e0e0e0;
         }
         
-        .skill-tag:hover {
-            background: #000;
-            color: white;
-            transform: translateY(-2px);
-        }
-        
-        .experience-section {
-            padding: 80px 20px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        
-        .experience-title {
-            font-size: 2rem;
-            font-weight: 300;
-            margin-bottom: 3rem;
-            text-align: center;
-            color: #000;
-            letter-spacing: 2px;
-        }
-        
-        .experience-timeline {
-            position: relative;
-            padding-left: 40px;
-        }
-        
-        .timeline-line {
-            position: absolute;
-            left: 15px;
-            top: 0;
-            bottom: 0;
-            width: 1px;
-            background: #e0e0e0;
-        }
-        
-        .experience-item {
-            position: relative;
-            margin-bottom: 50px;
-            padding-left: 40px;
-        }
-        
-        .experience-item:before {
-            content: '';
-            position: absolute;
-            left: -32px;
-            top: 8px;
-            width: 10px;
-            height: 10px;
-            background: #000;
-            border-radius: 50%;
-        }
-        
-        .experience-year {
-            font-size: 0.9rem;
-            color: #999;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 10px;
-        }
-        
-        .experience-role {
-            font-size: 1.4rem;
+        .member-name {
+            font-size: 1.3rem;
             font-weight: 400;
             color: #000;
-            margin-bottom: 8px;
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.5px;
         }
         
-        .experience-company {
-            font-size: 1rem;
+        .member-role {
+            font-size: 0.95rem;
             color: #666;
-            margin-bottom: 15px;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
         }
         
-        .experience-description {
-            font-size: 1rem;
+        .member-details {
+            font-size: 0.9rem;
             color: #666;
             line-height: 1.6;
         }
         
-        .philosophy-section {
-            padding: 80px 20px;
-            background: #000;
-            color: white;
-            text-align: center;
+        .member-details .detail-item {
+            margin-bottom: 0.8rem;
         }
         
-        .philosophy-container {
-            max-width: 800px;
-            margin: 0 auto;
+        .member-details .label {
+            font-weight: 400;
+            color: #000;
+            margin-right: 0.5rem;
         }
         
-        .philosophy-quote {
-            font-size: 2rem;
-            font-weight: 200;
-            line-height: 1.4;
-            margin-bottom: 2rem;
-            letter-spacing: 1px;
-        }
-        
-        .philosophy-author {
-            font-size: 1rem;
-            color: #ccc;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-        
+        /* 响应式设计 */
         @media (max-width: 768px) {
-            .me-content {
-                grid-template-columns: 1fr;
-                gap: 40px;
-                text-align: center;
-            }
-            
-            .me-title {
-                font-size: 2.5rem;
-            }
-            
-            .me-description {
-                font-size: 1.1rem;
-            }
-            
-            .skills-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-            
-            .philosophy-quote {
-                font-size: 1.6rem;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .me-title {
+            .about-title {
                 font-size: 2rem;
                 letter-spacing: 2px;
             }
             
-            .me-hero {
-                padding: 40px 20px;
+            .director-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
             }
             
-            .philosophy-quote {
-                font-size: 1.4rem;
+            .director-info {
+                position: static;
+                text-align: center;
+            }
+            
+            .director-details {
+                padding-left: 0;
+            }
+            
+            .team-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .team-member {
+                padding: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .about-header {
+                padding: 40px 1rem 30px;
+            }
+            
+            .director-section,
+            .team-section {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            
+            .about-title {
+                font-size: 1.8rem;
+            }
+            
+            .director-name {
+                font-size: 1.6rem;
             }
         }
         
         /* 动画效果 */
         .fade-in {
             opacity: 0;
-            transform: translateY(30px);
-            animation: fadeInUp 0.8s ease forwards;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s ease forwards;
         }
         
         .fade-in:nth-child(1) { animation-delay: 0.1s; }
-        .fade-in:nth-child(2) { animation-delay: 0.3s; }
-        .fade-in:nth-child(3) { animation-delay: 0.5s; }
+        .fade-in:nth-child(2) { animation-delay: 0.2s; }
+        .fade-in:nth-child(3) { animation-delay: 0.3s; }
+        .fade-in:nth-child(4) { animation-delay: 0.4s; }
         
         @keyframes fadeInUp {
             to {
@@ -324,108 +323,153 @@
         </div>
     </nav>
 
-    <!-- About Me 页面主体 -->
-    <div class="me-wrapper">
-        <!-- 主要介绍区域 -->
-        <section class="me-hero">
-            <div class="me-content">
-                <div class="me-text">
-                    <h1 class="me-title fade-in" data-translate="me.title">About Me</h1>
-                    <p class="me-description fade-in" data-translate="me.description1">
-                        我是一名专注于简约现代设计的创意工作者，致力于为客户提供专业的视觉解决方案。
-                    </p>
-                    <p class="me-description fade-in" data-translate="me.description2">
-                        擅长平面设计和综合设计，追求简洁而富有表现力的设计语言，让每一个作品都能传达出独特的视觉魅力。
-                    </p>
+    <!-- About页面主体 -->
+    <div class="about-wrapper">
+        <!-- 页面标题 -->
+        <header class="about-header">
+            <h1 class="about-title fade-in" data-translate="about.title">About</h1>
+            <p class="about-subtitle fade-in" data-translate="about.subtitle">专注简约现代设计的创意工作室</p>
+        </header>
+
+        <!-- 负责人介绍 -->
+        <section class="director-section">
+            <div class="director-content">
+                <div class="director-info fade-in">
+                    <h2 class="director-name" data-translate="director.name">islandJQ</h2>
+                    <p class="director-title" data-translate="director.title">Founder & Creative Director</p>
+                    
+                    <div class="director-image">
+                        <span>DIRECTOR PORTRAIT</span>
+                    </div>
+                    
+                    <div class="director-contact">
+                        <p><strong>Email:</strong><br>
+                        <a href="mailto:island.jqstudio@gmail.com">island.jqstudio@gmail.com</a></p>
+                        <p><strong>Location:</strong><br>
+                        Based in China</p>
+                    </div>
                 </div>
-                <div class="me-image fade-in">
-                    <span>DESIGNER PORTRAIT</span>
+                
+                <div class="director-details fade-in">
+                    <div class="detail-section">
+                        <h3 data-translate="director.background">Background</h3>
+                        <div class="detail-content">
+                            <p data-translate="director.background.text1">
+                                我是一名专注于简约现代设计的创意工作者，致力于为客户提供专业的视觉解决方案。擅长平面设计和综合设计，追求简洁而富有表现力的设计语言。
+                            </p>
+                            <p data-translate="director.background.text2">
+                                在设计实践中，我始终坚持"少即是多"的设计理念，通过精炼的视觉元素传达深层的品牌内涵，让每一个作品都能传达出独特的视觉魅力。
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h3 data-translate="director.education">Education</h3>
+                        <div class="detail-content">
+                            <div class="education-item">
+                                <div class="year">2019-2021</div>
+                                <div class="institution" data-translate="director.education.master.school">Master of Fine Arts in Visual Communication</div>
+                                <div class="degree" data-translate="director.education.master.degree">Design Academy</div>
+                            </div>
+                            <div class="education-item">
+                                <div class="year">2015-2019</div>
+                                <div class="institution" data-translate="director.education.bachelor.school">Bachelor of Arts in Graphic Design</div>
+                                <div class="degree" data-translate="director.education.bachelor.degree">Art Institute</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h3 data-translate="director.experience">Professional Experience</h3>
+                        <div class="detail-content">
+                            <div class="education-item">
+                                <div class="year">2024 - Present</div>
+                                <div class="institution">islandJQ STUDIO</div>
+                                <div class="degree" data-translate="director.experience.current">Founder & Creative Director - 创立个人设计工作室，专注于品牌设计、包装设计和数字设计领域</div>
+                            </div>
+                            <div class="education-item">
+                                <div class="year">2022 - 2024</div>
+                                <div class="institution" data-translate="director.experience.previous.company">Leading Design Agency</div>
+                                <div class="degree" data-translate="director.experience.previous.role">Senior Graphic Designer - 参与多个大型品牌项目的设计与执行</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h3 data-translate="director.specialization">Specialization</h3>
+                        <div class="detail-content">
+                            <p data-translate="director.specialization.text">
+                                Brand Identity Design, Print Design, Digital Design, Packaging Design, Typography, UI/UX Design
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- 技能展示区域 -->
-        <section class="skills-section">
-            <div class="skills-container">
-                <h2 class="skills-title fade-in" data-translate="me.skills">专业技能</h2>
-                <div class="skills-grid">
-                    <div class="skill-category fade-in">
-                        <h3 data-translate="me.skills.design">Design</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Brand Identity</span>
-                            <span class="skill-tag">Print Design</span>
-                            <span class="skill-tag">Digital Design</span>
-                            <span class="skill-tag">Illustration</span>
-                            <span class="skill-tag">Packaging</span>
-                            <span class="skill-tag">Typography</span>
+        <!-- 团队介绍 -->
+        <section class="team-section">
+            <div class="team-container">
+                <h2 class="team-title fade-in" data-translate="team.title">Team</h2>
+                
+                <div class="team-grid">
+                    <div class="team-member fade-in">
+                        <h3 class="member-name" data-translate="team.member1.name">李设计师</h3>
+                        <p class="member-role" data-translate="team.member1.role">Senior Visual Designer</p>
+                        <div class="member-details">
+                            <div class="detail-item">
+                                <span class="label" data-translate="team.education">Education:</span>
+                                <span data-translate="team.member1.education">美术学院视觉传达专业</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="label" data-translate="team.joined">Joined:</span>
+                                <span>2024</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="label" data-translate="team.specialization">Specialization:</span>
+                                <span data-translate="team.member1.spec">Brand Identity, Print Design</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="skill-category fade-in">
-                        <h3 data-translate="me.skills.tools">Tools</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Adobe Creative Suite</span>
-                            <span class="skill-tag">Figma</span>
-                            <span class="skill-tag">Sketch</span>
-                            <span class="skill-tag">Principle</span>
-                            <span class="skill-tag">Cinema 4D</span>
+                    
+                    <div class="team-member fade-in">
+                        <h3 class="member-name" data-translate="team.member2.name">王设计师</h3>
+                        <p class="member-role" data-translate="team.member2.role">Digital Designer</p>
+                        <div class="member-details">
+                            <div class="detail-item">
+                                <span class="label" data-translate="team.education">Education:</span>
+                                <span data-translate="team.member2.education">交互设计专业</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="label" data-translate="team.joined">Joined:</span>
+                                <span>2024</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="label" data-translate="team.specialization">Specialization:</span>
+                                <span data-translate="team.member2.spec">UI/UX Design, Web Design</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="skill-category fade-in">
-                        <h3 data-translate="me.skills.development">Development</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">HTML/CSS</span>
-                            <span class="skill-tag">JavaScript</span>
-                            <span class="skill-tag">Web Design</span>
-                            <span class="skill-tag">Responsive Design</span>
-                            <span class="skill-tag">UI/UX</span>
+                    
+                    <div class="team-member fade-in">
+                        <h3 class="member-name" data-translate="team.member3.name">张策划师</h3>
+                        <p class="member-role" data-translate="team.member3.role">Creative Strategist</p>
+                        <div class="member-details">
+                            <div class="detail-item">
+                                <span class="label" data-translate="team.education">Education:</span>
+                                <span data-translate="team.member3.education">市场营销与传播学</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="label" data-translate="team.joined">Joined:</span>
+                                <span>2024</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="label" data-translate="team.specialization">Specialization:</span>
+                                <span data-translate="team.member3.spec">Brand Strategy, Content Planning</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <!-- 经验时间线 -->
-        <section class="experience-section">
-            <h2 class="experience-title fade-in" data-translate="me.experience">Experience</h2>
-            <div class="experience-timeline">
-                <div class="timeline-line"></div>
-                
-                <div class="experience-item fade-in">
-                    <div class="experience-year">2024 - Present</div>
-                    <h3 class="experience-role" data-translate="me.experience.current.role">Founder & Creative Director</h3>
-                    <div class="experience-company">islandJQ STUDIO</div>
-                    <p class="experience-description" data-translate="me.experience.current.description">
-                        创立个人设计工作室，专注于品牌设计、包装设计和数字设计领域。为各类客户提供从概念到实现的完整设计解决方案。
-                    </p>
-                </div>
-                
-                <div class="experience-item fade-in">
-                    <div class="experience-year">2022 - 2024</div>
-                    <h3 class="experience-role" data-translate="me.experience.previous.role">Senior Graphic Designer</h3>
-                    <div class="experience-company" data-translate="me.experience.previous.company">Leading Design Agency</div>
-                    <p class="experience-description" data-translate="me.experience.previous.description">
-                        在知名设计公司担任高级平面设计师，参与多个大型品牌项目的设计与执行，积累了丰富的商业设计经验。
-                    </p>
-                </div>
-                
-                <div class="experience-item fade-in">
-                    <div class="experience-year">2020 - 2022</div>
-                    <h3 class="experience-role" data-translate="me.experience.early.role">Visual Designer</h3>
-                    <div class="experience-company" data-translate="me.experience.early.company">Creative Studio</div>
-                    <p class="experience-description" data-translate="me.experience.early.description">
-                        专注于视觉设计和品牌形象的创建，为初创公司和中小企业提供专业的设计服务，建立了扎实的设计基础。
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- 设计理念 -->
-        <section class="philosophy-section">
-            <div class="philosophy-container">
-                <blockquote class="philosophy-quote fade-in" data-translate="me.philosophy.quote">
-                    "简约不是减少，而是去除多余。<br>好的设计应该是不言而喻的。"
-                </blockquote>
-                <cite class="philosophy-author fade-in">— islandJQ</cite>
             </div>
         </section>
     </div>

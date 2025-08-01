@@ -4,7 +4,7 @@ const translations = {
         // 导航
         'nav.works': 'Works',
         'nav.academic': 'Publications',
-        'nav.me': 'Me',
+        'nav.about': 'About',
         'nav.news': 'News',
         'nav.contact': 'Contact',
         'nav.lang': 'EN',
@@ -105,7 +105,7 @@ const translations = {
         // 导航
         'nav.works': 'Works',
         'nav.academic': 'Publications',
-        'nav.me': 'Me',
+        'nav.about': 'About',
         'nav.news': 'News',
         'nav.contact': 'Contact',
         'nav.lang': '中',
