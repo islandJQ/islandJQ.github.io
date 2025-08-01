@@ -79,6 +79,9 @@ body {
     transition: color 0.2s ease;
     position: relative;
     letter-spacing: 0.5px;
+    line-height: 1.2;
+    display: inline-block;
+    vertical-align: baseline;
 }
 
 .nav-link:hover {
@@ -104,13 +107,15 @@ body {
 .lang-switch {
     background: var(--primary-color);
     color: white !important;
-    padding: 6px 14px;
+    padding: 4px 12px;
     border-radius: 2px;
     font-size: 0.9rem;
     font-weight: 300;
     font-family: 'DIN Next LT Pro', sans-serif;
     transition: all 0.2s ease;
-    line-height: normal;
+    line-height: 1.2;
+    vertical-align: baseline;
+    display: inline-block;
 }
 
 .lang-switch:hover {
