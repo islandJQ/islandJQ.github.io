@@ -30,9 +30,9 @@ body {
 }
 
 .container {
-    max-width: 1600px;
+    max-width: 100%;
     margin: 0 auto;
-    padding: 0 4rem;
+    padding: 0 2rem;
 }
 
 /* 导航栏 */
@@ -47,9 +47,9 @@ body {
 }
 
 .nav-container {
-    max-width: 1600px;
+    max-width: 100%;
     margin: 0 auto;
-    padding: 0 4rem;
+    padding: 0 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -152,10 +152,10 @@ body {
 .hero-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 6rem;
+    gap: 4rem;
     align-items: center;
-    max-width: 1600px;
-    padding: 0 4rem;
+    max-width: 100%;
+    padding: 0 2rem;
     position: relative;
     z-index: 2;
 }
@@ -326,7 +326,7 @@ section {
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 3rem;
     margin-top: 3rem;
-    max-width: 1600px;
+    max-width: 100%;
     margin-left: auto;
     margin-right: auto;
 }
