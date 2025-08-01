@@ -106,27 +106,41 @@ body {
 }
 
 .lang-switch {
-    background: var(--primary-color);
-    color: white !important;
-    padding: 6px 12px;
-    border-radius: 2px;
+    background: transparent;
+    color: var(--text-secondary);
+    padding: 0;
+    border-radius: 0;
     font-size: 0.9rem;
     font-weight: 300;
     font-family: 'DIN Next LT Pro', sans-serif;
-    transition: all 0.2s ease;
+    transition: color 0.2s ease;
     line-height: 1.4;
     vertical-align: middle;
     display: inline-block;
-    height: auto;
     min-height: 20px;
+    text-decoration: none;
+    position: relative;
+    letter-spacing: 0.5px;
 }
 
 .lang-switch:hover {
-    background: var(--secondary-color);
+    color: var(--text-primary);
 }
 
 .lang-switch::after {
-    display: none;
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    width: 0;
+    height: 1px;
+    background: var(--text-primary);
+    transition: all 0.2s ease;
+    transform: translateX(-50%);
+}
+
+.lang-switch:hover::after {
+    width: 100%;
 }
 
 .nav-toggle {
