@@ -1,5 +1,5 @@
 // Enhanced Service Worker with advanced caching strategies
-const CACHE_VERSION = 'v2.0.0';
+const CACHE_VERSION = 'v2.0.1';
 const CACHE_NAME = `islandJQ-${CACHE_VERSION}`;
 const IMAGE_CACHE = `islandJQ-images-${CACHE_VERSION}`;
 const FONT_CACHE = `islandJQ-fonts-${CACHE_VERSION}`;
