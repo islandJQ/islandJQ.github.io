@@ -252,6 +252,70 @@
             background: #07c160;
             border-color: #07c160;
         }
+
+        /* 微信弹窗样式 */
+        .wechat-modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+
+        .wechat-modal-content {
+            background-color: #fff;
+            margin: 10% auto;
+            padding: 30px;
+            border-radius: 15px;
+            width: 350px;
+            max-width: 90%;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+        }
+
+        .wechat-close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: -10px;
+        }
+
+        .wechat-close:hover,
+        .wechat-close:focus {
+            color: #000;
+        }
+
+        .wechat-qr img {
+            width: 200px;
+            height: 200px;
+            margin: 20px 0;
+        }
+
+        .wechat-id {
+            font-size: 1.1rem;
+            margin: 15px 0;
+            color: #333;
+        }
+
+        .copy-btn {
+            background: #07c160;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s ease;
+        }
+
+        .copy-btn:hover {
+            background: #059a4f;
+        }
         
         @media (max-width: 768px) {
             .contact-title {
@@ -347,7 +411,7 @@
         <a href="https://www.behance.net/mianquan" class="contact-floating-icon behance" target="_blank" title="Behance">
             <i class="fab fa-behance"></i>
         </a>
-        <a href="#" class="contact-floating-icon wechat" title="WeChat: Yinghuochong_Q">
+        <a href="#" class="contact-floating-icon wechat" title="WeChat" onclick="openWeChatModal()">
             <i class="fab fa-weixin"></i>
         </a>
     </div>
@@ -392,6 +456,19 @@
                 <p data-translate="contact.studio.description">专注简约现代设计的创意工作室</p>
                 <p data-translate="contact.studio.location">Based in China</p>
             </div>
+        </div>
+    </div>
+
+    <!-- 微信弹窗 -->
+    <div id="wechat-modal" class="wechat-modal">
+        <div class="wechat-modal-content">
+            <span class="wechat-close" onclick="closeWeChatModal()">&times;</span>
+            <h3>微信联系方式</h3>
+            <div class="wechat-qr">
+                <img src="images/wechat-qr.jpg" alt="微信二维码" />
+            </div>
+            <p class="wechat-id">微信号：<span id="wechat-id-text">Yinghuochong_Q</span></p>
+            <button onclick="copyWeChatId()" class="copy-btn">复制微信号</button>
         </div>
     </div>
 
@@ -455,6 +532,39 @@
                     submitButton.disabled = false;
                 });
             });
+
+            // 微信弹窗功能
+            window.openWeChatModal = function() {
+                document.getElementById('wechat-modal').style.display = 'block';
+            };
+
+            window.closeWeChatModal = function() {
+                document.getElementById('wechat-modal').style.display = 'none';
+            };
+
+            window.copyWeChatId = function() {
+                const wechatId = document.getElementById('wechat-id-text').textContent;
+                navigator.clipboard.writeText(wechatId).then(function() {
+                    alert('微信号已复制到剪贴板！');
+                }).catch(function() {
+                    // 降级方案
+                    const textArea = document.createElement('textarea');
+                    textArea.value = wechatId;
+                    document.body.appendChild(textArea);
+                    textArea.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(textArea);
+                    alert('微信号已复制到剪贴板！');
+                });
+            };
+
+            // 点击模态框外部关闭
+            window.onclick = function(event) {
+                const modal = document.getElementById('wechat-modal');
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                }
+            };
         });
     </script>
 </body>

@@ -83,7 +83,7 @@ const translations = {
         'contact.form.send': '发送消息',
         'contact.studio.title': 'islandJQ STUDIO',
         'contact.studio.description': '专注简约现代设计的创意工作室',
-        'contact.studio.location': '地址：中国',
+        'contact.studio.location': '地址：中国苏州',
         
         // 学术发表
         'academic.title': 'Publications',
@@ -180,7 +180,7 @@ const translations = {
         'contact.form.send': 'Send Message',
         'contact.studio.title': 'islandJQ STUDIO',
         'contact.studio.description': 'Creative studio focused on minimalist modern design',
-        'contact.studio.location': 'Based in China',
+        'contact.studio.location': 'Based in China, Suzhou',
         
         // 学术发表
         'academic.title': 'Publications',
