@@ -128,7 +128,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('project-overview').textContent = currentProject.overview;
         
         // 更新页面标题
-        document.title = `${currentProject.title} - islandJQ DESIGN STUDIO`;
+        document.title = `${currentProject.title} - islandJQ STUDIO`;
         
         // 更新图片画廊
         updateGallery();
