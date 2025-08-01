@@ -219,6 +219,42 @@
             min-width: 80px;
         }
         
+        /* 工作室联系信息 */
+        .studio-contact-info {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        .contact-item {
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-label {
+            font-weight: 400;
+            color: #000;
+            margin-right: 1rem;
+            min-width: 80px;
+            display: inline-block;
+        }
+        
+        .contact-item a {
+            color: #333;
+            text-decoration: none;
+        }
+        
+        .contact-item a:hover {
+            color: #000;
+            text-decoration: underline;
+        }
+        
+        .contact-item span:not(.contact-label) {
+            color: #333;
+        }
+        
         /* 响应式设计 */
         @media (max-width: 768px) {
             .about-container {
@@ -366,11 +402,6 @@
                         </div>
                     </div>
                 </div>
-                
-                <div class="contact-info">
-                    <p><strong>Email:</strong> <a href="mailto:island.jqstudio@gmail.com">island.jqstudio@gmail.com</a></p>
-                    <p><strong>Location:</strong> Based in China</p>
-                </div>
             </section>
 
             <!-- 团队介绍 -->
@@ -404,6 +435,18 @@
                         <p><span class="label">Education:</span>市场营销与传播学</p>
                         <p><span class="label">Joined:</span>2024</p>
                         <p><span class="label">Focus:</span>Brand Strategy, Content Planning</p>
+                    </div>
+                </div>
+                
+                <!-- 工作室联系信息 -->
+                <div class="studio-contact-info">
+                    <div class="contact-item">
+                        <span class="contact-label">Email:</span>
+                        <a href="mailto:island.jqstudio@gmail.com">island.jqstudio@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-label">Location:</span>
+                        <span>Based in China, Suzhou</span>
                     </div>
                 </div>
             </section>
