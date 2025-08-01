@@ -468,10 +468,9 @@
             <span class="wechat-close" onclick="closeWeChatModal()">&times;</span>
             <h3>微信联系方式</h3>
             <div class="wechat-qr">
-                <img src="images/wechat-qr-placeholder.svg" alt="微信二维码" style="width: 200px; height: 200px; border-radius: 10px;" />
+                <img src="images/wechat-qr.jpg" alt="微信二维码" style="width: 200px; height: 200px; border-radius: 10px;" />
             </div>
-            <p class="wechat-id">微信号：<span id="wechat-id-text">Yinghuochong_Q</span></p>
-            <button onclick="copyWeChatId()" class="copy-btn">复制微信号</button>
+            <p style="text-align: center; color: #666; font-size: 0.9rem; margin: 10px 0;">请扫描上方二维码添加微信</p>
         </div>
     </div>
 
@@ -545,21 +544,6 @@
                 document.getElementById('wechat-modal').style.display = 'none';
             };
 
-            window.copyWeChatId = function() {
-                const wechatId = document.getElementById('wechat-id-text').textContent;
-                navigator.clipboard.writeText(wechatId).then(function() {
-                    alert('微信号已复制到剪贴板！');
-                }).catch(function() {
-                    // 降级方案
-                    const textArea = document.createElement('textarea');
-                    textArea.value = wechatId;
-                    document.body.appendChild(textArea);
-                    textArea.select();
-                    document.execCommand('copy');
-                    document.body.removeChild(textArea);
-                    alert('微信号已复制到剪贴板！');
-                });
-            };
 
             // 点击模态框外部关闭
             window.onclick = function(event) {
