@@ -47,9 +47,8 @@
         }
         
         .contact-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
+            display: flex;
+            justify-content: center;
             margin-bottom: 2rem;
         }
         
@@ -58,7 +57,9 @@
         }
         
         .form-section {
-            text-align: left;
+            text-align: center;
+            width: 100%;
+            max-width: 500px;
         }
         
         .section-title {
@@ -104,10 +105,11 @@
         
         .contact-form {
             background: #f9f9f9;
-            padding: 25px;
+            padding: 30px;
             border-radius: 6px;
             text-align: left;
             border: 1px solid #e5e5e5;
+            max-width: 100%;
         }
         
         .form-group {
@@ -190,6 +192,66 @@
             font-size: 0.9rem;
         }
         
+        /* 右上角联系方式样式 */
+        .contact-floating {
+            position: fixed;
+            top: 100px;
+            right: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 1000;
+        }
+        
+        .contact-floating-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background: #fff;
+            border: 1px solid #e5e5e5;
+            border-radius: 50%;
+            color: #333;
+            text-decoration: none;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .contact-floating-icon:hover {
+            background: #000;
+            color: #fff;
+            border-color: #000;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        }
+        
+        .contact-floating-icon.email:hover {
+            background: #ea4335;
+            border-color: #ea4335;
+        }
+        
+        .contact-floating-icon.phone:hover {
+            background: #25d366;
+            border-color: #25d366;
+        }
+        
+        .contact-floating-icon.instagram:hover {
+            background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+            border-color: #bc1888;
+        }
+        
+        .contact-floating-icon.behance:hover {
+            background: #1769ff;
+            border-color: #1769ff;
+        }
+        
+        .contact-floating-icon.wechat:hover {
+            background: #07c160;
+            border-color: #07c160;
+        }
+        
         @media (max-width: 768px) {
             .contact-title {
                 font-size: 1.8rem;
@@ -216,6 +278,18 @@
             .studio-info {
                 margin-top: 1.5rem;
                 padding-top: 1.5rem;
+            }
+            
+            .contact-floating {
+                right: 15px;
+                top: 80px;
+                gap: 12px;
+            }
+            
+            .contact-floating-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 16px;
             }
         }
         
@@ -258,6 +332,25 @@
         </div>
     </nav>
 
+    <!-- 右上角浮动联系方式 -->
+    <div class="contact-floating">
+        <a href="mailto:island.jqstudio@gmail.com" class="contact-floating-icon email" title="Email">
+            <i class="fas fa-envelope"></i>
+        </a>
+        <a href="tel:+086-18260141029" class="contact-floating-icon phone" title="Phone">
+            <i class="fas fa-phone"></i>
+        </a>
+        <a href="https://www.instagram.com/island_mian?igsh=MTI1b2NvNW80YWIzZA%3D%3D&utm_source=qr" class="contact-floating-icon instagram" target="_blank" title="Instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.behance.net/mianquan" class="contact-floating-icon behance" target="_blank" title="Behance">
+            <i class="fab fa-behance"></i>
+        </a>
+        <a href="#" class="contact-floating-icon wechat" title="WeChat: Yinghuochong_Q">
+            <i class="fab fa-weixin"></i>
+        </a>
+    </div>
+
     <!-- 联系页面主体 -->
     <div class="contact-wrapper">
         <div class="contact-container">
@@ -266,35 +359,8 @@
                 如果您对我们的设计服务感兴趣，欢迎联系我们进行合作洽谈。
             </p>
             
+            <!-- 居中的联系表单 -->
             <div class="contact-content">
-                <!-- 联系方式 -->
-                <div class="contact-section">
-                    <h2 class="section-title" data-translate="contact.getInTouch">Get in Touch</h2>
-                    <div class="contact-links">
-                        <a href="mailto:island.jqstudio@gmail.com" class="contact-link">
-                            <i class="fas fa-envelope"></i>
-                            <span>island.jqstudio@gmail.com</span>
-                        </a>
-                        <a href="tel:+086-18260141029" class="contact-link">
-                            <i class="fas fa-phone"></i>
-                            <span>+086 18260141029</span>
-                        </a>
-                        <a href="https://www.instagram.com/island_mian?igsh=MTI1b2NvNW80YWIzZA%3D%3D&utm_source=qr" class="contact-link" target="_blank">
-                            <i class="fab fa-instagram"></i>
-                            <span>@island_mian</span>
-                        </a>
-                        <a href="https://www.behance.net/mianquan" class="contact-link" target="_blank">
-                            <i class="fab fa-behance"></i>
-                            <span>Behance Portfolio</span>
-                        </a>
-                        <a href="#" class="contact-link">
-                            <i class="fab fa-weixin"></i>
-                            <span>WeChat: Yinghuochong_Q</span>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- 联系表单 -->
                 <div class="form-section">
                     <h2 class="section-title" data-translate="contact.sendMessage">Send a Message</h2>
                     <form class="contact-form" id="contact-form">
