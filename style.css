@@ -58,11 +58,11 @@ body {
 
 .nav-logo a {
     font-size: 1.2rem;
-    font-family: 'DIN Next LT Pro', 'Arial', sans-serif;
-    font-weight: 100;
+    font-family: 'DIN Next LT Pro', sans-serif;
+    font-weight: 200;
     color: #000000;
     text-decoration: none;
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
 }
 
 .nav-menu {
@@ -73,11 +73,12 @@ body {
 .nav-link {
     color: var(--text-secondary);
     text-decoration: none;
-    font-weight: 400;
+    font-weight: 300;
     font-size: 0.9rem;
-    font-family: 'DIN Next LT Pro', 'Arial', sans-serif;
+    font-family: 'DIN Next LT Pro', sans-serif;
     transition: color 0.2s ease;
     position: relative;
+    letter-spacing: 0.5px;
 }
 
 .nav-link:hover {
@@ -766,6 +767,8 @@ section {
     .nav-link {
         font-size: 1.2rem;
         font-weight: 300;
+        font-family: 'DIN Next LT Pro', sans-serif;
+        letter-spacing: 0.5px;
         padding: 1rem 0;
     }
 
