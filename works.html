@@ -24,9 +24,9 @@
         
         /* 分类筛选 */
         .works-filter {
-            padding: 30px 20px 30px;
+            padding: 30px 40px 30px;
             text-align: center;
-            max-width: 1200px;
+            max-width: 1600px;
             margin: 0 auto;
         }
         
@@ -60,12 +60,12 @@
         
         /* 网格布局 - 参考tian-design.com */
         .works-grid {
-            max-width: 1200px;
+            max-width: 1600px;
             margin: 0 auto;
-            padding: 10px 20px 60px;
+            padding: 10px 40px 60px;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 50px;
             align-items: start;
         }
         
@@ -143,10 +143,14 @@
         
         /* 响应式设计 */
         @media (max-width: 768px) {
+            .works-filter {
+                padding: 30px 20px 30px;
+            }
+            
             .works-grid {
                 grid-template-columns: 1fr;
                 gap: 40px;
-                padding: 40px 20px;
+                padding: 20px 20px 60px;
             }
             
             .filter-buttons {
