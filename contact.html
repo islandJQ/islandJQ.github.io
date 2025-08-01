@@ -382,6 +382,7 @@
                         </div>
                         <input type="hidden" name="_next" value="https://islandJQ.github.io/contact.html?success=true">
                         <input type="hidden" name="_subject" value="New message from islandJQ STUDIO website">
+                        <input type="hidden" name="_redirect" value="false">
                         <button type="submit" class="form-button" data-translate="contact.form.send">Send Message</button>
                     </form>
                 </div>
@@ -417,13 +418,42 @@
                 navToggle.classList.toggle('active');
             });
             
-            // 检查URL参数显示成功消息
-            const urlParams = new URLSearchParams(window.location.search);
-            if (urlParams.get('success') === 'true') {
-                alert('感谢您的留言！我们已收到您的消息，会尽快回复您。');
-                // 清除URL参数
-                window.history.replaceState({}, document.title, window.location.pathname);
-            }
+            // 表单提交处理
+            const contactForm = document.getElementById('contact-form');
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const formData = new FormData(contactForm);
+                const submitButton = contactForm.querySelector('.form-button');
+                
+                // 显示提交中状态
+                submitButton.textContent = 'Sending...';
+                submitButton.disabled = true;
+                
+                // 提交到 Formspree
+                fetch(contactForm.action, {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => {
+                    if (response.ok) {
+                        // 成功提交
+                        alert('感谢您的留言！我们已收到您的消息，会尽快回复您。');
+                        contactForm.reset();
+                    } else {
+                        throw new Error('Form submission failed');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('发送失败，请稍后重试或直接发邮件至 island.jqstudio@gmail.com');
+                })
+                .finally(() => {
+                    // 恢复按钮状态
+                    submitButton.textContent = 'Send Message';
+                    submitButton.disabled = false;
+                });
+            });
         });
     </script>
 </body>
