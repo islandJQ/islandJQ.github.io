@@ -34,6 +34,10 @@ const translations = {
         'works.photography.title': '摄影',
         'works.photography.subtitle': 'Photography',
         
+        // 工作室合照
+        'studio.photo.title': 'islandJQ STUDIO Team',
+        'studio.photo.caption': '创意设计工作室团队合影',
+        
         // 关于我
         'me.title': 'About Me',
         'me.description1': '我是一名专注于简约现代设计的创意工作者，致力于为客户提供专业的视觉解决方案。',
@@ -134,6 +138,10 @@ const translations = {
         'works.illustration.subtitle': 'Illustration Design',
         'works.photography.title': 'Photography',
         'works.photography.subtitle': 'Photography',
+        
+        // 工作室合照
+        'studio.photo.title': 'islandJQ STUDIO Team',
+        'studio.photo.caption': 'Creative Design Studio Team Photo',
         
         // 关于我
         'me.title': 'About Me',

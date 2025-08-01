@@ -28,6 +28,51 @@
             padding: 0 2rem;
         }
         
+        /* 工作室合照部分 */
+        .studio-photo-section {
+            margin-bottom: 60px;
+            text-align: center;
+        }
+        
+        .studio-photo-container {
+            position: relative;
+            display: inline-block;
+            max-width: 100%;
+        }
+        
+        .studio-photo {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .studio-photo:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .photo-caption {
+            margin-top: 1.5rem;
+            text-align: center;
+        }
+        
+        .photo-caption p {
+            font-size: 1rem;
+            font-weight: 400;
+            color: #000;
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.5px;
+        }
+        
+        .photo-caption span {
+            font-size: 0.85rem;
+            color: #666;
+            font-weight: 300;
+        }
+        
         /* 负责人部分 */
         .director-section {
             margin-bottom: 60px;
@@ -187,6 +232,27 @@
             .about-wrapper {
                 padding: 20px 0;
             }
+            
+            .studio-photo-section {
+                margin-bottom: 40px;
+            }
+            
+            .studio-photo {
+                max-width: 100%;
+                border-radius: 6px;
+            }
+            
+            .photo-caption {
+                margin-top: 1rem;
+            }
+            
+            .photo-caption p {
+                font-size: 0.9rem;
+            }
+            
+            .photo-caption span {
+                font-size: 0.8rem;
+            }
         }
         
         @media (max-width: 480px) {
@@ -246,6 +312,17 @@
     <div class="about-wrapper">
         <div class="about-container">
             
+            <!-- 工作室合照 -->
+            <section class="studio-photo-section fade-in">
+                <div class="studio-photo-container">
+                    <img src="images/studio-team-photo.jpg" alt="islandJQ STUDIO Team Photo" class="studio-photo" loading="lazy">
+                    <div class="photo-caption">
+                        <p data-translate="studio.photo.title">islandJQ STUDIO Team</p>
+                        <span data-translate="studio.photo.caption">创意设计工作室团队合影</span>
+                    </div>
+                </div>
+            </section>
+
             <!-- 负责人介绍 -->
             <section class="director-section fade-in">
                 <h1 class="director-name" data-translate="director.name">islandJQ</h1>
