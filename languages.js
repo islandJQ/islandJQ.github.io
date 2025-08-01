@@ -86,13 +86,17 @@ const translations = {
         'contact.studio.location': '地址：中国苏州',
         
         // 学术发表
-        'academic.title': 'Publications',
+        'academic.title': '学术发表',
         'academic.subtitle': '设计理论研究 · 学术论文 · 期刊发表',
         'filter.all': '全部',
         'filter.journal': '期刊论文',
         'filter.conference': '会议论文',
         'filter.book': '专著',
         'filter.chapter': '章节',
+        
+        // Publications页面
+        'publications.title': '学术发表',
+        'publications.subtitle': '学术研究与设计发表',
         
         // 页脚
         'footer.copyright': '© 2024 islandJQ  DESIGN  STUDIO. All rights reserved.'
@@ -190,6 +194,10 @@ const translations = {
         'filter.conference': 'Conference Papers',
         'filter.book': 'Books',
         'filter.chapter': 'Chapters',
+        
+        // Publications页面
+        'publications.title': 'Publications',
+        'publications.subtitle': 'Academic Research & Design Publications',
         
         // 页脚
         'footer.copyright': '© 2024 islandJQ  DESIGN  STUDIO. All rights reserved.'
