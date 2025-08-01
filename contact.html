@@ -363,7 +363,7 @@
             <div class="contact-content">
                 <div class="form-section">
                     <h2 class="section-title" data-translate="contact.sendMessage">Send a Message</h2>
-                    <form class="contact-form" id="contact-form" action="https://formspree.io/f/xldllkja" method="POST">
+                    <form class="contact-form" id="contact-form">
                         <div class="form-group">
                             <label class="form-label" for="name" data-translate="contact.form.name">Name</label>
                             <input type="text" id="name" name="name" class="form-input" required>
@@ -380,10 +380,6 @@
                             <label class="form-label" for="message" data-translate="contact.form.message">Message</label>
                             <textarea id="message" name="message" class="form-textarea" placeholder="请详细描述您的需求..." required></textarea>
                         </div>
-                        <input type="hidden" name="_next" value="https://islandJQ.github.io/contact.html?success=true">
-                        <input type="hidden" name="_subject" value="New message from islandJQ STUDIO website">
-                        <input type="hidden" name="_replyto" value="email">
-                        <input type="hidden" name="_format" value="plain">
                         <button type="submit" class="form-button" data-translate="contact.form.send">Send Message</button>
                     </form>
                 </div>
@@ -419,13 +415,25 @@
                 navToggle.classList.toggle('active');
             });
             
-            // 检查URL参数显示成功消息
-            const urlParams = new URLSearchParams(window.location.search);
-            if (urlParams.get('success') === 'true') {
-                alert('感谢您的留言！我们已收到您的消息，会尽快回复您。');
-                // 清除URL参数
-                window.history.replaceState({}, document.title, window.location.pathname);
-            }
+            // 联系表单提交处理
+            const contactForm = document.getElementById('contact-form');
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const subject = document.getElementById('subject').value;
+                const message = document.getElementById('message').value;
+                
+                // 创建邮件链接
+                const mailtoLink = `mailto:island.jqstudio@gmail.com?subject=${encodeURIComponent('[网站联系] ' + subject)}&body=${encodeURIComponent(`姓名: ${name}\n邮箱: ${email}\n\n消息:\n${message}`)}`;
+                
+                // 打开邮件客户端
+                window.location.href = mailtoLink;
+                
+                // 显示提示
+                alert('正在打开您的邮件客户端，请发送邮件联系我们。');
+            });
         });
     </script>
 </body>
