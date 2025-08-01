@@ -106,9 +106,11 @@ body {
     color: white !important;
     padding: 6px 14px;
     border-radius: 2px;
-    font-size: 0.8rem;
-    font-weight: 400;
+    font-size: 0.9rem;
+    font-weight: 300;
+    font-family: 'DIN Next LT Pro', sans-serif;
     transition: all 0.2s ease;
+    line-height: normal;
 }
 
 .lang-switch:hover {
