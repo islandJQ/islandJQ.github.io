@@ -8,8 +8,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const projectsData = {
         'branding-1': {
             title: {
-                zh: '品牌视觉识别系统设计',
-                en: 'Brand Visual Identity System Design'
+                zh: '品牌视觉设计',
+                en: 'Brand Visual Design'
             },
             client: '创新科技有限公司',
             category: '品牌设计, VI设计',
