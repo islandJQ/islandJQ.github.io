@@ -17,18 +17,18 @@
         
         .contact-wrapper {
             margin-top: 70px;
-            min-height: calc(100vh - 70px);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
+            min-height: 100vh;
+            padding: 60px 20px;
         }
         
         .contact-container {
-            max-width: 100%;
-            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .contact-header {
             text-align: center;
-            padding: 0 2rem;
+            margin-bottom: 80px;
         }
         
         .contact-title {
@@ -42,7 +42,6 @@
         .contact-description {
             font-size: 1.1rem;
             color: #666;
-            margin-bottom: 2rem;
             line-height: 1.5;
             font-weight: 300;
             letter-spacing: 1px;
@@ -332,7 +331,11 @@
             }
             
             .contact-wrapper {
-                padding: 15px;
+                padding: 40px 20px;
+            }
+            
+            .contact-header {
+                margin-bottom: 60px;
             }
             
             .form-button {
@@ -416,10 +419,13 @@
     <!-- 联系页面主体 -->
     <div class="contact-wrapper">
         <div class="contact-container">
-            <h1 class="contact-title" data-translate="contact.title">Contact</h1>
-            <p class="contact-description" data-translate="contact.description">
-                如果您对我们的设计服务感兴趣，欢迎联系我们进行合作洽谈。
-            </p>
+            <!-- 页面标题 -->
+            <header class="contact-header">
+                <h1 class="contact-title" data-translate="contact.title">Contact</h1>
+                <p class="contact-description" data-translate="contact.description">
+                    如果您对我们的设计服务感兴趣，欢迎联系我们进行合作洽谈。
+                </p>
+            </header>
             
             <!-- 居中的联系表单 -->
             <div class="contact-content">
