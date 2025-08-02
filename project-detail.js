@@ -157,10 +157,13 @@ document.addEventListener('DOMContentLoaded', function() {
     // 更新页面内容
     function updateProjectContent() {
         const currentLang = getCurrentLanguage();
+        console.log('Updating project content, current language:', currentLang);
+        console.log('Current project:', currentProject);
         
         // 处理标题 - 支持多语言
         const titleText = typeof currentProject.title === 'object' ? 
             currentProject.title[currentLang] : currentProject.title;
+        console.log('Setting title to:', titleText);
         document.getElementById('project-title').textContent = titleText;
         
         // 处理描述 - 支持多语言
