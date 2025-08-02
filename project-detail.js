@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
             client: '创新科技有限公司',
             category: '品牌设计, VI设计',
             date: '2024',
-            team: '创意总监: 徐静琪<br>设计师: 李明, 王晓<br>项目经理: 张华',
+            team: '创意总监: islandJQ<br>设计师: 设计团队<br>项目经理: 项目组',
             overview: '<p>为新兴科技公司打造的全新品牌视觉识别系统。项目涵盖了从标志设计到完整的VI手册，确保品牌在各个触点上保持一致性和专业性。</p>' +
                      '<p>设计理念融合了科技感与人文关怀，体现了公司"科技改变生活"的核心价值观。通过简约而富有表现力的视觉语言，成功帮助客户在竞争激烈的市场中建立了独特的品牌形象。</p>',
             images: [],
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
             client: '自然茶园',
             category: '包装设计, 产品设计',
             date: '2024',
-            team: '创意总监: 徐静琪<br>设计师: 陈雪<br>项目经理: 王磊',
+            team: '创意总监: islandJQ<br>设计师: 设计团队<br>项目经理: 项目组',
             overview: '<p>为高端有机茶品牌设计的包装系列。设计灵感来源于中国传统茶文化与现代简约美学的结合。</p>' +
                      '<p>通过精心的材质选择和印刷工艺，营造出优雅而具有品质感的产品形象。整个设计系列强调生态环保理念，使用可再生材料，传递绿色健康的生活方式。</p>',
             images: [],
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
             client: '创意无限工作室',
             category: '网页设计, UI/UX设计',
             date: '2024',
-            team: '创意总监: 徐静琪<br>UI设计师: 赵阳<br>前端开发: 刘伟',
+            team: '创意总监: islandJQ<br>UI设计师: 设计团队<br>前端开发: 开发团队',
             overview: '<p>为创意工作室设计的响应式网站。采用大胆的版式设计和流畅的交互动画，展现工作室的创意实力。</p>' +
                      '<p>网站不仅美观，更注重用户体验和转化率。特别设计了沉浸式的作品展示方式，让访客能够更好地体验和理解创意作品。</p>',
             images: [],
@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', function() {
             client: '创新科技有限公司',
             category: '品牌设计, VI设计',
             date: '2024',
-            team: '创意总监: 徐静琪<br>设计团队: islandJQ Studio',
+            team: '创意总监: islandJQ<br>设计团队: islandJQ Studio',
             overview: '<p>这是一个充满创意的品牌设计项目。我们为客户打造了全新的视觉识别系统，包括标志设计、色彩系统、字体规范以及各类应用设计。</p>' +
                      '<p>整个设计过程中，我们注重简约现代的设计理念，确保品牌形象既有辨识度又具有时代感。</p>',
             images: [],
