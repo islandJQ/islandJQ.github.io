@@ -59,8 +59,8 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         'print-1': {
             title: {
-                zh: '印刷媒体设计',
-                en: 'Print Media Design'
+                zh: '印刷作品',
+                en: 'Print Works'
             },
             client: '文化传媒公司',
             category: '印刷设计, 平面设计',
