@@ -191,7 +191,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (currentProject.images && currentProject.images.length > 0) {
             gallery.innerHTML = currentProject.images.map((image, index) => `
                 <div class="gallery-item">
-                    <img src="${image}" alt="${currentProject.title} - 图片${index + 1}" 
+                    <img src="${image}" alt="${typeof currentProject.title === 'object' ? currentProject.title[getCurrentLanguage()] : currentProject.title} - 图片${index + 1}" 
                          loading="lazy" onerror="this.src='images/placeholder.jpg'">
                 </div>
             `).join('');
@@ -232,8 +232,38 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // 初始化页面
-    updateProjectContent();
+    // 等待DOM和语言管理器准备完成后初始化
+    function initializePage() {
+        // 确保语言管理器存在并已初始化
+        if (window.languageManager) {
+            // 监听语言变化事件
+            window.addEventListener('languageChanged', function() {
+                console.log('Language changed, updating project content');
+                updateProjectContent();
+            });
+            
+            // 如果语言管理器没有初始化，先初始化它
+            if (!window.languageManager.initialized) {
+                window.languageManager.init();
+            }
+        }
+        
+        // 初始化页面内容
+        updateProjectContent();
+    }
+    
+    // 确保在DOM加载完成和语言管理器准备好后初始化
+    function waitForLanguageManager() {
+        if (window.languageManager) {
+            initializePage();
+        } else {
+            // 如果语言管理器还没加载，继续等待
+            setTimeout(waitForLanguageManager, 50);
+        }
+    }
+    
+    // 开始等待语言管理器
+    waitForLanguageManager();
     
     // 添加导航栏功能
     const navToggle = document.getElementById('nav-toggle');

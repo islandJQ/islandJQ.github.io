@@ -217,6 +217,7 @@ class LanguageManager {
     constructor() {
         this.currentLang = localStorage.getItem('language') || 'zh';
         this.translations = translations;
+        this.initialized = false;
     }
     
     // 获取当前语言
@@ -279,6 +280,9 @@ class LanguageManager {
                 this.toggleLanguage();
             });
         }
+        
+        // 标记为已初始化
+        this.initialized = true;
     }
 }
 
