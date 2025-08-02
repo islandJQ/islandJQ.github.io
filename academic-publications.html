@@ -41,52 +41,33 @@
     <style>
         /* 学术页面特有样式 */
         .academic-hero {
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            padding: 120px 0 80px;
+            background: #ffffff;
+            padding: 120px 0 60px;
             text-align: center;
             position: relative;
-            overflow: hidden;
-        }
-        
-        .academic-hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="%23e9ecef" opacity="0.5"/></svg>') repeat;
-            background-size: 50px 50px;
-            animation: float 20s infinite linear;
-        }
-        
-        @keyframes float {
-            0% { transform: translateX(0) translateY(0); }
-            100% { transform: translateX(-50px) translateY(-50px); }
         }
         
         .academic-title {
-            font-size: 3.5rem;
-            font-weight: 100;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
-            position: relative;
-            z-index: 2;
+            font-size: 3rem;
+            font-weight: 200;
+            letter-spacing: 3px;
+            margin-bottom: 2rem;
+            color: #000;
         }
         
         .academic-subtitle {
-            font-size: 1.2rem;
-            color: var(--text-secondary);
+            font-size: 1.1rem;
+            color: #666;
+            font-weight: 300;
+            letter-spacing: 1px;
             margin-bottom: 2rem;
-            position: relative;
-            z-index: 2;
         }
         
         .publications-filter {
             display: flex;
             justify-content: center;
             gap: 1rem;
-            margin: 3rem 0;
+            margin: 1rem 0 3rem 0;
             flex-wrap: wrap;
         }
         
@@ -278,6 +259,10 @@
         @media (max-width: 768px) {
             .academic-title {
                 font-size: 2.5rem;
+            }
+            
+            .academic-hero {
+                padding: 100px 0 40px;
             }
             
             .publications-grid {
