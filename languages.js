@@ -98,6 +98,15 @@ const translations = {
         'filter.book': '专著',
         'filter.chapter': '章节',
         
+        // 项目详情页面
+        'project.year': '年份',
+        'project.client': '客户',
+        'project.category': '类别',
+        'project.team': '团队',
+        'project.prevProject': '上一个项目',
+        'project.nextProject': '下一个项目',
+        'project.allProjects': '返回作品集',
+        
         // Publications页面
         'publications.title': '学术发表',
         'publications.subtitle': '学术研究与设计发表',
@@ -202,6 +211,15 @@ const translations = {
         'filter.conference': 'Conference Papers',
         'filter.book': 'Books',
         'filter.chapter': 'Chapters',
+        
+        // 项目详情页面
+        'project.year': 'Year',
+        'project.client': 'Client',
+        'project.category': 'Category',
+        'project.team': 'Team',
+        'project.prevProject': 'Previous Project',
+        'project.nextProject': 'Next Project',
+        'project.allProjects': 'All Projects',
         
         // Publications页面
         'publications.title': 'Publications',
