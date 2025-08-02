@@ -7,89 +7,120 @@ document.addEventListener('DOMContentLoaded', function() {
     // 项目数据
     const projectsData = {
         'branding-1': {
-            title: '品牌视觉识别系统设计',
+            title: {
+                zh: '品牌视觉识别系统设计',
+                en: 'Brand Visual Identity System Design'
+            },
             client: '创新科技有限公司',
             category: '品牌设计, VI设计',
             date: '2024',
             team: '创意总监: islandJQ<br>设计师: 设计团队<br>项目经理: 项目组',
-            overview: '<p>为新兴科技公司打造的全新品牌视觉识别系统。项目涵盖了从标志设计到完整的VI手册，确保品牌在各个触点上保持一致性和专业性。</p>' +
-                     '<p>设计理念融合了科技感与人文关怀，体现了公司"科技改变生活"的核心价值观。通过简约而富有表现力的视觉语言，成功帮助客户在竞争激烈的市场中建立了独特的品牌形象。</p>',
+            overview: {
+                zh: '<p>为新兴科技公司打造的全新品牌视觉识别系统。项目涵盖了从标志设计到完整的VI手册，确保品牌在各个触点上保持一致性和专业性。</p><p>设计理念融合了科技感与人文关怀，体现了公司"科技改变生活"的核心价值观。通过简约而富有表现力的视觉语言，成功帮助客户在竞争激烈的市场中建立了独特的品牌形象。</p>',
+                en: '<p>A brand new brand visual identity system created for emerging technology companies. The project covers everything from logo design to complete VI manual, ensuring brand consistency and professionalism across all touchpoints.</p><p>The design concept combines technology and humanistic care, embodying the company\'s core value of "technology changes life". Through concise and expressive visual language, it successfully helped customers establish a unique brand image in the highly competitive market.</p>'
+            },
             images: [],
             prevProject: 'web-1',
             nextProject: 'packaging-1'
         },
         'packaging-1': {
-            title: '有机茶品牌包装设计',
+            title: {
+                zh: '有机茶品牌包装设计',
+                en: 'Organic Tea Brand Packaging Design'
+            },
             client: '自然茶园',
             category: '包装设计, 产品设计',
             date: '2024',
             team: '创意总监: islandJQ<br>设计师: 设计团队<br>项目经理: 项目组',
-            overview: '<p>为高端有机茶品牌设计的包装系列。设计灵感来源于中国传统茶文化与现代简约美学的结合。</p>' +
-                     '<p>通过精心的材质选择和印刷工艺，营造出优雅而具有品质感的产品形象。整个设计系列强调生态环保理念，使用可再生材料，传递绿色健康的生活方式。</p>',
+            overview: {
+                zh: '<p>为高端有机茶品牌设计的包装系列。设计灵感来源于中国传统茶文化与现代简约美学的结合。</p><p>通过精心的材质选择和印刷工艺，营造出优雅而具有品质感的产品形象。整个设计系列强调生态环保理念，使用可再生材料，传递绿色健康的生活方式。</p>',
+                en: '<p>Packaging series designed for high-end organic tea brands. The design inspiration comes from the combination of traditional Chinese tea culture and modern minimalist aesthetics.</p><p>Through careful material selection and printing technology, an elegant and quality product image is created. The entire design series emphasizes ecological and environmental protection concepts, uses renewable materials, and conveys a green and healthy lifestyle.</p>'
+            },
             images: [],
             prevProject: 'branding-1',
             nextProject: 'web-1'
         },
         'web-1': {
-            title: '创意工作室网站设计',
+            title: {
+                zh: '创意工作室网站设计',
+                en: 'Creative Studio Website Design'
+            },
             client: '创意无限工作室',
             category: '网页设计, UI/UX设计',
             date: '2024',
             team: '创意总监: islandJQ<br>UI设计师: 设计团队<br>前端开发: 开发团队',
-            overview: '<p>为创意工作室设计的响应式网站。采用大胆的版式设计和流畅的交互动画，展现工作室的创意实力。</p>' +
-                     '<p>网站不仅美观，更注重用户体验和转化率。特别设计了沉浸式的作品展示方式，让访客能够更好地体验和理解创意作品。</p>',
+            overview: {
+                zh: '<p>为创意工作室设计的响应式网站。采用大胆的版式设计和流畅的交互动画，展现工作室的创意实力。</p><p>网站不仅美观，更注重用户体验和转化率。特别设计了沉浸式的作品展示方式，让访客能够更好地体验和理解创意作品。</p>',
+                en: '<p>Responsive website designed for creative studios. Bold layout design and smooth interactive animations are used to showcase the creative strength of the studio.</p><p>The website is not only beautiful, but also focuses on user experience and conversion rate. An immersive work display method is specially designed to allow visitors to better experience and understand creative works.</p>'
+            },
             images: [],
             prevProject: 'packaging-1',
             nextProject: 'branding-1'
         },
         'print-1': {
-            title: '印刷作品',
+            title: {
+                zh: '印刷媒体设计',
+                en: 'Print Media Design'
+            },
             client: '文化传媒公司',
-            category: '印刷设计 / 平面设计',
-            date: '2024年4月',
-            team: 'islandJQ Design Studio',
-            overview: '专业的印刷设计作品集，包含海报设计、宣传册设计、名片设计等多种印刷媒体。' +
-                     '设计注重视觉冲击力与信息传达的平衡，运用简约现代的设计语言，' +
-                     '确保每个作品都能在印刷媒体中发挥最佳的视觉效果。',
+            category: '印刷设计, 平面设计',
+            date: '2024',
+            team: '创意总监: islandJQ<br>设计师: 设计团队<br>项目经理: 项目组',
+            overview: {
+                zh: '<p>专业的印刷设计作品集，包含海报设计、宣传册设计、名片设计等多种印刷媒体。设计注重视觉冲击力与信息传达的平衡。</p><p>运用简约现代的设计语言，确保每个作品都能在印刷媒体中发挥最佳的视觉效果，传达品牌核心价值。</p>',
+                en: '<p>Professional print design portfolio including poster design, brochure design, business card design and various print media. The design focuses on the balance between visual impact and information communication.</p><p>Using simple and modern design language to ensure that each work can achieve the best visual effect in print media and convey brand core values.</p>'
+            },
             images: [],
             prevProject: 'photography-1',
             nextProject: 'digital-1'
         },
         'digital-1': {
-            title: '数字设计',
+            title: {
+                zh: '数字平台设计',
+                en: 'Digital Platform Design'
+            },
             client: '数字科技公司',
-            category: '数字设计 / UI/UX设计',
-            date: '2024年3月',
-            team: 'islandJQ Design Studio',
-            overview: '为数字平台打造的全套视觉设计解决方案。项目涵盖移动应用界面设计、' +
-                     '数字广告创意、社交媒体视觉内容等。设计采用现代简约风格，' +
-                     '注重用户体验和视觉层次，确保在数字环境中获得最佳的展示效果。',
+            category: '数字设计, UI/UX设计',
+            date: '2024',
+            team: '创意总监: islandJQ<br>UI设计师: 设计团队<br>前端开发: 开发团队',
+            overview: {
+                zh: '<p>为数字平台打造的全套视觉设计解决方案。项目涵盖移动应用界面设计、数字广告创意、社交媒体视觉内容等。</p><p>设计采用现代简约风格，注重用户体验和视觉层次，确保在数字环境中获得最佳的展示效果。</p>',
+                en: '<p>Comprehensive visual design solutions for digital platforms. The project covers mobile application interface design, digital advertising creativity, social media visual content and more.</p><p>The design adopts a modern minimalist style, focusing on user experience and visual hierarchy to ensure the best display effect in the digital environment.</p>'
+            },
             images: [],
             prevProject: 'print-1',
             nextProject: 'illustration-1'
         },
         'illustration-1': {
-            title: '插画设计',
+            title: {
+                zh: '原创插画设计',
+                en: 'Original Illustration Design'
+            },
             client: '出版社',
-            category: '插画设计 / 视觉艺术',
-            date: '2024年2月',
-            team: 'islandJQ Design Studio',
-            overview: '原创插画设计作品，风格简约现代，富有表现力。作品应用于书籍封面、' +
-                     '杂志插图、品牌视觉等多个领域。插画风格注重线条的简洁性和色彩的和谐性，' +
-                     '通过独特的视觉语言传达情感和概念。',
+            category: '插画设计, 视觉艺术',
+            date: '2024',
+            team: '创意总监: islandJQ<br>插画师: 设计团队<br>项目经理: 项目组',
+            overview: {
+                zh: '<p>原创插画设计作品，风格简约现代，富有表现力。作品应用于书籍封面、杂志插图、品牌视觉等多个领域。</p><p>插画风格注重线条的简洁性和色彩的和谐性，通过独特的视觉语言传达情感和概念。</p>',
+                en: '<p>Original illustration design works with a simple, modern style and rich expressiveness. The works are applied to book covers, magazine illustrations, brand visuals and other fields.</p><p>The illustration style focuses on the simplicity of lines and the harmony of colors, conveying emotions and concepts through unique visual language.</p>'
+            },
             images: [],
             prevProject: 'digital-1',
             nextProject: 'photography-1'
         },
         'photography-1': {
-            title: '摄影',
+            title: {
+                zh: '专业摄影作品',
+                en: 'Professional Photography'
+            },
             client: '艺术画廊',
-            category: '摄影艺术 / 视觉记录',
-            date: '2024年1月',
-            team: 'islandJQ Design Studio',
-            overview: '专业摄影作品集，涵盖产品摄影、建筑摄影、人像摄影等多个领域。' +
-                     '摄影风格简洁明快，注重光影的运用和构图的平衡。' +
-                     '通过镜头语言展现物体的美感和空间的韵律。',
+            category: '摄影艺术, 视觉记录',
+            date: '2024',
+            team: '创意总监: islandJQ<br>摄影师: 设计团队<br>项目经理: 项目组',
+            overview: {
+                zh: '<p>专业摄影作品集，涵盖产品摄影、建筑摄影、人像摄影等多个领域。摄影风格简洁明快，注重光影的运用和构图的平衡。</p><p>通过镜头语言展现物体的美感和空间的韵律，记录生活中的美好瞬间。</p>',
+                en: '<p>Professional photography portfolio covering product photography, architectural photography, portrait photography and other fields. The photography style is simple and bright, focusing on the use of light and shadow and the balance of composition.</p><p>Show the beauty of objects and the rhythm of space through lens language, recording beautiful moments in life.</p>'
+            },
             images: [
                 'images/works/photography/project1.jpg'
             ],
@@ -97,13 +128,18 @@ document.addEventListener('DOMContentLoaded', function() {
             nextProject: 'print-1'
         },
         'default': {
-            title: '品牌视觉识别系统',
+            title: {
+                zh: '品牌视觉识别系统',
+                en: 'Brand Visual Identity System'
+            },
             client: '创新科技有限公司',
             category: '品牌设计, VI设计',
             date: '2024',
             team: '创意总监: islandJQ<br>设计团队: islandJQ Studio',
-            overview: '<p>这是一个充满创意的品牌设计项目。我们为客户打造了全新的视觉识别系统，包括标志设计、色彩系统、字体规范以及各类应用设计。</p>' +
-                     '<p>整个设计过程中，我们注重简约现代的设计理念，确保品牌形象既有辨识度又具有时代感。</p>',
+            overview: {
+                zh: '<p>这是一个充满创意的品牌设计项目。我们为客户打造了全新的视觉识别系统，包括标志设计、色彩系统、字体规范以及各类应用设计。</p><p>整个设计过程中，我们注重简约现代的设计理念，确保品牌形象既有辨识度又具有时代感。</p>',
+                en: '<p>This is a creative brand design project. We created a brand new visual identity system for our clients, including logo design, color system, font specifications and various application designs.</p><p>Throughout the design process, we focus on simple and modern design concepts to ensure that the brand image is both recognizable and contemporary.</p>'
+            },
             images: [],
             prevProject: null,
             nextProject: null
@@ -113,17 +149,33 @@ document.addEventListener('DOMContentLoaded', function() {
     // 获取当前项目数据
     const currentProject = projectsData[projectId] || projectsData['default'];
     
+    // 获取当前语言
+    function getCurrentLanguage() {
+        return localStorage.getItem('language') || 'zh';
+    }
+    
     // 更新页面内容
     function updateProjectContent() {
-        document.getElementById('project-title').textContent = currentProject.title;
+        const currentLang = getCurrentLanguage();
+        
+        // 处理标题 - 支持多语言
+        const titleText = typeof currentProject.title === 'object' ? 
+            currentProject.title[currentLang] : currentProject.title;
+        document.getElementById('project-title').textContent = titleText;
+        
+        // 处理描述 - 支持多语言
+        const overviewText = typeof currentProject.overview === 'object' ? 
+            currentProject.overview[currentLang] : currentProject.overview;
+        document.getElementById('project-overview').innerHTML = overviewText;
+        
+        // 其他字段保持不变
         document.getElementById('project-client').textContent = currentProject.client;
         document.getElementById('project-category').textContent = currentProject.category;
         document.getElementById('project-date').textContent = currentProject.date;
         document.getElementById('project-team').innerHTML = currentProject.team;
-        document.getElementById('project-overview').innerHTML = currentProject.overview;
         
         // 更新页面标题
-        document.title = `${currentProject.title} - islandJQ STUDIO`;
+        document.title = `${titleText} - islandJQ STUDIO`;
         
         // 更新图片画廊
         updateGallery();
