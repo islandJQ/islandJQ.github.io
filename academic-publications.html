@@ -14,9 +14,12 @@
     <meta property="og:type" content="website">
     
     <title>Publications - islandJQ STUDIO</title>
+    <!-- 预加载关键字体 -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=DIN+Next+LT+Pro:wght@100;200;300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DIN+Next+LT+Pro:wght@100;200;300;400;500;600;700&display=swap"></noscript>
+    
     <link rel="stylesheet" href="style.css?v=2025080122">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=DIN+Next+LT+Pro:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="languages.js"></script>
     
     <!-- 结构化数据 -->
@@ -38,11 +41,23 @@
     </script>
     
     <style>
+        /* 防止字体加载跳跃 */
+        @font-face {
+            font-family: 'DIN Next LT Pro';
+            font-display: optional;
+        }
+        
         /* Publications页面样式 - 与News页面保持一致 */
         .publications-wrapper {
             margin-top: 70px;
             min-height: 100vh;
             padding: 60px 20px;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+        
+        .publications-wrapper.loaded {
+            opacity: 1;
         }
         
         .publications-container {
@@ -546,6 +561,10 @@
     
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // 防止字体加载跳跃 - 页面加载完成后显示内容
+            setTimeout(function() {
+                document.querySelector('.publications-wrapper').classList.add('loaded');
+            }, 100);
             // 导航栏功能
             const navToggle = document.getElementById('nav-toggle');
             const navMenu = document.getElementById('nav-menu');
