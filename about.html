@@ -28,6 +28,20 @@
             padding: 0 2rem;
         }
         
+        /* 联系信息容器特殊处理 - 最左侧对齐 */
+        .studio-contact-section {
+            margin-left: -2rem;
+            margin-right: -2rem;
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+        
+        .studio-contact-section .contact-grid {
+            justify-content: flex-start;
+            margin: 0;
+            padding: 0;
+        }
+        
         /* 工作室合照部分 */
         .studio-photo-section {
             margin-bottom: 60px;
@@ -219,7 +233,7 @@
             min-width: 80px;
         }
         
-        /* 工作室联系信息 - 新位置样式 */
+        /* 工作室联系信息 - 最左侧位置样式 */
         .studio-contact-section {
             margin: 3rem 0;
             padding: 2rem 0;
@@ -228,13 +242,17 @@
         }
         
         .contact-grid {
-            max-width: 600px;
+            max-width: 100%;
+            display: flex;
+            justify-content: flex-start;
         }
         
         .contact-column {
             display: flex;
             flex-direction: column;
             gap: 0.8rem;
+            width: auto;
+            max-width: 300px;
         }
         
         .contact-item {
