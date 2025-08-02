@@ -3,6 +3,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // 获取URL参数
     const urlParams = new URLSearchParams(window.location.search);
     const projectId = urlParams.get('id') || 'default';
+    console.log('URL search params:', window.location.search);
+    console.log('Project ID from URL:', projectId);
     
     // 项目数据
     const projectsData = {
@@ -148,6 +150,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // 获取当前项目数据
     const currentProject = projectsData[projectId] || projectsData['default'];
+    console.log('Available project IDs:', Object.keys(projectsData));
+    console.log('Selected project ID:', projectId);
+    console.log('Project found:', !!projectsData[projectId]);
     
     // 获取当前语言
     function getCurrentLanguage() {
