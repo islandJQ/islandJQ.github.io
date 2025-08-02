@@ -196,15 +196,15 @@ body {
 }
 
 .hero-bg-image:nth-child(1) {
-    background-image: url('images/hero-bg-1.jpg');
+    background-image: url('images/hero-bg-1.jpg?v=2025080201');
 }
 
 .hero-bg-image:nth-child(2) {
-    background-image: url('images/hero-bg-2.jpg');
+    background-image: url('images/hero-bg-2.jpg?v=2025080201');
 }
 
 .hero-bg-image:nth-child(3) {
-    background-image: url('images/hero-bg-3.jpg');
+    background-image: url('images/hero-bg-3.jpg?v=2025080201');
 }
 
 /* 半透明遮罩层，确保文字可读性 */
