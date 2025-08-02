@@ -153,6 +153,8 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('Available project IDs:', Object.keys(projectsData));
     console.log('Selected project ID:', projectId);
     console.log('Project found:', !!projectsData[projectId]);
+    console.log('Current project title:', currentProject.title);
+    console.log('Using fallback default?', !projectsData[projectId]);
     
     // 获取当前语言
     function getCurrentLanguage() {

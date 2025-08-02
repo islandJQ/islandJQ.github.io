@@ -230,6 +230,11 @@ class LanguageManager {
         this.currentLang = this.currentLang === 'zh' ? 'en' : 'zh';
         localStorage.setItem('language', this.currentLang);
         this.updatePageContent();
+        
+        // 触发语言变化事件
+        window.dispatchEvent(new CustomEvent('languageChanged', {
+            detail: { language: this.currentLang }
+        }));
     }
     
     // 获取翻译文本
