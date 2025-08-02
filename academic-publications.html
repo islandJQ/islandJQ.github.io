@@ -39,15 +39,24 @@
     </script>
     
     <style>
-        /* 学术页面特有样式 */
-        .academic-hero {
-            background: #ffffff;
-            padding: 120px 0 60px;
-            text-align: center;
-            position: relative;
+        /* Publications页面样式 - 与News页面保持一致 */
+        .publications-wrapper {
+            margin-top: 70px;
+            min-height: 100vh;
+            padding: 60px 20px;
         }
         
-        .academic-title {
+        .publications-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .publications-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+        
+        .publications-title {
             font-size: 3rem;
             font-weight: 200;
             letter-spacing: 3px;
@@ -55,12 +64,11 @@
             color: #000;
         }
         
-        .academic-subtitle {
+        .publications-subtitle {
             font-size: 1.1rem;
             color: #666;
             font-weight: 300;
             letter-spacing: 1px;
-            margin-bottom: 2rem;
         }
         
         .publications-filter {
@@ -257,12 +265,12 @@
         
         /* 响应式设计 */
         @media (max-width: 768px) {
-            .academic-title {
+            .publications-title {
                 font-size: 2.5rem;
             }
             
-            .academic-hero {
-                padding: 100px 0 40px;
+            .publications-wrapper {
+                padding: 40px 20px;
             }
             
             .publications-grid {
@@ -315,18 +323,17 @@
         </div>
     </nav>
 
-    <!-- 主内容区 -->
-    <main>
-        <!-- Hero Section -->
-        <section class="academic-hero">
-            <div class="container">
-                <h1 class="academic-title font-din" data-translate="academic.title">Publications</h1>
-                <p class="academic-subtitle" data-translate="academic.subtitle">设计理论研究 · 学术论文 · 期刊发表</p>
-            </div>
-        </section>
+    <!-- Publications页面主体 -->
+    <div class="publications-wrapper">
+        <div class="publications-container">
+            <!-- 页面标题 -->
+            <header class="publications-header">
+                <h1 class="publications-title" data-translate="academic.title">Publications</h1>
+                <p class="publications-subtitle" data-translate="academic.subtitle">设计理论研究 · 学术论文 · 期刊发表</p>
+            </header>
 
-        <!-- 筛选器 -->
-        <section class="container">
+            <!-- 筛选器 -->
+            <section>
             <div class="publications-filter">
                 <button class="filter-btn active" data-filter="all" data-translate="filter.all">全部</button>
                 <button class="filter-btn" data-filter="journal" data-translate="filter.journal">期刊论文</button>
@@ -337,7 +344,7 @@
         </section>
 
         <!-- 发表列表 -->
-        <section class="container">
+        <section>
             <div class="publications-grid" id="publications-grid">
                 <!-- 期刊论文 -->
                 <article class="publication-card" data-type="journal">
@@ -507,7 +514,7 @@
 
         <!-- 统计数据 -->
         <section class="stats-section">
-            <div class="container">
+            <div class="publications-container">
                 <div class="stats-grid">
                     <div class="stat-item">
                         <div class="stat-number">15+</div>
@@ -528,7 +535,8 @@
                 </div>
             </div>
         </section>
-    </main>
+        </div>
+    </div>
 
     <!-- 页脚 -->
     <footer class="footer">
