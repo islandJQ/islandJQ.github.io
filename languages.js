@@ -107,6 +107,25 @@ const translations = {
         'project.nextProject': '下一个项目',
         'project.allProjects': '返回作品集',
         
+        // About页面
+        'about.studio.title': 'islandJQ STUDIO',
+        'about.studio.subtitle': '专业创意设计工作室',
+        'about.studio.description': '我们专注于简约现代的设计理念，为客户提供专业、创新的视觉解决方案。从品牌识别到数字体验，我们致力于创造有意义、有影响力的设计作品。',
+        'about.services.title': '服务范围',
+        'about.services.branding': '品牌设计',
+        'about.services.print': '印刷设计',
+        'about.services.digital': '数字设计',
+        'about.services.packaging': '包装设计',
+        
+        // 负责人介绍
+        'director.name': 'islandJQ',
+        'director.position': '创始人兼创意总监，islandJQ STUDIO',
+        'director.background': '背景介绍',
+        'director.background.text': '专注于简约现代设计的创意工作者，致力于为客户提供专业的视觉解决方案。擅长平面设计和综合设计，追求简洁而富有表现力的设计语言。在设计实践中始终坚持"少即是多"的设计理念，通过精炼的视觉元素传达深层的品牌内涵。',
+        'director.education': '教育背景',
+        'director.experience': '工作经历',
+        'director.specialization': '专业专长',
+        
         // Publications页面
         'publications.title': '学术发表',
         'publications.subtitle': '学术研究与设计发表',
@@ -220,6 +239,25 @@ const translations = {
         'project.prevProject': 'Previous Project',
         'project.nextProject': 'Next Project',
         'project.allProjects': 'All Projects',
+        
+        // About页面
+        'about.studio.title': 'islandJQ STUDIO',
+        'about.studio.subtitle': 'Professional Creative Design Studio',
+        'about.studio.description': 'We focus on minimalist modern design concepts, providing professional and innovative visual solutions for clients. From brand identity to digital experience, we are committed to creating meaningful and impactful design works.',
+        'about.services.title': 'Services',
+        'about.services.branding': 'Brand Design',
+        'about.services.print': 'Print Design',
+        'about.services.digital': 'Digital Design',
+        'about.services.packaging': 'Packaging Design',
+        
+        // 负责人介绍
+        'director.name': 'islandJQ',
+        'director.position': 'Founder & Creative Director, islandJQ STUDIO',
+        'director.background': 'Background',
+        'director.background.text': 'A creative professional focused on minimalist modern design, committed to providing professional visual solutions for clients. Specializing in graphic design and comprehensive design, pursuing concise yet expressive design language. Always adhering to the "less is more" design philosophy in practice, conveying deep brand connotations through refined visual elements.',
+        'director.education': 'Education',
+        'director.experience': 'Professional Experience',
+        'director.specialization': 'Specialization',
         
         // Publications页面
         'publications.title': 'Publications',
