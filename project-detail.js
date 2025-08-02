@@ -7,41 +7,37 @@ document.addEventListener('DOMContentLoaded', function() {
     // 项目数据
     const projectsData = {
         'branding-1': {
-            title: '品牌视觉设计',
+            title: '品牌视觉识别系统设计',
             client: '创新科技有限公司',
-            category: '品牌设计 / VI设计',
-            date: '2024年3月',
-            team: 'islandJQ Design Studio',
-            overview: '为新兴科技公司打造的全新品牌视觉识别系统。项目涵盖了从标志设计到完整的VI手册，' +
-                     '确保品牌在各个触点上保持一致性和专业性。设计理念融合了科技感与人文关怀，' +
-                     '体现了公司"科技改变生活"的核心价值观。通过简约而富有表现力的视觉语言，' +
-                     '成功帮助客户在竞争激烈的市场中建立了独特的品牌形象。',
+            category: '品牌设计, VI设计',
+            date: '2024',
+            team: '创意总监: 徐静琪<br>设计师: 李明, 王晓<br>项目经理: 张华',
+            overview: '<p>为新兴科技公司打造的全新品牌视觉识别系统。项目涵盖了从标志设计到完整的VI手册，确保品牌在各个触点上保持一致性和专业性。</p>' +
+                     '<p>设计理念融合了科技感与人文关怀，体现了公司"科技改变生活"的核心价值观。通过简约而富有表现力的视觉语言，成功帮助客户在竞争激烈的市场中建立了独特的品牌形象。</p>',
             images: [],
             prevProject: 'web-1',
             nextProject: 'packaging-1'
         },
         'packaging-1': {
-            title: '包装设计',
+            title: '有机茶品牌包装设计',
             client: '自然茶园',
-            category: '包装设计 / 产品设计',
-            date: '2024年2月',
-            team: 'islandJQ Design Studio',
-            overview: '为高端有机茶品牌设计的包装系列。设计灵感来源于中国传统茶文化与现代简约美学的结合。' +
-                     '通过精心的材质选择和印刷工艺，营造出优雅而具有品质感的产品形象。' +
-                     '整个设计系列强调生态环保理念，使用可再生材料，传递绿色健康的生活方式。',
+            category: '包装设计, 产品设计',
+            date: '2024',
+            team: '创意总监: 徐静琪<br>设计师: 陈雪<br>项目经理: 王磊',
+            overview: '<p>为高端有机茶品牌设计的包装系列。设计灵感来源于中国传统茶文化与现代简约美学的结合。</p>' +
+                     '<p>通过精心的材质选择和印刷工艺，营造出优雅而具有品质感的产品形象。整个设计系列强调生态环保理念，使用可再生材料，传递绿色健康的生活方式。</p>',
             images: [],
             prevProject: 'branding-1',
             nextProject: 'web-1'
         },
         'web-1': {
-            title: '网页设计',
+            title: '创意工作室网站设计',
             client: '创意无限工作室',
-            category: '网页设计 / UI/UX设计',
-            date: '2024年1月',
-            team: 'islandJQ Design Studio',
-            overview: '为创意工作室设计的响应式网站。采用大胆的版式设计和流畅的交互动画，' +
-                     '展现工作室的创意实力。网站不仅美观，更注重用户体验和转化率。' +
-                     '特别设计了沉浸式的作品展示方式，让访客能够更好地体验和理解创意作品。',
+            category: '网页设计, UI/UX设计',
+            date: '2024',
+            team: '创意总监: 徐静琪<br>UI设计师: 赵阳<br>前端开发: 刘伟',
+            overview: '<p>为创意工作室设计的响应式网站。采用大胆的版式设计和流畅的交互动画，展现工作室的创意实力。</p>' +
+                     '<p>网站不仅美观，更注重用户体验和转化率。特别设计了沉浸式的作品展示方式，让访客能够更好地体验和理解创意作品。</p>',
             images: [],
             prevProject: 'packaging-1',
             nextProject: 'branding-1'
@@ -101,14 +97,13 @@ document.addEventListener('DOMContentLoaded', function() {
             nextProject: 'print-1'
         },
         'default': {
-            title: '品牌视觉设计',
+            title: '品牌视觉识别系统',
             client: '创新科技有限公司',
-            category: '品牌设计 / VI设计',
-            date: '2024年3月',
-            team: 'islandJQ Design Studio',
-            overview: '这是一个充满创意的品牌设计项目。我们为客户打造了全新的视觉识别系统，' +
-                     '包括标志设计、色彩系统、字体规范以及各类应用设计。整个设计过程中，' +
-                     '我们注重简约现代的设计理念，确保品牌形象既有辨识度又具有时代感。',
+            category: '品牌设计, VI设计',
+            date: '2024',
+            team: '创意总监: 徐静琪<br>设计团队: islandJQ Studio',
+            overview: '<p>这是一个充满创意的品牌设计项目。我们为客户打造了全新的视觉识别系统，包括标志设计、色彩系统、字体规范以及各类应用设计。</p>' +
+                     '<p>整个设计过程中，我们注重简约现代的设计理念，确保品牌形象既有辨识度又具有时代感。</p>',
             images: [],
             prevProject: null,
             nextProject: null
@@ -124,8 +119,8 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('project-client').textContent = currentProject.client;
         document.getElementById('project-category').textContent = currentProject.category;
         document.getElementById('project-date').textContent = currentProject.date;
-        document.getElementById('project-team').textContent = currentProject.team;
-        document.getElementById('project-overview').textContent = currentProject.overview;
+        document.getElementById('project-team').innerHTML = currentProject.team;
+        document.getElementById('project-overview').innerHTML = currentProject.overview;
         
         // 更新页面标题
         document.title = `${currentProject.title} - islandJQ STUDIO`;
@@ -304,39 +299,30 @@ document.addEventListener('DOMContentLoaded', function() {
     function updateProjectNavigation() {
         const prevButton = document.getElementById('prev-project');
         const nextButton = document.getElementById('next-project');
+        const bottomPrevButton = document.getElementById('bottom-prev-project');
+        const bottomNextButton = document.getElementById('bottom-next-project');
         
         if (currentProject.prevProject) {
             prevButton.href = `project-detail.html?id=${currentProject.prevProject}`;
-            prevButton.style.visibility = 'visible';
+            bottomPrevButton.href = `project-detail.html?id=${currentProject.prevProject}`;
+            prevButton.style.display = 'block';
+            bottomPrevButton.style.display = 'flex';
         } else {
-            prevButton.style.visibility = 'hidden';
+            prevButton.style.display = 'none';
+            bottomPrevButton.style.display = 'none';
         }
         
         if (currentProject.nextProject) {
             nextButton.href = `project-detail.html?id=${currentProject.nextProject}`;
-            nextButton.style.visibility = 'visible';
+            bottomNextButton.href = `project-detail.html?id=${currentProject.nextProject}`;
+            nextButton.style.display = 'block';
+            bottomNextButton.style.display = 'flex';
         } else {
-            nextButton.style.visibility = 'hidden';
+            nextButton.style.display = 'none';
+            bottomNextButton.style.display = 'none';
         }
     }
     
-    // 返回顶部按钮
-    const backToTop = document.getElementById('back-to-top');
-    
-    window.addEventListener('scroll', function() {
-        if (window.pageYOffset > 300) {
-            backToTop.classList.add('visible');
-        } else {
-            backToTop.classList.remove('visible');
-        }
-    });
-    
-    backToTop.addEventListener('click', function() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    });
     
     // 图片加载动画
     const observerOptions = {
