@@ -253,17 +253,29 @@
                 document.getElementById('project-content').innerHTML = content;
             }
             
+            // 调试信息
+            console.log('当前URL:', window.location.href);
+            console.log('项目ID:', projectId);
+            console.log('可用项目:', Object.keys(projects));
+            
             // 加载对应项目
             if (projectId && projects[projectId]) {
+                console.log('找到项目:', projects[projectId]);
                 renderProject(projects[projectId]);
             } else {
-                // 默认内容或404
-                document.getElementById('project-content').innerHTML = `
-                    <div class="detail-header">
-                        <h1 class="detail-title">项目未找到</h1>
-                        <p class="detail-description">抱歉，请求的项目不存在。</p>
-                    </div>
-                `;
+                // 如果没有ID参数，显示摄影项目
+                if (!projectId) {
+                    console.log('没有项目ID，显示默认摄影项目');
+                    renderProject(projects['photography-1']);
+                } else {
+                    // 项目未找到
+                    document.getElementById('project-content').innerHTML = `
+                        <div class="detail-header">
+                            <h1 class="detail-title">项目未找到</h1>
+                            <p class="detail-description">抱歉，请求的项目 "${projectId}" 不存在。可用项目: ${Object.keys(projects).join(', ')}</p>
+                        </div>
+                    `;
+                }
             }
             
             // 导航栏功能
