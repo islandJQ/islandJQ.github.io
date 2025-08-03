@@ -30,15 +30,15 @@
         /* 项目主要内容区域 */
         .project-main {
             display: flex;
-            gap: 60px;
-            max-width: 1200px;
+            gap: 40px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 0 40px;
         }
         
         /* 左侧项目信息 */
         .project-sidebar {
-            flex: 0 0 320px;
+            flex: 0 0 280px;
             padding-top: 40px;
         }
         
@@ -109,18 +109,19 @@
         }
         
         .gallery-item {
-            margin-bottom: 40px;
+            margin-bottom: 20px;
         }
         
         .gallery-item img {
             width: 100%;
             height: auto;
             display: block;
+            border-radius: 4px;
         }
         
         /* 底部导航 */
         .bottom-navigation {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 80px auto 0;
             padding: 0 40px;
             display: flex;
@@ -149,6 +150,16 @@
         }
         
         /* 响应式设计 */
+        @media (max-width: 1200px) {
+            .project-main {
+                max-width: 1200px;
+            }
+            
+            .bottom-navigation {
+                max-width: 1200px;
+            }
+        }
+        
         @media (max-width: 1024px) {
             .project-main {
                 flex-direction: column;
