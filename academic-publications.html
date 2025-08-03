@@ -138,7 +138,29 @@
             padding: 21px;
             margin-bottom: 15.75px;
             border-radius: 2px;
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
+            border-left: 3px solid transparent;
+        }
+        
+        /* 响应式底色变化 - 根据类型 */
+        .publication-card[data-type="journal"] {
+            background: linear-gradient(135deg, #f8f9ff 0%, #f0f4ff 100%);
+            border-left-color: #4f46e5;
+        }
+        
+        .publication-card[data-type="conference"] {
+            background: linear-gradient(135deg, #f0fdf4 0%, #ecfccb 100%);
+            border-left-color: #16a34a;
+        }
+        
+        .publication-card[data-type="book"] {
+            background: linear-gradient(135deg, #fefce8 0%, #fef3c7 100%);
+            border-left-color: #d97706;
+        }
+        
+        .publication-card[data-type="chapter"] {
+            background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%);
+            border-left-color: #be185d;
         }
         
         .publication-card:last-child {
@@ -162,6 +184,17 @@
         
         .publication-card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            border-left-width: 4px;
+        }
+        
+        /* 移动端优化 */
+        @media (max-width: 768px) {
+            .publication-card:hover {
+                transform: none;
+                box-shadow: none;
+                border-left-width: 3px;
+            }
         }
         
         .publication-header {
