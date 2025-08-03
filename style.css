@@ -57,7 +57,7 @@ body {
 }
 
 .nav-logo a {
-    font-size: 1.2rem;
+    font-size: 1.32rem;
     font-family: 'DIN Next LT Pro', sans-serif;
     font-weight: 650;
     color: #000000;
@@ -801,7 +801,7 @@ section {
     }
     
     .nav-logo a {
-        font-size: 1rem;
+        font-size: 1.1rem;
     }
     
     .nav-menu {
