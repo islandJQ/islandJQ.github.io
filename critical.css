@@ -59,7 +59,8 @@ body {
 
 .nav-logo a {
     font-size: 1.2rem;
-    font-weight: 100;
+    font-family: 'DIN Next LT Pro', sans-serif;
+    font-weight: 650;
     color: #000000;
     text-decoration: none;
     letter-spacing: 0.5px;
