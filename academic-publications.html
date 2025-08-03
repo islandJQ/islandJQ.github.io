@@ -139,6 +139,34 @@
             margin-bottom: 15.75px;
             border-radius: 2px;
             transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+        
+        /* 响应式交互效果 - 保持原色调 */
+        .publication-card:hover {
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+        
+        .publication-card[data-type="journal"]:hover {
+            background: #ffffff;
+            border: 1px solid #f0f0f0;
+        }
+        
+        .publication-card[data-type="conference"]:hover {
+            background: #fdfdfd;
+            border: 1px solid #f5f5f5;
+        }
+        
+        .publication-card[data-type="book"]:hover {
+            background: #ffffff;
+            border: 1px solid #efefef;
+        }
+        
+        .publication-card[data-type="chapter"]:hover {
+            background: #fefefe;
+            border: 1px solid #f8f8f8;
         }
         
         .publication-card:last-child {
