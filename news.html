@@ -55,18 +55,30 @@
             display: grid;
             grid-template-columns: 171px 1fr;
             gap: 34.2px;
-            padding-bottom: 51.3px;
+            padding: 25.65px 17.1px 51.3px;
             border-bottom: 1px solid #e5e5e5;
+            border-radius: 2px;
             transition: all 0.3s ease;
+            margin: 0 -17.1px;
         }
         
         .news-article:last-child {
             border-bottom: none;
-            padding-bottom: 0;
+            padding-bottom: 25.65px;
         }
         
+        /* 响应式交互效果 - 保持原色调 */
         .news-article:hover {
-            transform: translateY(-5px);
+            transform: translateY(-3px);
+            background: #fdfdfd;
+            border-color: #f0f0f0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+        }
+        
+        /* 为不同类别添加细微差异 */
+        .news-article:hover .news-category {
+            border-color: #ddd;
+            background: #fafafa;
         }
         
         .news-date {
@@ -140,6 +152,16 @@
             padding: 34.2px;
             margin-bottom: 51.3px;
             border-radius: 2px;
+            border: 1px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        /* 响应式交互效果 - 保持原色调 */
+        .featured-article:hover {
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transform: translateY(-2px);
         }
         
         .featured-article .news-item-title {
@@ -167,6 +189,12 @@
                 grid-template-columns: 1fr;
                 gap: 17.1px;
                 text-align: left;
+                margin: 0;
+                padding: 17.1px;
+            }
+            
+            .news-article:hover {
+                transform: translateY(-2px);
             }
             
             .news-date {
@@ -184,6 +212,10 @@
             
             .featured-article {
                 padding: 25.65px 17.1px;
+            }
+            
+            .featured-article:hover {
+                transform: translateY(-1px);
             }
             
             .featured-article .news-item-title {
