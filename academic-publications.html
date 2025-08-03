@@ -66,7 +66,7 @@
         
         .publications-header {
             text-align: center;
-            margin-bottom: 80px;
+            margin-bottom: 60px; /* 减少底部边距，与news页面更接近 */
         }
         
         .publications-title {
@@ -327,14 +327,6 @@
     </style>
 </head>
 <body>
-    <!-- 加载动画 -->
-    <div class="loader-wrapper" id="loader">
-        <div class="loader">
-            <div class="loader-circle"></div>
-            <div class="loader-text">LOADING</div>
-        </div>
-    </div>
-    
     <!-- 导航栏 -->
     <nav class="navbar">
         <div class="nav-container">
@@ -375,6 +367,19 @@
 
         <!-- 发表列表 -->
         <section>
+            <!-- 添加一个顶部统计区域，与news页面的featured-article对应 -->
+            <div style="background: #f8f8f8; padding: 40px; margin-bottom: 60px; border-radius: 2px; text-align: center;">
+                <h2 style="font-size: 1.8rem; font-weight: 300; margin-bottom: 1rem; color: #000;">学术成果概览</h2>
+                <p style="font-size: 1rem; color: #666; line-height: 1.7; margin-bottom: 2rem;">
+                    持续深耕设计理论研究，将创新思维与学术探索相结合，在国内外核心期刊和学术会议上发表多篇高质量论文，推动设计学科的理论发展与实践应用。
+                </p>
+                <div style="display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap;">
+                    <div><span style="font-size: 2rem; font-weight: 200; color: #000;">30+</span><br><span style="color: #666; font-size: 0.9rem;">发表总数</span></div>
+                    <div><span style="font-size: 2rem; font-weight: 200; color: #000;">15+</span><br><span style="color: #666; font-size: 0.9rem;">核心期刊</span></div>
+                    <div><span style="font-size: 2rem; font-weight: 200; color: #000;">200+</span><br><span style="color: #666; font-size: 0.9rem;">引用次数</span></div>
+                </div>
+            </div>
+            
             <div class="publications-grid" id="publications-grid">
                 <!-- 期刊论文 -->
                 <article class="publication-card" data-type="journal">
