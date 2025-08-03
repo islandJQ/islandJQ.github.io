@@ -6,6 +6,7 @@ const translations = {
         'nav.academic': 'Publications',
         'nav.about': 'About',
         'nav.news': 'News',
+        'nav.shop': 'Shop',
         'nav.contact': 'Contact',
         'nav.lang': 'EN',
         
@@ -130,6 +131,34 @@ const translations = {
         'publications.title': '学术发表',
         'publications.subtitle': '学术研究与设计发表',
         
+        // Shop页面
+        'shop.filter.all': '全部',
+        'shop.filter.prints': '艺术海报',
+        'shop.filter.stationery': '文具用品',
+        'shop.filter.books': '设计书籍',
+        'shop.filter.accessories': '配饰用品',
+        'shop.filter.digital': '数字产品',
+        'shop.status.new': '新品',
+        'shop.status.sale': '特价',
+        'shop.prints.minimal.title': '极简艺术海报',
+        'shop.prints.minimal.category': '艺术海报',
+        'shop.prints.typography.title': '字体设计海报',
+        'shop.prints.typography.category': '艺术海报',
+        'shop.stationery.notebook.title': '设计师笔记本',
+        'shop.stationery.notebook.category': '文具用品',
+        'shop.stationery.calendar.title': '设计日历 2025',
+        'shop.stationery.calendar.category': '文具用品',
+        'shop.books.theory.title': '设计理论手册',
+        'shop.books.theory.category': '设计书籍',
+        'shop.accessories.bag.title': '工作室帆布袋',
+        'shop.accessories.bag.category': '配饰用品',
+        'shop.accessories.pins.title': '工作室徽章套装',
+        'shop.accessories.pins.category': '配饰用品',
+        'shop.digital.templates.title': '数字设计模板',
+        'shop.digital.templates.category': '数字产品',
+        'shop.digital.guidelines.title': '品牌指南模板',
+        'shop.digital.guidelines.category': '数字产品',
+        
         // 页脚
         'footer.copyright': '© 2024 islandJQ  DESIGN  STUDIO. All rights reserved.'
     },
@@ -139,6 +168,7 @@ const translations = {
         'nav.academic': 'Publications',
         'nav.about': 'About',
         'nav.news': 'News',
+        'nav.shop': 'Shop',
         'nav.contact': 'Contact',
         'nav.lang': '中',
         
@@ -262,6 +292,34 @@ const translations = {
         // Publications页面
         'publications.title': 'Publications',
         'publications.subtitle': 'Academic Research & Design Publications',
+        
+        // Shop页面
+        'shop.filter.all': 'All',
+        'shop.filter.prints': 'Art Prints',
+        'shop.filter.stationery': 'Stationery',
+        'shop.filter.books': 'Books',
+        'shop.filter.accessories': 'Accessories',
+        'shop.filter.digital': 'Digital',
+        'shop.status.new': 'New',
+        'shop.status.sale': 'Sale',
+        'shop.prints.minimal.title': 'Minimal Art Prints',
+        'shop.prints.minimal.category': 'Art Prints',
+        'shop.prints.typography.title': 'Typography Posters',
+        'shop.prints.typography.category': 'Art Prints',
+        'shop.stationery.notebook.title': 'Designer Notebook',
+        'shop.stationery.notebook.category': 'Stationery',
+        'shop.stationery.calendar.title': 'Design Calendar 2025',
+        'shop.stationery.calendar.category': 'Stationery',
+        'shop.books.theory.title': 'Design Theory Handbook',
+        'shop.books.theory.category': 'Books',
+        'shop.accessories.bag.title': 'Studio Tote Bag',
+        'shop.accessories.bag.category': 'Accessories',
+        'shop.accessories.pins.title': 'Studio Pin Set',
+        'shop.accessories.pins.category': 'Accessories',
+        'shop.digital.templates.title': 'Digital Design Templates',
+        'shop.digital.templates.category': 'Digital',
+        'shop.digital.guidelines.title': 'Brand Guidelines Template',
+        'shop.digital.guidelines.category': 'Digital',
         
         // 页脚
         'footer.copyright': '© 2024 islandJQ  DESIGN  STUDIO. All rights reserved.'

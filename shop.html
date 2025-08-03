@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Shop - islandJQ设计工作室商店，精选设计产品">
+    <title>Shop - islandJQ STUDIO</title>
+    <link rel="stylesheet" href="style.css?v=2025080122">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DIN+Next+LT+Pro:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="languages.js"></script>
+    <style>
+        /* Shop页面专用样式，参考Works页面设计 */
+        body {
+            background: #ffffff;
+            font-family: 'DIN Next LT Pro', sans-serif;
+        }
+        
+        .shop-wrapper {
+            margin-top: 70px;
+            min-height: 100vh;
+        }
+        
+        
+        /* 分类筛选 */
+        .shop-filter {
+            padding: 30px 2rem 30px;
+            text-align: center;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+        
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        .filter-btn {
+            background: none;
+            border: none;
+            font-size: 0.9rem;
+            color: #999;
+            cursor: pointer;
+            padding: 8px 0;
+            letter-spacing: 1px;
+            font-weight: 300;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid transparent;
+            font-family: 'DIN Next LT Pro', sans-serif;
+        }
+        
+        .filter-btn:hover,
+        .filter-btn.active {
+            color: #000;
+            border-bottom: 1px solid #000;
+        }
+        
+        /* 网格布局 - 参考Works页面 */
+        .shop-grid {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 10px 2rem 60px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            align-items: start;
+        }
+        
+        .product-card {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.4s ease;
+            position: relative;
+            border: 1px solid transparent;
+            border-radius: 2px;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+        
+        .product-image {
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%; /* 16:9 比例 */
+            overflow: hidden;
+            background: #f8f8f8;
+            margin-bottom: 20px;
+            position: relative;
+            border-radius: 2px;
+        }
+        
+        .product-image img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        
+        .product-card:hover .product-image img {
+            transform: scale(1.05);
+        }
+        
+        /* 产品信息 */
+        .product-meta {
+            padding: 8px 12px 15px;
+        }
+        
+        .product-title {
+            font-size: 1.1rem;
+            font-weight: 400;
+            margin-bottom: 6px;
+            color: #000;
+            letter-spacing: 0.3px;
+            line-height: 1.2;
+        }
+        
+        .product-category {
+            font-size: 0.75rem;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-bottom: 8px;
+            line-height: 1.1;
+        }
+        
+        .product-price {
+            font-size: 0.9rem;
+            color: #000;
+            font-weight: 500;
+            line-height: 1.1;
+        }
+        
+        .product-price .currency {
+            font-size: 0.75rem;
+            color: #666;
+        }
+        
+        /* 占位符样式 */
+        .placeholder-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            color: white;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+        
+        /* 产品状态标签 */
+        .product-status {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #000;
+            color: #fff;
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 4px 8px;
+            border-radius: 2px;
+            z-index: 2;
+        }
+        
+        .product-status.new {
+            background: #4CAF50;
+        }
+        
+        .product-status.sale {
+            background: #FF5722;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 1024px) {
+            .shop-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .shop-filter {
+                padding: 30px 20px 30px;
+            }
+            
+            .shop-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                padding: 20px 20px 60px;
+            }
+            
+            .filter-buttons {
+                gap: 20px;
+            }
+            
+            .filter-btn {
+                font-size: 0.8rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .filter-buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+        
+        /* 加载动画 */
+        .product-card {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        
+        .product-card:nth-child(1) { animation-delay: 0.1s; }
+        .product-card:nth-child(2) { animation-delay: 0.2s; }
+        .product-card:nth-child(3) { animation-delay: 0.3s; }
+        .product-card:nth-child(4) { animation-delay: 0.4s; }
+        .product-card:nth-child(5) { animation-delay: 0.5s; }
+        .product-card:nth-child(6) { animation-delay: 0.6s; }
+        .product-card:nth-child(7) { animation-delay: 0.7s; }
+        .product-card:nth-child(8) { animation-delay: 0.8s; }
+        .product-card:nth-child(9) { animation-delay: 0.9s; }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">islandJQ  STUDIO</a>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="works.html" class="nav-link" data-translate="nav.works">Works</a>
+                <a href="academic-publications.html" class="nav-link" data-translate="nav.academic">Publications</a>
+                <a href="about.html" class="nav-link" data-translate="nav.about">About</a>
+                <a href="news.html" class="nav-link" data-translate="nav.news">News</a>
+                <a href="shop.html" class="nav-link active" data-translate="nav.shop">Shop</a>
+                <a href="contact.html" class="nav-link" data-translate="nav.contact">Contact</a>
+                <a href="#" class="nav-link lang-switch" id="lang-switch">EN</a>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 商店主体 -->
+    <div class="shop-wrapper">
+
+        <!-- 分类筛选 -->
+        <section class="shop-filter">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all" data-translate="shop.filter.all">All</button>
+                <button class="filter-btn" data-filter="prints" data-translate="shop.filter.prints">Art Prints</button>
+                <button class="filter-btn" data-filter="stationery" data-translate="shop.filter.stationery">Stationery</button>
+                <button class="filter-btn" data-filter="books" data-translate="shop.filter.books">Books</button>
+                <button class="filter-btn" data-filter="accessories" data-translate="shop.filter.accessories">Accessories</button>
+                <button class="filter-btn" data-filter="digital" data-translate="shop.filter.digital">Digital</button>
+            </div>
+        </section>
+
+        <!-- 产品网格 -->
+        <section class="shop-grid" id="shop-grid">
+            <a href="#" class="product-card" data-category="prints">
+                <div class="product-image">
+                    <div class="placeholder-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                        Art Print Collection
+                    </div>
+                    <div class="product-status new" data-translate="shop.status.new">New</div>
+                </div>
+                <div class="product-meta">
+                    <h3 class="product-title" data-translate="shop.prints.minimal.title">极简艺术海报</h3>
+                    <div class="product-category" data-translate="shop.prints.minimal.category">Art Prints</div>
+                    <div class="product-price">
+                        <span class="currency">¥</span>128
+                    </div>
+                </div>
+            </a>
+
+            <a href="#" class="product-card" data-category="stationery">
+                <div class="product-image">
+                    <div class="placeholder-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                        Design Notebook
+                    </div>
+                </div>
+                <div class="product-meta">
+                    <h3 class="product-title" data-translate="shop.stationery.notebook.title">设计师笔记本</h3>
+                    <div class="product-category" data-translate="shop.stationery.notebook.category">Stationery</div>
+                    <div class="product-price">
+                        <span class="currency">¥</span>68
+                    </div>
+                </div>
+            </a>
+
+            <a href="#" class="product-card" data-category="books">
+                <div class="product-image">
+                    <div class="placeholder-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                        Design Theory Book
+                    </div>
+                    <div class="product-status sale" data-translate="shop.status.sale">Sale</div>
+                </div>
+                <div class="product-meta">
+                    <h3 class="product-title" data-translate="shop.books.theory.title">设计理论手册</h3>
+                    <div class="product-category" data-translate="shop.books.theory.category">Books</div>
+                    <div class="product-price">
+                        <span class="currency">¥</span>198
+                    </div>
+                </div>
+            </a>
+
+            <a href="#" class="product-card" data-category="accessories">
+                <div class="product-image">
+                    <div class="placeholder-image" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+                        Studio Tote Bag
+                    </div>
+                </div>
+                <div class="product-meta">
+                    <h3 class="product-title" data-translate="shop.accessories.bag.title">工作室帆布袋</h3>
+                    <div class="product-category" data-translate="shop.accessories.bag.category">Accessories</div>
+                    <div class="product-price">
+                        <span class="currency">¥</span>88
+                    </div>
+                </div>
+            </a>
+
+            <a href="#" class="product-card" data-category="digital">
+                <div class="product-image">
+                    <div class="placeholder-image" style="background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);">
+                        Digital Templates
+                    </div>
+                </div>
+                <div class="product-meta">
+                    <h3 class="product-title" data-translate="shop.digital.templates.title">数字设计模板</h3>
+                    <div class="product-category" data-translate="shop.digital.templates.category">Digital</div>
+                    <div class="product-price">
+                        <span class="currency">¥</span>58
+                    </div>
+                </div>
+            </a>
+
+            <a href="#" class="product-card" data-category="prints">
+                <div class="product-image">
+                    <div class="placeholder-image" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
+                        Typography Poster
+                    </div>
+                </div>
+                <div class="product-meta">
+                    <h3 class="product-title" data-translate="shop.prints.typography.title">字体设计海报</h3>
+                    <div class="product-category" data-translate="shop.prints.typography.category">Art Prints</div>
+                    <div class="product-price">
+                        <span class="currency">¥</span>148
+                    </div>
+                </div>
+            </a>
+
+            <a href="#" class="product-card" data-category="stationery">
+                <div class="product-image">
+                    <div class="placeholder-image" style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);">
+                        Design Calendar
+                    </div>
+                    <div class="product-status new" data-translate="shop.status.new">New</div>
+                </div>
+                <div class="product-meta">
+                    <h3 class="product-title" data-translate="shop.stationery.calendar.title">设计日历 2025</h3>
+                    <div class="product-category" data-translate="shop.stationery.calendar.category">Stationery</div>
+                    <div class="product-price">
+                        <span class="currency">¥</span>98
+                    </div>
+                </div>
+            </a>
+
+            <a href="#" class="product-card" data-category="accessories">
+                <div class="product-image">
+                    <div class="placeholder-image" style="background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);">
+                        Studio Pin Set
+                    </div>
+                </div>
+                <div class="product-meta">
+                    <h3 class="product-title" data-translate="shop.accessories.pins.title">工作室徽章套装</h3>
+                    <div class="product-category" data-translate="shop.accessories.pins.category">Accessories</div>
+                    <div class="product-price">
+                        <span class="currency">¥</span>38
+                    </div>
+                </div>
+            </a>
+
+            <a href="#" class="product-card" data-category="digital">
+                <div class="product-image">
+                    <div class="placeholder-image" style="background: linear-gradient(135deg, #c3cfe2 0%, #c3cfe2 100%);">
+                        Brand Guidelines
+                    </div>
+                </div>
+                <div class="product-meta">
+                    <h3 class="product-title" data-translate="shop.digital.guidelines.title">品牌指南模板</h3>
+                    <div class="product-category" data-translate="shop.digital.guidelines.category">Digital</div>
+                    <div class="product-price">
+                        <span class="currency">¥</span>168
+                    </div>
+                </div>
+            </a>
+        </section>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <p data-translate="footer.copyright">&copy; 2024 islandJQ  STUDIO. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // 筛选功能
+        document.addEventListener('DOMContentLoaded', function() {
+            // 初始化语言管理器
+            window.languageManager.init();
+            
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const productCards = document.querySelectorAll('.product-card');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const filter = this.getAttribute('data-filter');
+                    
+                    // 更新按钮状态
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // 筛选产品
+                    productCards.forEach(card => {
+                        const category = card.getAttribute('data-category');
+                        
+                        if (filter === 'all' || category === filter) {
+                            card.style.display = 'block';
+                            card.style.animation = 'fadeInUp 0.6s ease forwards';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+            
+            // 导航栏功能
+            const navToggle = document.getElementById('nav-toggle');
+            const navMenu = document.getElementById('nav-menu');
+            
+            navToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+                navToggle.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
