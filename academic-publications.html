@@ -66,19 +66,27 @@
         
         .publications-header {
             text-align: center;
-            margin-bottom: 60px; /* 减少底部边距，与news页面更接近 */
+            margin-bottom: 40px; /* 进一步减少底部边距 */
         }
         
         .publications-title {
             font-size: 3rem;
             font-weight: 200;
             letter-spacing: 3px;
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
             color: #000;
             font-family: 'DIN Next LT Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
             line-height: 1.2; /* 固定行高防止跳跃 */
             min-height: 3.6rem; /* 设置最小高度防止跳跃 */
             position: relative;
+        }
+        
+        .publications-subtitle {
+            font-size: 1.1rem;
+            color: #666;
+            font-weight: 300;
+            letter-spacing: 1px;
+            margin-bottom: 2rem;
         }
         
         /* 防止FOUT (Flash of Unstyled Text) */
@@ -95,16 +103,17 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 30px;
+            gap: 20px;
+            margin-bottom: 1rem;
         }
         
         .filter-btn {
             background: none;
             border: none;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             color: #999;
             cursor: pointer;
-            padding: 8px 0;
+            padding: 5px 0;
             letter-spacing: 1px;
             font-weight: 300;
             text-transform: uppercase;
@@ -300,6 +309,7 @@
             <!-- 页面标题 -->
             <header class="publications-header">
                 <h1 class="publications-title" data-translate="academic.title">Publications</h1>
+                <p class="publications-subtitle" data-translate="publications.subtitle">Academic Research & Articles</p>
                 <!-- 筛选器直接放在标题下方 -->
                 <div class="filter-buttons">
                     <button class="filter-btn active" data-filter="all" data-translate="filter.all">All</button>
