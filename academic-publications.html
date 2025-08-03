@@ -14,7 +14,7 @@
     <meta property="og:type" content="website">
     
     <title>Publications - islandJQ STUDIO</title>
-    <!-- Cache Buster v2025080312 -->
+    <!-- Cache Buster v2025080313 -->
     <!-- 预加载关键字体 -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=DIN+Next+LT+Pro:wght@100;200;300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DIN+Next+LT+Pro:wght@100;200;300;400;500;600;700&display=swap"></noscript>
@@ -125,9 +125,10 @@
             border-bottom: 1px solid #000;
         }
         
-        .publications-grid {
-            display: grid;
-            gap: 10.5px;
+        .publications-container .publications-grid {
+            display: grid !important;
+            gap: 10.5px !important;
+            margin-top: -5px !important;
         }
         
         .publication-card {
@@ -274,7 +275,7 @@
         /* 筛选器区域样式 - 提高优先级 */
         .publications-container .filter-section {
             text-align: center !important;
-            margin: 15px 0 10px 0 !important;
+            margin: 10px 0 5px 0 !important;
         }
         
         
