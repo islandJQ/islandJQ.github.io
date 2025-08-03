@@ -1,4 +1,3 @@
-// 多语言支持
 const translations = {
     'zh': {
         // 导航

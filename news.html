@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css?v=2025080122">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=DIN+Next+LT+Pro:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="languages.js"></script>
+    <script src="core.js" defer></script>
     <style>
         body {
             background: #ffffff;
@@ -404,20 +404,5 @@
         </div>
     </footer>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // 初始化语言管理器
-            window.languageManager.init();
-            
-            // 导航栏功能
-            const navToggle = document.getElementById('nav-toggle');
-            const navMenu = document.getElementById('nav-menu');
-            
-            navToggle.addEventListener('click', function() {
-                navMenu.classList.toggle('active');
-                navToggle.classList.toggle('active');
-            });
-        });
-    </script>
 </body>
 </html>

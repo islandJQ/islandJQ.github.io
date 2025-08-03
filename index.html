@@ -53,14 +53,13 @@
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DIN+Next+LT+Pro:wght@100;200;300;400;500;600;700&display=swap"></noscript>
     
     <!-- 延迟加载非关键CSS -->
-    <link rel="preload" href="style.css?v=2025080122" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="style.css?v=2025080122"></noscript>
+    <link rel="preload" href="style.css?v=2025080301" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="style.css?v=2025080301"></noscript>
     <link rel="preload" href="loader.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="loader.css"></noscript>
     
-    <!-- 异步加载脚本 -->
-    <script src="languages.js" defer></script>
-    <script src="image-optimizer.js" defer></script>
+    <!-- 核心功能 -->
+    <script src="core.js?v=2025080301" defer></script>
     
     <!-- 结构化数据 -->
     <script type="application/ld+json">
@@ -177,10 +176,8 @@
         </div>
     </footer>
 
-    <!-- 优化脚本加载 -->
-    <script src="script.js" defer></script>
+    <!-- 页面特定功能 -->
     <script src="animations.js" defer></script>
-    <script src="performance.js" defer></script>
     
     <script>
         // 注册增强版 Service Worker
