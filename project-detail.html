@@ -211,13 +211,13 @@
         <div class="project-main">
             <!-- 左侧信息栏 -->
             <aside class="project-sidebar">
-                <div class="project-year">2011</div>
-                <h1 class="project-title">摄影作品</h1>
-                <div class="project-type">Photography</div>
-                <div class="project-location">云南</div>
+                <div class="project-year">2024</div>
+                <h1 class="project-title">品牌视觉设计</h1>
+                <div class="project-type">品牌设计</div>
+                <div class="project-location">上海</div>
                 
                 <div class="project-description">
-                    记录生活中的美好瞬间，从云南的山水风光到都市的人文景观，用镜头捕捉时间的印记。2011年云南之行，用相机记录下了壮美的自然风光和当地的人文气息。
+                    为新兴科技公司打造的全新品牌视觉识别系统，包括标志设计、色彩系统、字体规范和应用系统设计。通过简洁现代的设计语言，传达品牌的创新精神和专业形象。
                 </div>
                 
                 <a href="works.html" class="back-link">← 返回作品集</a>
@@ -226,10 +226,10 @@
             <!-- 右侧图片内容区域 -->
             <main class="project-content">
                 <div class="gallery-item">
-                    <img src="images/works/photography/p942938062.jpeg" alt="2011云南 II" loading="lazy">
+                    <img src="images/works/branding/placeholder-1.jpg" alt="品牌视觉设计 - 1" loading="lazy">
                 </div>
                 <div class="gallery-item">
-                    <img src="images/works/photography/p942938083.jpeg" alt="2011云南 I" loading="lazy">
+                    <img src="images/works/branding/placeholder-2.jpg" alt="品牌视觉设计 - 2" loading="lazy">
                 </div>
             </main>
         </div>
@@ -406,7 +406,7 @@
             if (projectId && projectsData[projectId]) {
                 const projectData = projectsData[projectId];
                 const currentLang = window.languageManager ? window.languageManager.getCurrentLang() : 'zh';
-                const project = projectData[currentLang] || projectData.zh;
+                const project = projectData[currentLang] || projectData.zh || projectData;
                 
                 // 更新页面内容
                 document.querySelector('.project-year').textContent = project.year;
@@ -441,7 +441,7 @@
         document.addEventListener('DOMContentLoaded', function() {
             // 获取URL参数
             const urlParams = new URLSearchParams(window.location.search);
-            const projectId = urlParams.get('id');
+            const projectId = urlParams.get('id') || 'branding-1'; // 默认显示品牌设计
             
             // 加载项目数据
             updateProjectContent(projectId);
