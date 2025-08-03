@@ -249,8 +249,14 @@
         .research-overview {
             background: #f8f8f8;
             padding: 30px;
-            margin: 40px 0 0 0;
+            margin: 30px 0;
             border-radius: 2px;
+        }
+        
+        /* 筛选器区域样式 */
+        .filter-section {
+            text-align: center;
+            margin: 30px 0;
         }
         
         .overview-content {
@@ -390,7 +396,30 @@
             <header class="publications-header">
                 <h1 class="publications-title" data-translate="academic.title">Publications</h1>
                 <p class="publications-subtitle" data-translate="publications.subtitle">Academic Research & Articles</p>
-                <!-- 筛选器直接放在标题下方 -->
+            </header>
+
+            <!-- 学术成果概览 - 移动到筛选器之前 -->
+            <section class="research-overview">
+                <div class="overview-content">
+                    <p class="overview-description">
+                        持续深耕设计理论研究，将创新思维与学术探索相结合，在国内外核心期刊和学术会议上发表多篇高质量论文，推动设计学科的理论发展与实践应用。
+                    </p>
+                    <div class="research-areas">
+                        <div class="research-area">
+                            <h3>信息设计</h3>
+                        </div>
+                        <div class="research-area">
+                            <h3>书籍设计</h3>
+                        </div>
+                        <div class="research-area">
+                            <h3>动态设计</h3>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 筛选器 -->
+            <div class="filter-section">
                 <div class="filter-buttons">
                     <button class="filter-btn active" data-filter="all" data-translate="filter.all">All</button>
                     <button class="filter-btn" data-filter="journal" data-translate="filter.journal">Journal Papers</button>
@@ -398,7 +427,7 @@
                     <button class="filter-btn" data-filter="book" data-translate="filter.book">Books</button>
                     <button class="filter-btn" data-filter="chapter" data-translate="filter.chapter">Chapters</button>
                 </div>
-            </header>
+            </div>
 
         <!-- 发表列表 -->
         <section>
@@ -507,23 +536,6 @@
             </div>
         </section>
 
-        <!-- 学术成果概览 -->
-        <section class="research-overview">
-            <div class="overview-content">
-                <p class="overview-description">持续深耕设计理论研究，将创新思维与学术探索相结合，推动设计学科的理论发展与实践应用。</p>
-                <div class="research-areas">
-                    <div class="research-area">
-                        <h3>信息可视化设计</h3>
-                    </div>
-                    <div class="research-area">
-                        <h3>书籍设计</h3>
-                    </div>
-                    <div class="research-area">
-                        <h3>动态设计</h3>
-                    </div>
-                </div>
-            </div>
-        </section>
 
         </div>
     </div>
