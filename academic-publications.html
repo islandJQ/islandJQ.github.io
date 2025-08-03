@@ -42,9 +42,14 @@
     
     <style>
         /* 防止字体加载跳跃 */
-        @font-face {
-            font-family: 'DIN Next LT Pro';
-            font-display: optional;
+        html {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* 预设字体栈，防止闪烁 */
+        body {
+            font-family: 'DIN Next LT Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
         }
         
         /* Publications页面样式 - 与News页面保持一致 */
@@ -52,12 +57,6 @@
             margin-top: 70px;
             min-height: 100vh;
             padding: 60px 20px;
-            opacity: 0;
-            transition: opacity 0.3s ease-in-out;
-        }
-        
-        .publications-wrapper.loaded {
-            opacity: 1;
         }
         
         .publications-container {
@@ -76,7 +75,20 @@
             letter-spacing: 3px;
             margin-bottom: 2rem;
             color: #000;
-            font-family: 'DIN Next LT Pro', sans-serif;
+            font-family: 'DIN Next LT Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            line-height: 1.2; /* 固定行高防止跳跃 */
+            min-height: 3.6rem; /* 设置最小高度防止跳跃 */
+            position: relative;
+        }
+        
+        /* 防止FOUT (Flash of Unstyled Text) */
+        .publications-title::before {
+            content: attr(data-translate);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            opacity: 0;
         }
         
         .filter-buttons {
@@ -120,13 +132,21 @@
             overflow: hidden;
             box-shadow: var(--shadow);
             transition: all 0.3s ease;
-            opacity: 0;
-            transform: translateY(30px);
         }
         
         .publication-card.animate-in {
-            opacity: 1;
-            transform: translateY(0);
+            animation: fadeInUp 0.5s ease forwards;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         
         .publication-card:hover {
@@ -561,10 +581,6 @@
     
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // 防止字体加载跳跃 - 页面加载完成后显示内容
-            setTimeout(function() {
-                document.querySelector('.publications-wrapper').classList.add('loaded');
-            }, 100);
             // 导航栏功能
             const navToggle = document.getElementById('nav-toggle');
             const navMenu = document.getElementById('nav-menu');
@@ -587,30 +603,30 @@
                     
                     const filter = this.dataset.filter;
                     
-                    publicationCards.forEach(card => {
+                    publicationCards.forEach((card, index) => {
                         if (filter === 'all' || card.dataset.type === filter) {
                             card.style.display = 'block';
-                            setTimeout(() => {
-                                card.classList.add('animate-in');
-                            }, 100);
-                        } else {
+                            // 重新添加动画类
                             card.classList.remove('animate-in');
                             setTimeout(() => {
-                                card.style.display = 'none';
-                            }, 300);
+                                card.classList.add('animate-in');
+                            }, index * 100);
+                        } else {
+                            card.style.display = 'none';
+                            card.classList.remove('animate-in');
                         }
                     });
                 });
             });
 
-            // 初始动画
-            setTimeout(() => {
+            // 初始动画 - 页面完全加载后执行
+            window.addEventListener('load', function() {
                 publicationCards.forEach((card, index) => {
                     setTimeout(() => {
                         card.classList.add('animate-in');
-                    }, index * 200);
+                    }, index * 100);
                 });
-            }, 500);
+            });
 
             // 初始化语言管理器
             if (window.languageManager) {
