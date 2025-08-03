@@ -242,7 +242,7 @@
         </div>
     </footer>
 
-    <script src="core.js"></script>
+    <script src="core.js?v=2025080302"></script>
     <script>
         // 项目数据
         const projectsData = {
@@ -403,10 +403,16 @@
         };
 
         function updateProjectContent(projectId) {
+            console.log('Updating project content for:', projectId); // 调试信息
+            console.log('Available projects:', Object.keys(projectsData)); // 调试信息
+            
             if (projectId && projectsData[projectId]) {
                 const projectData = projectsData[projectId];
                 const currentLang = window.languageManager ? window.languageManager.getCurrentLang() : 'zh';
                 const project = projectData[currentLang] || projectData.zh || projectData;
+                
+                console.log('Current language:', currentLang); // 调试信息
+                console.log('Project data:', project); // 调试信息
                 
                 // 更新页面内容
                 document.querySelector('.project-year').textContent = project.year;
@@ -443,8 +449,7 @@
             const urlParams = new URLSearchParams(window.location.search);
             const projectId = urlParams.get('id') || 'branding-1'; // 默认显示品牌设计
             
-            // 加载项目数据
-            updateProjectContent(projectId);
+            console.log('Project ID:', projectId); // 调试信息
             
             // 初始化语言管理器
             if (window.languageManager) {
@@ -455,6 +460,11 @@
                     updateProjectContent(projectId);
                 });
             }
+            
+            // 加载项目数据 - 确保在语言管理器初始化后执行
+            setTimeout(() => {
+                updateProjectContent(projectId);
+            }, 100);
             
             // 导航栏功能
             const navToggle = document.getElementById('nav-toggle');
