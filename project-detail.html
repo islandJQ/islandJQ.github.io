@@ -242,8 +242,7 @@
         </div>
     </footer>
 
-    <script src="languages.js"></script>
-    <script src="script.js"></script>
+    <script src="core.js"></script>
     <script>
         // 项目数据
         const projectsData = {
@@ -314,11 +313,22 @@
                 ]
             },
             'photography-1': {
-                year: '2011',
-                title: '摄影作品',
-                type: 'Photography',
-                location: '云南',
-                description: '记录生活中的美好瞬间，从云南的山水风光到都市的人文景观，用镜头捕捉时间的印记。2011年云南之行，用相机记录下了壮美的自然风光和当地的人文气息。',
+                zh: {
+                    year: '2011',
+                    title: '摄影作品',
+                    type: 'Photography',
+                    location: '云南',
+                    description: '记录生活中的美好瞬间，从云南的山水风光到都市的人文景观，用镜头捕捉时间的印记。2011年云南之行，用相机记录下了壮美的自然风光和当地的人文气息。',
+                    backLink: '← 返回作品集'
+                },
+                en: {
+                    year: '2011',
+                    title: 'Photography Works',
+                    type: 'Photography',
+                    location: 'Yunnan',
+                    description: 'Capturing beautiful moments in life, from the landscapes of Yunnan to urban humanistic scenes, using the lens to capture traces of time. The 2011 Yunnan trip recorded the magnificent natural scenery and local cultural atmosphere with the camera.',
+                    backLink: '← Back to Portfolio'
+                },
                 images: [
                     'images/works/photography/p942938062.jpeg',
                     'images/works/photography/p942938083.jpeg'
@@ -326,14 +336,11 @@
             }
         };
 
-        document.addEventListener('DOMContentLoaded', function() {
-            // 获取URL参数
-            const urlParams = new URLSearchParams(window.location.search);
-            const projectId = urlParams.get('id');
-            
-            // 加载项目数据
+        function updateProjectContent(projectId) {
             if (projectId && projectsData[projectId]) {
-                const project = projectsData[projectId];
+                const projectData = projectsData[projectId];
+                const currentLang = window.languageManager ? window.languageManager.getCurrentLang() : 'zh';
+                const project = projectData[currentLang] || projectData.zh;
                 
                 // 更新页面内容
                 document.querySelector('.project-year').textContent = project.year;
@@ -341,12 +348,13 @@
                 document.querySelector('.project-type').textContent = project.type;
                 document.querySelector('.project-location').textContent = project.location;
                 document.querySelector('.project-description').textContent = project.description;
+                document.querySelector('.back-link').textContent = project.backLink;
                 
                 // 更新图片
                 const galleryContainer = document.querySelector('.project-content');
                 galleryContainer.innerHTML = ''; // 清空现有图片
                 
-                project.images.forEach((imageSrc, index) => {
+                projectData.images.forEach((imageSrc, index) => {
                     const galleryItem = document.createElement('div');
                     galleryItem.className = 'gallery-item';
                     
@@ -362,10 +370,24 @@
                 // 更新页面标题
                 document.title = `${project.title} - islandJQ STUDIO`;
             }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // 获取URL参数
+            const urlParams = new URLSearchParams(window.location.search);
+            const projectId = urlParams.get('id');
+            
+            // 加载项目数据
+            updateProjectContent(projectId);
             
             // 初始化语言管理器
             if (window.languageManager) {
                 window.languageManager.init();
+                
+                // 监听语言切换事件
+                window.addEventListener('languageChanged', function() {
+                    updateProjectContent(projectId);
+                });
             }
             
             // 导航栏功能
