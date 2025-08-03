@@ -52,24 +52,27 @@
         }
         
         .news-article {
-            background: #f8f8f8;
+            display: grid;
+            grid-template-columns: 171px 1fr;
+            gap: 34.2px;
             padding: 34.2px;
             margin-bottom: 51.3px;
+            border-bottom: 1px solid #e5e5e5;
             border-radius: 2px;
-            border: 1px solid transparent;
             transition: all 0.3s ease;
         }
         
         .news-article:last-child {
+            border-bottom: none;
             margin-bottom: 0;
         }
         
         /* 响应式交互效果 - 保持原色调 */
         .news-article:hover {
-            background: #ffffff;
-            border: 1px solid #e0e0e0;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            background: #fdfdfd;
+            border-color: #f0f0f0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
         }
         
         /* 为不同类别添加细微差异 */
@@ -79,14 +82,8 @@
         }
         
         .news-date {
-            display: inline-block;
-            background: #000;
-            color: #fff;
-            font-size: 0.599rem;
-            text-transform: uppercase;
-            letter-spacing: 0.855px;
-            padding: 6.84px 12.825px;
-            margin-bottom: 1.283rem;
+            text-align: right;
+            padding-top: 10px;
         }
         
         .date-month {
@@ -189,18 +186,24 @@
             }
             
             .news-article {
+                grid-template-columns: 1fr;
+                gap: 17.1px;
+                text-align: left;
                 padding: 25.65px 17.1px;
                 margin-bottom: 34.2px;
             }
             
             .news-article:hover {
-                transform: translateY(-1px);
+                transform: translateY(-2px);
             }
             
             .news-date {
-                font-size: 0.55rem;
-                padding: 5px 10px;
-                margin-bottom: 1rem;
+                text-align: left;
+                border-bottom: 1px solid #e5e5e5;
+                padding-bottom: 12.825px;
+                display: flex;
+                align-items: center;
+                gap: 12.825px;
             }
             
             .featured-article {
@@ -300,7 +303,10 @@
             <!-- 新闻列表 -->
             <div class="news-grid">
                 <article class="news-article">
-                    <div class="news-date">Jan 2024</div>
+                    <div class="news-date">
+                        <div class="date-month">Jan</div>
+                        <div class="date-year">2024</div>
+                    </div>
                     <div class="news-content">
                         <h2 class="news-item-title" data-translate="news.item1.title">新作品发布</h2>
                         <p class="news-excerpt" data-translate="news.item1.content">
@@ -315,7 +321,10 @@
                 </article>
 
                 <article class="news-article">
-                    <div class="news-date">Dec 2023</div>
+                    <div class="news-date">
+                        <div class="date-month">Dec</div>
+                        <div class="date-year">2023</div>
+                    </div>
                     <div class="news-content">
                         <h2 class="news-item-title" data-translate="news.item2.title">设计奖项获得</h2>
                         <p class="news-excerpt" data-translate="news.item2.content">
@@ -330,7 +339,10 @@
                 </article>
 
                 <article class="news-article">
-                    <div class="news-date">Nov 2023</div>
+                    <div class="news-date">
+                        <div class="date-month">Nov</div>
+                        <div class="date-year">2023</div>
+                    </div>
                     <div class="news-content">
                         <h2 class="news-item-title" data-translate="news.item3.title">工作室更新</h2>
                         <p class="news-excerpt" data-translate="news.item3.content">
@@ -345,7 +357,10 @@
                 </article>
 
                 <article class="news-article">
-                    <div class="news-date">Oct 2023</div>
+                    <div class="news-date">
+                        <div class="date-month">Oct</div>
+                        <div class="date-year">2023</div>
+                    </div>
                     <div class="news-content">
                         <h2 class="news-item-title" data-translate="news.item4.title">设计展览参与</h2>
                         <p class="news-excerpt" data-translate="news.item4.content">
@@ -360,7 +375,10 @@
                 </article>
 
                 <article class="news-article">
-                    <div class="news-date">Sep 2023</div>
+                    <div class="news-date">
+                        <div class="date-month">Sep</div>
+                        <div class="date-year">2023</div>
+                    </div>
                     <div class="news-content">
                         <h2 class="news-item-title" data-translate="news.item5.title">客户案例分享</h2>
                         <p class="news-excerpt" data-translate="news.item5.content">
