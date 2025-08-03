@@ -244,7 +244,124 @@
     <script src="languages.js"></script>
     <script src="script.js"></script>
     <script>
+        // 项目数据
+        const projectsData = {
+            'branding-1': {
+                year: '2024',
+                title: '品牌视觉设计',
+                type: 'Branding',
+                location: '上海',
+                description: '为新兴科技公司打造的全新品牌视觉识别系统，包括标志设计、色彩系统、字体规范和应用系统设计。通过简洁现代的设计语言，传达品牌的创新精神和专业形象。',
+                images: [
+                    'images/works/branding/placeholder-1.jpg',
+                    'images/works/branding/placeholder-2.jpg'
+                ]
+            },
+            'print-1': {
+                year: '2024',
+                title: '印刷作品',
+                type: 'Print Design',
+                location: '北京',
+                description: '精选印刷设计作品集，涵盖书籍装帧、海报设计、宣传册等多种印刷媒介。注重纸张材质与印刷工艺的结合，创造独特的视觉体验和触感。',
+                images: [
+                    'images/works/print/placeholder-1.jpg',
+                    'images/works/print/placeholder-2.jpg'
+                ]
+            },
+            'digital-1': {
+                year: '2024',
+                title: '数字设计',
+                type: 'Digital Design',
+                location: '深圳',
+                description: '数字媒体设计项目，包括UI/UX设计、动态图形、交互设计等。运用最新的设计工具和技术，创造流畅的用户体验和视觉效果。',
+                images: [
+                    'images/works/digital/placeholder-1.jpg',
+                    'images/works/digital/placeholder-2.jpg'
+                ]
+            },
+            'illustration-1': {
+                year: '2024',
+                title: '插画设计',
+                type: 'Illustration',
+                location: '成都',
+                description: '原创插画作品系列，风格多样，从手绘到数字绘画，从写实到抽象。每一幅作品都讲述着独特的故事，传递着情感和想象。',
+                images: [
+                    'images/works/illustration/placeholder-1.jpg',
+                    'images/works/illustration/placeholder-2.jpg'
+                ]
+            },
+            'packaging-1': {
+                year: '2024',
+                title: '包装设计',
+                type: 'Packaging',
+                location: '杭州',
+                description: '创新包装设计解决方案，结合品牌理念与产品特性，打造独特的包装体验。注重环保材料的应用，实现美观与可持续的平衡。',
+                images: [
+                    'images/works/packaging/placeholder-1.jpg',
+                    'images/works/packaging/placeholder-2.jpg'
+                ]
+            },
+            'web-1': {
+                year: '2024',
+                title: '网页设计',
+                type: 'Web Design',
+                location: '南京',
+                description: '响应式网站设计项目，注重用户体验和视觉美感的结合。采用现代化的设计理念，确保在各种设备上都能呈现最佳效果。',
+                images: [
+                    'images/works/web/placeholder-1.jpg',
+                    'images/works/web/placeholder-2.jpg'
+                ]
+            },
+            'photography-1': {
+                year: '2011',
+                title: '摄影作品集',
+                type: 'Photography',
+                location: '云南',
+                description: '记录生活中的美好瞬间，从云南的山水风光到都市的人文景观，用镜头捕捉时间的印记。2011年云南之行，用相机记录下了壮美的自然风光和当地的人文气息。',
+                images: [
+                    'images/works/photography/p942938062.jpeg',
+                    'images/works/photography/p942938083.jpeg'
+                ]
+            }
+        };
+
         document.addEventListener('DOMContentLoaded', function() {
+            // 获取URL参数
+            const urlParams = new URLSearchParams(window.location.search);
+            const projectId = urlParams.get('id');
+            
+            // 加载项目数据
+            if (projectId && projectsData[projectId]) {
+                const project = projectsData[projectId];
+                
+                // 更新页面内容
+                document.querySelector('.project-year').textContent = project.year;
+                document.querySelector('.project-title').textContent = project.title;
+                document.querySelector('.project-type').textContent = project.type;
+                document.querySelector('.project-location').textContent = project.location;
+                document.querySelector('.project-description').textContent = project.description;
+                
+                // 更新图片
+                const galleryContainer = document.querySelector('.project-content');
+                galleryContainer.innerHTML = ''; // 清空现有图片
+                
+                project.images.forEach((imageSrc, index) => {
+                    const galleryItem = document.createElement('div');
+                    galleryItem.className = 'gallery-item';
+                    
+                    const img = document.createElement('img');
+                    img.src = imageSrc;
+                    img.alt = `${project.title} - ${index + 1}`;
+                    img.loading = 'lazy';
+                    
+                    galleryItem.appendChild(img);
+                    galleryContainer.appendChild(galleryItem);
+                });
+                
+                // 更新页面标题
+                document.title = `${project.title} - islandJQ STUDIO`;
+            }
+            
             // 初始化语言管理器
             if (window.languageManager) {
                 window.languageManager.init();
