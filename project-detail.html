@@ -33,80 +33,83 @@
             min-height: calc(100vh - 200px);
         }
         
-        /* 左侧信息栏 - 窄条 */
+        /* 左侧信息栏 - 极简风格 */
         .project-sidebar {
-            flex: 0 0 200px;
-            padding: 40px 30px;
+            flex: 0 0 120px;
+            padding: 40px 20px;
             background: #ffffff;
-            border-right: 1px solid #f0f0f0;
             position: sticky;
             top: 100px;
             height: fit-content;
         }
         
         .project-year {
-            font-size: 1.1rem;
-            font-weight: 400;
-            color: #000;
-            margin-bottom: 30px;
-            letter-spacing: 0.5px;
-        }
-        
-        .project-title {
             font-size: 0.9rem;
             font-weight: 400;
             color: #000;
-            margin-bottom: 15px;
-            line-height: 1.4;
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
         }
         
         .project-type {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: #666;
-            margin-bottom: 8px;
+            margin-bottom: 40px;
             line-height: 1.3;
+        }
+        
+        .project-title {
+            display: none;
         }
         
         .project-location {
-            font-size: 0.85rem;
-            color: #666;
-            margin-bottom: 30px;
-            line-height: 1.3;
+            display: none;
         }
         
         .project-description {
-            font-size: 0.8rem;
-            color: #666;
-            line-height: 1.5;
-            margin-bottom: 30px;
+            display: none;
         }
         
         .back-link {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             color: #666;
             text-decoration: none;
             transition: color 0.3s ease;
+            position: absolute;
+            bottom: 40px;
         }
         
         .back-link:hover {
             color: #000;
         }
         
-        /* 右侧图片区域 */
+        /* 右侧图片区域 - 横构图优化 */
         .project-content {
             flex: 1;
-            padding: 40px;
-            background: #ffffff;
+            padding: 40px 60px;
+            background: #f5f5f5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: calc(100vh - 200px);
         }
         
         .gallery-item {
-            margin-bottom: 20px;
+            margin-bottom: 60px;
+            max-width: 800px;
+            width: 100%;
+        }
+        
+        .gallery-item:last-child {
+            margin-bottom: 0;
         }
         
         .gallery-item img {
             width: 100%;
             height: auto;
             display: block;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
         
         /* 底部导航 */
@@ -206,15 +209,8 @@
             <!-- 左侧信息栏 -->
             <aside class="project-sidebar">
                 <div class="project-year">2011</div>
-                <h1 class="project-title">摄影作品集</h1>
                 <div class="project-type">Photography</div>
-                <div class="project-location">云南</div>
-                
-                <div class="project-description">
-                    记录生活中的美好瞬间，从云南的山水风光到都市的人文景观，用镜头捕捉时间的印记。
-                </div>
-                
-                <a href="works.html" class="back-link">← 返回作品集</a>
+                <a href="works.html" class="back-link">← Back</a>
             </aside>
             
             <!-- 右侧图片内容区域 -->
