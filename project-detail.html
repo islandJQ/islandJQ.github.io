@@ -3,183 +3,146 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="项目详情 - islandJQ设计工作室作品展示">
-    <title>项目详情 - islandJQ STUDIO</title>
-    <!-- 预加载关键字体 -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=DIN+Next+LT+Pro:wght@100;200;300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DIN+Next+LT+Pro:wght@100;200;300;400;500;600;700&display=swap"></noscript>
-    
-    <!-- 主样式文件 -->
-    <link rel="stylesheet" href="style.css?v=2025080204">
+    <title>Project Detail - islandJQ STUDIO</title>
+    <link rel="stylesheet" href="style.css?v=2025080122">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DIN+Next+LT+Pro:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="languages.js"></script>
     <style>
-        /* 极简主义风格 - 参考 irobe.ndc.co.jp */
         body {
             background: #ffffff;
-            font-family: 'DIN Next LT Pro', 'Helvetica Neue', Arial, sans-serif;
-            color: #000;
-            margin: 0;
-            padding: 0;
+            font-family: 'DIN Next LT Pro', sans-serif;
         }
         
-        .project-wrapper {
-            margin-top: 100px;
-            padding-bottom: 100px;
+        .detail-wrapper {
+            margin-top: 70px;
+            min-height: 100vh;
+            padding: 60px 2rem;
         }
         
-        /* 项目主要内容区域 */
-        .project-main {
-            display: flex;
-            gap: 60px;
+        .detail-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 40px;
         }
         
-        /* 左侧项目信息 */
-        .project-sidebar {
-            flex: 0 0 320px;
-            padding-top: 40px;
+        .detail-header {
+            text-align: center;
+            margin-bottom: 60px;
         }
         
-        .project-title {
-            font-size: 1.8rem;
-            font-weight: 400;
-            letter-spacing: 0.5px;
-            margin-bottom: 40px;
-            line-height: 1.3;
+        .detail-title {
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+            color: #000;
         }
         
-        /* 项目元数据 */
-        .project-meta {
-            margin-bottom: 40px;
+        .detail-meta {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
         }
         
         .meta-item {
-            margin-bottom: 24px;
             font-size: 0.9rem;
-            line-height: 1.6;
-        }
-        
-        .meta-label {
             color: #666;
-            margin-bottom: 4px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
         
-        .meta-value {
-            color: #000;
-        }
-        
-        /* 项目描述 */
-        .project-description {
-            font-size: 0.95rem;
-            line-height: 1.8;
+        .detail-description {
+            font-size: 1.1rem;
             color: #333;
-            margin-bottom: 40px;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto;
         }
         
-        /* 项目导航 */
-        .project-navigation {
-            border-top: 1px solid #e0e0e0;
-            padding-top: 30px;
-            font-size: 0.9rem;
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
         }
         
-        .project-nav-item {
-            display: block;
-            margin-bottom: 15px;
-            text-decoration: none;
-            color: #666;
-            transition: color 0.3s ease;
+        .photo-item {
+            background: #f8f8f8;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
         }
         
-        .project-nav-item:hover {
-            color: #000;
+        .photo-item:hover {
+            transform: translateY(-5px);
         }
         
-        .project-nav-item.active {
-            color: #000;
-            font-weight: 500;
-        }
-        
-        /* 右侧图片画廊 */
-        .project-content {
-            flex: 1;
-            min-width: 0;
-        }
-        
-        .gallery-item {
-            margin-bottom: 40px;
-        }
-        
-        .gallery-item img {
+        .photo-item img {
             width: 100%;
-            height: auto;
+            height: 300px;
+            object-fit: cover;
             display: block;
         }
         
-        /* 底部导航 */
-        .bottom-navigation {
-            max-width: 1200px;
-            margin: 80px auto 0;
-            padding: 0 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-top: 1px solid #e0e0e0;
-            padding-top: 40px;
+        .photo-info {
+            padding: 1.5rem;
         }
         
-        .nav-link {
-            text-decoration: none;
-            color: #666;
-            font-size: 0.9rem;
-            transition: color 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .nav-link:hover {
+        .photo-title {
+            font-size: 1.1rem;
+            font-weight: 400;
+            margin-bottom: 0.5rem;
             color: #000;
         }
         
-        .nav-link i {
-            font-size: 0.8rem;
+        .photo-date {
+            font-size: 0.85rem;
+            color: #999;
+            margin-bottom: 0.8rem;
         }
         
-        /* 响应式设计 */
-        @media (max-width: 1024px) {
-            .project-main {
-                flex-direction: column;
-                gap: 40px;
-            }
-            
-            .project-sidebar {
-                flex: none;
-                width: 100%;
-                max-width: 600px;
-            }
+        .photo-description {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.5;
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #000;
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+            transition: color 0.3s ease;
+        }
+        
+        .back-link:hover {
+            color: #666;
         }
         
         @media (max-width: 768px) {
-            .project-wrapper {
-                margin-top: 70px;
+            .detail-wrapper {
+                padding: 30px 1rem;
             }
             
-            .project-main {
-                padding: 0 20px;
+            .detail-title {
+                font-size: 2rem;
             }
             
-            .project-title {
-                font-size: 1.5rem;
-            }
-            
-            .bottom-navigation {
-                padding: 0 20px;
+            .detail-meta {
                 flex-direction: column;
-                gap: 20px;
-                text-align: center;
+                gap: 0.5rem;
+            }
+            
+            .photo-gallery {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .photo-item img {
+                height: 250px;
             }
         }
     </style>
@@ -208,98 +171,110 @@
     </nav>
 
     <!-- 项目详情主体 -->
-    <div class="project-wrapper">
-        <div class="project-main">
-            <!-- 左侧项目信息 -->
-            <aside class="project-sidebar">
-                <h1 class="project-title" id="project-title">品牌视觉设计</h1>
-                
-                <!-- 项目元数据 -->
-                <div class="project-meta">
-                    <div class="meta-item">
-                        <div class="meta-label" data-translate="project.year">年份</div>
-                        <div class="meta-value" id="project-date">2024</div>
-                    </div>
-                    <div class="meta-item">
-                        <div class="meta-label" data-translate="project.client">客户</div>
-                        <div class="meta-value" id="project-client">创新科技有限公司</div>
-                    </div>
-                    <div class="meta-item">
-                        <div class="meta-label" data-translate="project.category">类别</div>
-                        <div class="meta-value" id="project-category">品牌设计, VI设计</div>
-                    </div>
-                    <div class="meta-item">
-                        <div class="meta-label" data-translate="project.team">团队</div>
-                        <div class="meta-value" id="project-team">
-                            创意总监: islandJQ<br>
-                            设计师: 设计团队<br>
-                            项目经理: 项目组
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- 项目描述 -->
-                <div class="project-description" id="project-overview">
-                    <p>为新兴科技公司打造的全新品牌视觉识别系统。项目涵盖了从标志设计到完整的VI手册，确保品牌在各个触点上保持一致性和专业性。</p>
-                    <p>设计理念融合了科技感与人文关怀，体现了公司"科技改变生活"的核心价值观。通过简约而富有表现力的视觉语言，成功帮助客户在竞争激烈的市场中建立了独特的品牌形象。</p>
-                </div>
-                
-                <!-- 项目导航 -->
-                <nav class="project-navigation">
-                    <a href="#" class="project-nav-item" id="prev-project" data-translate="project.prevProject">← 上一个项目</a>
-                    <a href="#" class="project-nav-item" id="next-project" data-translate="project.nextProject">下一个项目 →</a>
-                    <a href="works.html" class="project-nav-item" data-translate="project.allProjects">返回作品集</a>
-                </nav>
-            </aside>
-            
-            <!-- 右侧图片内容 -->
-            <main class="project-content" id="project-gallery">
-                <div class="gallery-item">
-                    <img src="images/projects/project1/main.jpg" alt="项目主图" loading="lazy">
-                </div>
-                <div class="gallery-item">
-                    <img src="images/projects/project1/detail1.jpg" alt="标志设计" loading="lazy">
-                </div>
-                <div class="gallery-item">
-                    <img src="images/projects/project1/detail2.jpg" alt="色彩系统" loading="lazy">
-                </div>
-                <div class="gallery-item">
-                    <img src="images/projects/project1/detail3.jpg" alt="应用展示" loading="lazy">
-                </div>
-                <div class="gallery-item">
-                    <img src="images/projects/project1/detail4.jpg" alt="VI手册" loading="lazy">
-                </div>
-                <div class="gallery-item">
-                    <img src="images/projects/project1/detail5.jpg" alt="环境应用" loading="lazy">
-                </div>
-            </main>
-        </div>
-        
-        <!-- 底部导航 -->
-        <nav class="bottom-navigation">
-            <a href="#" class="nav-link" id="bottom-prev-project">
+    <div class="detail-wrapper">
+        <div class="detail-container">
+            <a href="works.html" class="back-link">
                 <i class="fas fa-arrow-left"></i>
-                <span data-translate="project.prevProject">上一个项目</span>
+                Back to Works
             </a>
-            <a href="works.html" class="nav-link">
-                <span data-translate="project.allProjects">所有项目</span>
-            </a>
-            <a href="#" class="nav-link" id="bottom-next-project">
-                <span data-translate="project.nextProject">下一个项目</span>
-                <i class="fas fa-arrow-right"></i>
-            </a>
-        </nav>
+            
+            <div id="project-content">
+                <!-- 项目内容将通过JavaScript动态加载 -->
+            </div>
+        </div>
     </div>
 
     <!-- 页脚 -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 islandJQ  STUDIO. All rights reserved.</p>
+            <p data-translate="footer.copyright">&copy; 2024 islandJQ  STUDIO. All rights reserved.</p>
         </div>
     </footer>
 
-    <script src="languages.js"></script>
-    <script src="script.js"></script>
-    <script src="project-detail.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 初始化语言管理器
+            window.languageManager.init();
+            
+            // 获取URL参数
+            const urlParams = new URLSearchParams(window.location.search);
+            const projectId = urlParams.get('id');
+            
+            // 项目数据
+            const projects = {
+                'photography-1': {
+                    title: '摄影作品集',
+                    category: 'Photography',
+                    year: '2011-2024',
+                    description: '记录生活中的美好瞬间，从云南的山水风光到都市的人文景观，用镜头捕捉时间的印记。',
+                    photos: [
+                        {
+                            src: 'images/works/photography/p942938083.jpeg',
+                            title: '2011云南 I',
+                            date: '2011.04.12',
+                            description: '云南之行的美好回忆，记录下壮美的自然风光。'
+                        },
+                        {
+                            src: 'images/works/photography/p942938062.jpeg',
+                            title: '2011云南 II', 
+                            date: '2011.04.12',
+                            description: '在云南的旅途中，感受到大自然的震撼与宁静。'
+                        }
+                    ]
+                }
+            };
+            
+            // 渲染项目内容
+            function renderProject(project) {
+                const content = `
+                    <div class="detail-header">
+                        <h1 class="detail-title">${project.title}</h1>
+                        <div class="detail-meta">
+                            <span class="meta-item">${project.category}</span>
+                            <span class="meta-item">${project.year}</span>
+                        </div>
+                        <p class="detail-description">${project.description}</p>
+                    </div>
+                    
+                    <div class="photo-gallery">
+                        ${project.photos.map(photo => `
+                            <div class="photo-item">
+                                <img src="${photo.src}" alt="${photo.title}" loading="lazy">
+                                <div class="photo-info">
+                                    <h3 class="photo-title">${photo.title}</h3>
+                                    <div class="photo-date">${photo.date}</div>
+                                    <p class="photo-description">${photo.description}</p>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                `;
+                
+                document.getElementById('project-content').innerHTML = content;
+            }
+            
+            // 加载对应项目
+            if (projectId && projects[projectId]) {
+                renderProject(projects[projectId]);
+            } else {
+                // 默认内容或404
+                document.getElementById('project-content').innerHTML = `
+                    <div class="detail-header">
+                        <h1 class="detail-title">项目未找到</h1>
+                        <p class="detail-description">抱歉，请求的项目不存在。</p>
+                    </div>
+                `;
+            }
+            
+            // 导航栏功能
+            const navToggle = document.getElementById('nav-toggle');
+            const navMenu = document.getElementById('nav-menu');
+            
+            navToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+                navToggle.classList.toggle('active');
+            });
+        });
+    </script>
 </body>
 </html>
