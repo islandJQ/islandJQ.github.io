@@ -67,7 +67,7 @@
         
         .publications-header {
             text-align: center;
-            margin-bottom: 68.4px;
+            margin-bottom: 48.4px;
         }
         
         .publications-title {
@@ -83,7 +83,10 @@
             color: #666;
             font-weight: 300;
             letter-spacing: 0.855px;
-            margin-bottom: 2rem;
+            margin-bottom: 0;
+            line-height: 1.6;
+            padding-top: 0;
+            margin-top: 0;
         }
         
         /* 防止FOUT (Flash of Unstyled Text) */
@@ -96,39 +99,31 @@
             opacity: 0;
         }
         
-        .publications-container .filter-buttons {
-            display: flex !important;
-            justify-content: center !important;
-            flex-wrap: wrap !important;
-            gap: 20px !important;
-            margin-bottom: 0.5rem !important;
-        }
-        
-        .filter-btn {
+        .publications-subtitle .filter-btn {
             background: none;
             border: none;
-            font-size: 0.8rem;
-            color: #999;
+            font-size: 0.941rem;
+            color: #666;
             cursor: pointer;
-            padding: 5px 0;
-            letter-spacing: 1px;
+            padding: 0 5px;
+            letter-spacing: 0.855px;
             font-weight: 300;
-            text-transform: uppercase;
             transition: all 0.3s ease;
-            border-bottom: 1px solid transparent;
             font-family: 'DIN Next LT Pro', sans-serif;
+            text-transform: none;
+            line-height: inherit;
+            vertical-align: baseline;
         }
         
-        .filter-btn:hover,
-        .filter-btn.active {
+        .publications-subtitle .filter-btn:hover,
+        .publications-subtitle .filter-btn.active {
             color: #000;
-            border-bottom: 1px solid #000;
         }
         
         .publications-container .publications-grid {
-            display: grid !important;
-            gap: 10.5px !important;
-            margin-top: -5px !important;
+            display: grid;
+            gap: 0;
+            margin-top: -20px;
         }
         
         .publication-card {
@@ -138,6 +133,11 @@
             border-radius: 2px;
             transition: all 0.3s ease;
             border: 1px solid transparent;
+        }
+        
+        /* 如果第一个卡片，减少顶部间距 */
+        .publication-card:first-child {
+            margin-top: -20px;
         }
         
         /* 响应式交互效果 - 保持原色调 */
@@ -275,7 +275,7 @@
         /* 筛选器区域样式 - 提高优先级 */
         .publications-container .filter-section {
             text-align: center !important;
-            margin: 10px 0 5px 0 !important;
+            margin: 0 !important;
         }
         
         
@@ -365,24 +365,23 @@
             <!-- 页面标题 -->
             <header class="publications-header">
                 <h1 class="publications-title" data-translate="academic.title">Publications</h1>
-                <!-- 筛选器替换副标题位置 -->
-                <div class="filter-section" style="margin: 0 !important;">
-                    <div class="filter-buttons" style="margin: 0 !important;">
-                        <button class="filter-btn active" data-filter="all" data-translate="filter.all" style="font-size: 0.941rem !important; color: #000 !important; font-weight: 300 !important; letter-spacing: 0.855px !important;">All</button>
-                        <button class="filter-btn" data-filter="journal" data-translate="filter.journal" style="font-size: 0.941rem !important; color: #666 !important; font-weight: 300 !important; letter-spacing: 0.855px !important;">Journal Papers</button>
-                        <button class="filter-btn" data-filter="conference" data-translate="filter.conference" style="font-size: 0.941rem !important; color: #666 !important; font-weight: 300 !important; letter-spacing: 0.855px !important;">Conference Papers</button>
-                        <button class="filter-btn" data-filter="book" data-translate="filter.book" style="font-size: 0.941rem !important; color: #666 !important; font-weight: 300 !important; letter-spacing: 0.855px !important;">Books</button>
-                        <button class="filter-btn" data-filter="chapter" data-translate="filter.chapter" style="font-size: 0.941rem !important; color: #666 !important; font-weight: 300 !important; letter-spacing: 0.855px !important;">Chapters</button>
-                    </div>
-                </div>
+                <!-- 筛选器作为副标题 -->
+                <p class="publications-subtitle">
+                    <button class="filter-btn active" data-filter="all" data-translate="filter.all">All</button>
+                    <span style="color: #999; margin: 0 5px; font-size: 0.941rem;">·</span>
+                    <button class="filter-btn" data-filter="journal" data-translate="filter.journal">Journal Papers</button>
+                    <span style="color: #999; margin: 0 5px; font-size: 0.941rem;">·</span>
+                    <button class="filter-btn" data-filter="conference" data-translate="filter.conference">Conference Papers</button>
+                    <span style="color: #999; margin: 0 5px; font-size: 0.941rem;">·</span>
+                    <button class="filter-btn" data-filter="book" data-translate="filter.book">Books</button>
+                    <span style="color: #999; margin: 0 5px; font-size: 0.941rem;">·</span>
+                    <button class="filter-btn" data-filter="chapter" data-translate="filter.chapter">Chapters</button>
+                </p>
             </header>
 
-        <!-- 间隔元素 -->
-        <div style="height: 50px; margin-top: -40px !important; margin-bottom: 5px !important;"></div>
-
         <!-- 发表列表 -->
-        <section style="margin: 0 !important; padding: 0 !important;">
-            <div class="publications-grid" id="publications-grid" style="margin: 0 !important;">
+        <section>
+            <div class="publications-grid" id="publications-grid">
                 <!-- 期刊论文 -->
                 <article class="publication-card" data-type="journal">
                     <span class="publication-type" data-translate="filter.journal">期刊论文</span>
